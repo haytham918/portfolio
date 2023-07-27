@@ -52,7 +52,7 @@
 
 @media screen and (max-width: 768px){
   .header{
-    
+    bottom: initial;
     top: 0;
 
   }
