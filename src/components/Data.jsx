@@ -59,7 +59,6 @@ const Data = () => {
       </h3>
       <p className="home__description">I'm a second-year Computer Science Engineering student at University of Michigan</p>
 
-      <a href="#contact" className="button button--flex"></a>
     </div>
   )
 };
