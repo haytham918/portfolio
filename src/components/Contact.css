@@ -7,7 +7,7 @@
 
 .contact__title{
   text-align: center;
-  font-size: var(--h2-font-size);
+  font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-1-5);
 }
@@ -38,7 +38,7 @@
 
 .contact__card-title,
 .contact__card-data{
-  font-size: var(--h3-font-size);
+  font-size: var(--small-font-size);
 }
 
 .contact__card-title{
@@ -52,7 +52,7 @@
 
 .contact__button{
   color: var(--text-color);
-  font-size: var(--h3-font-size);
+  font-size: var(--small-font-size);
   display: inline-flex;
   align-items: center;
   justify-content: center;

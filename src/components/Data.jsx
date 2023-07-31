@@ -1,5 +1,4 @@
 import React from "react";
-import hand from '../assets/hand.svg'
 const Data = () => {
   return(
     <div className="home__data">
