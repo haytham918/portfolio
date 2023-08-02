@@ -4,16 +4,22 @@ import Home from './components/Home'
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { ScrollUp } from './components/ScrollUp';
+import { useState } from 'react';
 function App() {
+  const[activeNav, setActiveNav] = useState('#about');
+
+  const handleNav = (section) => {
+    setActiveNav(section);
+  }
   return (
    <>
-   <Header />
+   <Header activeNav={activeNav} handleNav={handleNav}/>
 
    <main className='main'>
     <Home />
     <Contact />
    </main>
-   <Footer />
+   <Footer handleNav={handleNav}/>
    <ScrollUp />
    </>
   );
