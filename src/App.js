@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { ScrollUp } from './components/ScrollUp';
 function App() {
   return (
    <>
@@ -11,8 +12,9 @@ function App() {
    <main className='main'>
     <Home />
     <Contact />
-    <Footer />
    </main>
+   <Footer />
+   <ScrollUp />
    </>
   );
 }
