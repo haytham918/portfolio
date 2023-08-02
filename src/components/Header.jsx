@@ -3,6 +3,7 @@ import './Header.css';
 
 const Header = () => {
   window.addEventListener('scroll', function(){
+   
     const header = document.querySelector('.header');
     if(this.scrollY >= 80 ){
       header.classList.add('scroll-header');
@@ -11,6 +12,7 @@ const Header = () => {
     }
   })
 
+
   const [Toggle, showMenu] = useState(false);
 
   const[activeNav, setActiveNav] = useState('#about');
@@ -18,7 +20,7 @@ const Header = () => {
   return(
    <header className="header">
       <nav className="nav container">
-        <a href="index.html" className="nav__logo">Haytham Tang</a>
+        <a href="#" className="nav__logo" onClick={() => setActiveNav('#about')}>Haytham Tang</a>
 
         <div className={Toggle ? 'nav__menu show-menu' : 'nav__menu'}>
           <ul className="nav__list grid">
@@ -29,16 +31,11 @@ const Header = () => {
               </a>
             </li>
 
-            <li className="nav__item">
-              <a href="#skills" className="nav__link">
-                <i className="uil uil-file-alt nav__icon"></i> Skills
-              </a>
-            </li>
 
 
             <li className="nav__item">
               <a href="#portfolio" className={activeNav === '#portfolio' ? "nav__link active-link" : 'nav__link'} onClick={() => setActiveNav('#portfolio')}>
-                <i className="uil uil-scenery nav__icon"></i> Portfolio
+                <i className="uil uil-file-alt nav__icon"></i> Portfolio
               </a>
             </li>
 
