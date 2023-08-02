@@ -20,7 +20,7 @@ const Header = () => {
   return(
    <header className="header">
       <nav className="nav container">
-        <a href="#" className="nav__logo" onClick={() => setActiveNav('#about')}>Haytham Tang</a>
+        <a href="/" className="nav__logo" onClick={() => setActiveNav('#about')}>Haytham Tang</a>
 
         <div className={Toggle ? 'nav__menu show-menu' : 'nav__menu'}>
           <ul className="nav__list grid">
