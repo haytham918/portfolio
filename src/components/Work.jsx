@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './Work.css'
 import { Works } from './Works'
-import { projectsData } from './WorkData';
 export const Work = () => {
   return (
     <section className="work section" id='portfolio'>
