@@ -21,7 +21,7 @@ export const Works = () => {
   return (
     <div>
     <div className="work__filters">
-      {projectsNav.mao((item, index) => {
+      {projectsNav.map((item, index) => {
         return(
           <span onClick={(e) => {handleClick(e, index);}} className={`${active === index ? 'active-work' : ""} work__item`} key={index}>{item.name}</span>
         )
@@ -29,7 +29,7 @@ export const Works = () => {
     </div>
 
     <div className="work__container container grid">
-      {projectsData.map((item) => {
+      {projects.map((item) => {
         return <WorksItems item={item} key={item.id} />;
       })}
     </div>

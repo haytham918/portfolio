@@ -27,6 +27,7 @@
 }
 
 .work__card {
+  display: grid;
   background-color: var(--container-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1.25rem;
@@ -34,7 +35,9 @@
 }
 
 .work__img{
-  width: 295px;
+  text-align: center;
+  justify-self: center;
+  height: 150px;
   border-radius: 1rem;
   margin-bottom: var(--mb-1);
 }
