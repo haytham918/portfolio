@@ -8,19 +8,31 @@
  flex-direction: column;
  z-index: 1500;
  background-color: #f1f2eb;
+ border-radius: 8px;
 }
 
 .close-icon{
-  height: 10%;
-  position: absolute;
-  right: 1.2rem;
-  top: 0.2rem;
+  height: 8%;
 }
 
 .close{
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  right: 1.2rem;
+  top: 0;
+  position: absolute;
 }
 
-.dim{
-  opacity: 0.7;
+.youtube-video{
+  align-self: center;
+}
+
+.subtitle{
+  align-self: center;
+}
+
+
+@media screen and (max-width: 768px){
+  .detail-container{
+    width: 95%;
+  }
 }

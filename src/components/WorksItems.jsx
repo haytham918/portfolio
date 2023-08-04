@@ -13,7 +13,7 @@ export const WorksItems = ({item}) => {
   }
   let component;
   if(item.title === 'Linear Programming Capstone'){
-    component = <Capstone/>
+    component = <Capstone closeComponent={closeComponent}/>
   }
   return (
     <>
