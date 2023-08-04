@@ -18,6 +18,7 @@ export const Works = () => {
     setItem({name: e.target.textContent});
     setActive(index);
   }
+  
   return (
     <div>
     <div className="work__filters">

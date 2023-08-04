@@ -1,0 +1,26 @@
+.detail-container{
+ position: fixed;
+ justify-self: center;
+ width: 85%;
+ height: 100%;
+ top: 0;
+ display: flex;
+ flex-direction: column;
+ z-index: 1500;
+ background-color: #f1f2eb;
+}
+
+.close-icon{
+  height: 10%;
+  position: absolute;
+  right: 1.2rem;
+  top: 0.2rem;
+}
+
+.close{
+  font-size: 3.5rem;
+}
+
+.dim{
+  opacity: 0.7;
+}

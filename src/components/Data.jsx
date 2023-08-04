@@ -56,7 +56,7 @@ const Data = () => {
       <h3 className="home__subtitle">
         唐允轩
       </h3>
-      <p className="home__description">Hey, I'm Yunxuan "Haytham" Tang, a second-year Computer Science Engineering student at University of Michigan</p>
+      <p className="home__description">Hello, I'm Yunxuan "Haytham" Tang, a second-year Computer Science Engineering student at University of Michigan</p>
 
     </div>
   )
