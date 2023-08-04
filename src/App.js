@@ -18,8 +18,8 @@ function App() {
 
    <main className='main'>
     <Home />
-    <Contact />
     <Work />
+    <Contact />
    </main>
    <Footer handleNav={handleNav}/>
    <ScrollUp />
