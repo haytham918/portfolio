@@ -11,7 +11,7 @@ export const projectsData = [
   {
     id: 2,
     image: converterpic,
-    title: 'Universal Converter',
+    title: 'Universal Converter Web App',
     category: 'Project',
   }
 ]
