@@ -11,7 +11,7 @@ export const projectsData = [
   {
     id: 2,
     image: roboticspic,
-    title: 'Vex Robotics',
+    title: 'VEX Robotics',
     category: 'Project',
   },
   {
