@@ -365,7 +365,7 @@ const Units = () => {
           <button onClick={clickHandler} className="convert-button">
             Convert!
           </button>
-          <img src={arrow} alt="Arrow" className="arrow" />
+          <img src={arrow} alt="Arrow" className="arrow-convert" />
         </div>
 
         <div className="to-container">

@@ -114,7 +114,7 @@ const Time = () => {
             </button>
           </div>
           <div className="arrow-container">
-            <img src={arrow} alt="Arrow" className="arrow" />
+            <img src={arrow} alt="Arrow" className="arrow-convert" />
           </div>
           {requestTime !== "" ? (
             <div className="request-result-container">{requestTime}</div>

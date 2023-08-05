@@ -275,7 +275,7 @@ const Currency = (props) => {
               {flag1 !== "" ? (
                 <img src={flag1} alt={country1} className="flag" />
               ) : null}
-              <img src={arrow} alt="Arrow" className="arrow" />
+              <img src={arrow} alt="Arrow" className="arrow-convert" />
               {flag2 !== "" ? (
                 <img src={flag2} alt={country2} className="flag" />
               ) : null}

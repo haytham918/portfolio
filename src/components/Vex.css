@@ -3,8 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  height: 40%;
+  width: 35%;
+  height: 38%;
   align-self: center;
 }
 
@@ -59,4 +59,15 @@
 
 .indicator-inactive{
   background-color: grey;
+}
+
+.end-text{
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 650px) {
+  .carousel{
+    width: 60%;
+    height: 20%;
+  }
 }
