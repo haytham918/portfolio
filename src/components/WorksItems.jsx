@@ -24,6 +24,7 @@ export const WorksItems = ({item}) => {
     <a className="work__card" key={item.id} onClick={openComponent}>
       <img src={item.image} alt='' className='work__img'/>
       <h3 className="work__title">{item.title}</h3>
+      <h4 className='check-out'>Learn More</h4>
     </a>
     {showComponent? component : null}
     </>

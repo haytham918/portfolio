@@ -56,7 +56,7 @@
 
 .home__description{
   max-width: 400px;
-  margin-bottom: var(--mb-3);
+  margin-bottom: var(--mb-2);
 }
 
 .home__img {

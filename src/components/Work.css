@@ -32,6 +32,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1.25rem;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .work__img{
@@ -67,6 +68,24 @@
 .active-work {
   background-color: var(--title-color);
   color: var(--container-color);
+}
+
+.check-out{
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  display: none;
+  color: #07396d;
+}
+
+.work__card:hover{
+  .work__img{
+    opacity: 0.1;
+  }
+  .check-out{
+    display: block;
+    font-weight: 900;
+  }
 }
 
 @media screen and (max-width: 992px){
