@@ -21,7 +21,7 @@ export const WorksItems = ({item}) => {
   console.log(showComponent)
   return (
     <>
-    <a className="work__card" key={item.id} onClick={openComponent}>
+    <a href={() => false} className="work__card" key={item.id} onClick={openComponent}>
       <img src={item.image} alt='' className='work__img'/>
       <h3 className="work__title">{item.title}</h3>
       <h4 className='check-out'>Learn More</h4>
