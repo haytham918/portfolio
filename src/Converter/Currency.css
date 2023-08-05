@@ -1,0 +1,61 @@
+.header {
+  text-align: center;
+}
+
+.coin {
+  height: 8%;
+  margin-bottom: 0.5rem;
+  width: 50%;
+}
+
+.currency-container {
+  width: 95%;
+  height: 80%;
+  border-radius: 0.5rem;
+  background-color: rgb(231, 205, 246);
+  box-shadow: 0rem 0.2rem 0.8rem rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.original-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  box-shadow: 0rem 0.15rem aliceblue;
+}
+
+.flag-container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flag {
+  height: 33.5%;
+  width: 12.5%;
+  margin-bottom: 0.5em;
+}
+
+.convert-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  gap: 15%;
+}
+
+.arrow {
+  height: 50%;
+  margin-bottom: 0.5em;
+}

@@ -1,5 +1,5 @@
 import capstonepic from '../assets/capstone.jpeg'
-
+import converterpic from '../assets/converter.jpg'
 export const projectsData = [
   {
     id: 1,
@@ -8,6 +8,12 @@ export const projectsData = [
     category: 'Research',
   },
  
+  {
+    id: 2,
+    image: converterpic,
+    title: 'Universal Converter',
+    category: 'Project',
+  }
 ]
 
 export const projectsNav = [
