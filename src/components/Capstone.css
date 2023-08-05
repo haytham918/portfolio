@@ -30,9 +30,72 @@
   align-self: center;
 }
 
+.time-info{
+  font-style: italic;
+}
+
+.text-part{
+  margin-left: 3rem;
+  margin-top: 1rem;
+}
+
+.description{
+  margin-top: 0.5rem;
+  margin-right: 3.5rem;
+  color: var(--title-color-dark);
+}
+
+.download-link{
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 
 @media screen and (max-width: 768px){
   .detail-container{
     width: 95%;
+  }
+
+  .subtitle{
+    font-size: 1rem;
+  }
+
+  .headline{
+    font-size: 1rem;
+  }
+
+  .text-part{
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .youtube-video{
+    height: 12%;
+    width: 65%;
+  }
+  /* .text-part{
+    font-size: 0.6rem;
+    
+  }
+  .subtitle{
+    font-size: .8rem
+  }
+  .headline{
+    font-size: 0.8rem;
+  } */
+}
+
+@media screen and (max-width: 400px){
+  .text-part{
+    font-size: 0.75rem;
+    
+  }
+  .subtitle{
+    font-size: .85rem
+  }
+  .headline{
+    font-size: 0.85rem;
   }
 }
