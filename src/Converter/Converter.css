@@ -1,0 +1,18 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: beige;
+  height: 100%;
+ 
+}
+
+.overall {
+  position: fixed;
+  z-index: 1500;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
