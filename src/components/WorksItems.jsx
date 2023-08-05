@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Capstone } from './Capstone';
 import Converter from '../Converter/Converter';
+import { Vex } from './Vex';
 
 export const WorksItems = ({item}) => {
   const [showComponent, setComponent] = useState(false);
@@ -16,7 +17,7 @@ export const WorksItems = ({item}) => {
   if(item.id === 1){
     component = <Capstone closeComponent={closeComponent}/>
   }else if(item.id === 2){
-    
+    component = <Vex closeComponent={closeComponent}/>
   }
   else if(item.id === 3){
     component = <Converter closeConverter={closeComponent}/>
