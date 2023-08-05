@@ -7,7 +7,7 @@ export const Capstone = ({closeComponent}) => {
       <a href={() => false}className='close-icon' onClick={closeComponent}>
         <i className='uil uil-times close'></i>
       </a>
-      <iframe title='Video of Capstone Presentation' src='https://www.youtube.com/embed/j4yqDeWVyC8' width='85%' height='35%' className='youtube-video'>
+      <iframe title='Video of Capstone Presentation' src='https://www.youtube.com/embed/j4yqDeWVyC8' width='85%' height='45%' className='youtube-video'>
       </iframe>
       <h3 className='subtitle'>Video of Capstone Presentation</h3>
       <div className='text-part'>

@@ -1,6 +1,7 @@
 import capstonepic from '../assets/capstone.jpeg'
 import converterpic from '../assets/converter.jpg'
 import roboticspic from '../assets/roboticsCover.jpeg'
+import gantrypic from '../assets/gantryRobot.png'
 export const projectsData = [
   {
     id: 1,
@@ -9,9 +10,15 @@ export const projectsData = [
     category: 'Research',
   },
   {
+    id: 4,
+    image: gantrypic,
+    title: 'Warehouse Robot',
+    category: 'Project'
+  },
+  {
     id: 2,
     image: roboticspic,
-    title: 'VEX Robotics',
+    title: 'VEX Robotics Competition',
     category: 'Project',
   },
   {
