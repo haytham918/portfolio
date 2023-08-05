@@ -16,6 +16,9 @@ export const WorksItems = ({item}) => {
   if(item.id === 1){
     component = <Capstone closeComponent={closeComponent}/>
   }else if(item.id === 2){
+    
+  }
+  else if(item.id === 3){
     component = <Converter closeConverter={closeComponent}/>
   }
   console.log(showComponent)
