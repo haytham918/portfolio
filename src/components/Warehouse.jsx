@@ -13,9 +13,9 @@ export const Warehouse = ({closeComponent}) => {
       <div className='text-part'>
       <h3 className='headline'>Warehouse Robot</h3>
       <h4 className='time-info'>Jan. 2023 — May 2023</h4>
-      <h4 className='description'>In my senior year at high school, I did my capstone project that researched Linear Programming under the advising of Mr. Reed Coots and Dr. Greg Martin. I spent roughly ten months on this project, and finished with a 110-page paper and a schoolwide presentation.</h4>
-      <h4 className='description'>Over the course of my capstone, I analyzed over 30 literatures on the history of the development of Linear Programming as well as its variant algorithms and applications. I studied the essense of the distinct algorithms such as the Simplex Method and the Graph Method, comparing their advantages and drawbacks. Then, I devised my own Python programs that solve optimization problems, which is the goal of Linear Programming, based on different algorithms.</h4>
-      <h4 className='description'>Throughout the process, I gained a lot of experience conducting independent research and improved my academic writing skills with the help of my advisors.<br></br></h4>
+      <h4 className='description'>In my first-year engineering class, I led a team of five people to build a robot type capable of picking, palletizing, and transporting objects in a warehouse with three mechanical subsystems: the gantry frame, a scissor lift mechanism, and a claw mechanism.</h4>
+      <h4 className='description'>The goal of this project was the development of an automated system that alleviates the intense workload on package shipping center workers. This prototype is capable of carrying a maximum of three kilograms steadily.</h4>
+      <h4 className='description'>For the prototype, I designed a custom User-Interface using Processing, which is a a 5x5 grid representing the warehouse inventory with buttons for item reallocation, retrieval, and storage. The user can easily select the mode and location for objects by clicking options on the screen.</h4>
       <a className='download-link' href={reportPdf} download='Warehouse-Robot-Report'>Check out our report</a>
       </div>
     </div>
