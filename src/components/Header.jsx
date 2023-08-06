@@ -3,7 +3,6 @@ import "./Header.css";
 
 const Header = (props) => {
   window.addEventListener("scroll", function () {
-    console.log(this.scrollY);
     const header = document.querySelector(".header");
     if (this.scrollY >= 80) {
       header.classList.add("scroll-header");
