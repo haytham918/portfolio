@@ -2,7 +2,20 @@ import capstonepic from '../assets/capstone.jpeg'
 import converterpic from '../assets/converter.jpg'
 import roboticspic from '../assets/roboticsCover.jpeg'
 import gantrypic from '../assets/gantryRobot.png'
+import symbioticlabpic from '../assets/symbioticlabicon.png'
 export const projectsData = [
+  {
+    id: 6,
+    image: ,
+    title: 'Ambient Learning Mobile App',
+    category: 'Project'
+  },
+  {
+    id: 5,
+    image: symbioticlabpic,
+    title: 'QoS Memory System(Working on)',
+    category: 'Research'
+  },
   {
     id: 1,
     image: capstonepic,
