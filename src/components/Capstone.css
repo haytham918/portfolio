@@ -89,7 +89,10 @@
   } */
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 435px) {
+  .detail-container{
+    width: 100%;
+  }
   .text-part {
     font-size: 0.75rem;
   }
