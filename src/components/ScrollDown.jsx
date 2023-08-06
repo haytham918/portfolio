@@ -2,7 +2,7 @@ import React from "react";
 const ScrollDown = () => {
   return (
     <div className="home__scroll">
-      <a href="#contact" className="home__scroll-button button--flex">
+      <a href="#portfolio" className="home__scroll-button button--flex">
         <svg
           width="32px"
           height="32px"
