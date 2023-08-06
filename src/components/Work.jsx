@@ -1,12 +1,12 @@
-import React from 'react'
-import './Work.css'
-import { Works } from './Works'
+import React from "react";
+import "./Work.css";
+import { Works } from "./Works";
 export const Work = () => {
   return (
-    <section className="work section" id='portfolio'>
+    <section className="work section" id="portfolio">
       <h2 className="section__title">Portfolio</h2>
       <span className="section__subtitle">Past Works</span>
       <Works />
     </section>
-  )
-}
+  );
+};

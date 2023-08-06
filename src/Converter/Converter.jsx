@@ -6,7 +6,7 @@ import Time from "./Time";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Converter = ({closeConverter}) => {
+const Converter = ({ closeConverter }) => {
   const symbolsURL =
     "http://data.fixer.io/api/symbols?access_key=0ccba43ed82b96bca5e8206f5f1f094a";
   const latestURL =
@@ -14,9 +14,9 @@ const Converter = ({closeConverter}) => {
   const [countryList, setCountryList] = useState("");
   const [exchangeList, setExchangeList] = useState("");
 
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    getData();
+  }, []);
 
   console.log(countryList);
 
@@ -32,36 +32,42 @@ const Converter = ({closeConverter}) => {
   }
   const [index, showIndex] = useState(1);
   let converterBody;
-  if(index === 1){
-    converterBody = <Units />
-  }else if(index === 2){
-    converterBody = <Currency countryList={countryList} exchangeList={exchangeList} />
-  }else if(index === 3){
-    converterBody = <Time />
-  }else{
+  if (index === 1) {
+    converterBody = <Units />;
+  } else if (index === 2) {
+    converterBody = (
+      <Currency countryList={countryList} exchangeList={exchangeList} />
+    );
+  } else if (index === 3) {
+    converterBody = <Time />;
+  } else {
     converterBody = null;
   }
 
   const gotoUnit = () => {
     showIndex(1);
-  }
+  };
 
   const gotoCurrency = () => {
     showIndex(2);
-  }
-  
+  };
+
   const gotoTime = () => {
     showIndex(3);
-  }
+  };
 
   return (
     <div className="overall">
       <div className="top-bar">
-        <NavBar className="top-bar" gotoUnit={gotoUnit} gotoCurrency={gotoCurrency} gotoTime={gotoTime} closeConverter={closeConverter}/>
+        <NavBar
+          className="top-bar"
+          gotoUnit={gotoUnit}
+          gotoCurrency={gotoCurrency}
+          gotoTime={gotoTime}
+          closeConverter={closeConverter}
+        />
       </div>
-      <div className="page-container">
-       {converterBody}
-      </div>
+      <div className="page-container">{converterBody}</div>
     </div>
   );
 };

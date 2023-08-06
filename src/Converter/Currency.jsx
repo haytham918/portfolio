@@ -165,6 +165,7 @@ const Currency = (props) => {
     ZAR: "ZA",
     ZMK: "ZM",
     ZWD: "ZW",
+    BTC: 'BTC',
   };
 
   const [country1, setCountry1] = useState("");
@@ -267,7 +268,7 @@ const Currency = (props) => {
               />
             </div>
           </div>
-          <div className="convert-container">
+          <div className="convert-currency-container">
             <button onClick={clickHandler} className="convert-button">
               Convert!
             </button>

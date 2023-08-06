@@ -1,4 +1,4 @@
-.work__filters{
+.work__filters {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,12 +15,12 @@
   text-transform: capitalize;
 }
 
-.work__item:hover{
+.work__item:hover {
   background-color: var(--title-color);
   color: var(--container-color);
 }
 
-.work__container{
+.work__container {
   grid-template-columns: repeat(2, max-content);
   gap: 3rem;
   justify-content: center;
@@ -35,20 +35,20 @@
   cursor: pointer;
 }
 
-.work__img{
+.work__img {
   justify-self: center;
   height: 150px;
   border-radius: 1rem;
   margin-bottom: var(--mb-1);
 }
 
-.work__title{
+.work__title {
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-0-5);
 }
 
-.work__button{
+.work__button {
   color: var(--text-color);
   font-size: var(--small-font-size);
   display: flex;
@@ -56,12 +56,12 @@
   column-gap: 0.25rem;
 }
 
-.work__button-icon{
+.work__button-icon {
   font-size: 1rem;
   transition: 0.4s;
 }
 
-.work__button:hover .work__button-icon{
+.work__button:hover .work__button-icon {
   transform: translateX(0.25rem);
 }
 
@@ -70,7 +70,7 @@
   color: var(--container-color);
 }
 
-.check-out{
+.check-out {
   position: absolute;
   justify-self: center;
   align-self: center;
@@ -78,52 +78,51 @@
   color: #07396d;
 }
 
-.work__card:hover{
-  .work__img{
+.work__card:hover {
+  .work__img {
     opacity: 0.1;
   }
-  .check-out{
+  .check-out {
     display: block;
     font-weight: 900;
   }
 }
 
-@media screen and (max-width: 992px){
-  .work__container{
+@media screen and (max-width: 992px) {
+  .work__container {
     gap: 1.25rem;
   }
 
-  .work__card{
+  .work__card {
     padding: 1rem;
   }
 
-  .work__img{
+  .work__img {
     margin-bottom: 0.75rem;
   }
 
-  .work__title{
+  .work__title {
     margin-bottom: 0.25rem;
   }
 }
 
-@media screen and (max-width: 768px){
-  .work__container{
+@media screen and (max-width: 768px) {
+  .work__container {
     grid-template-columns: max-content;
   }
 }
 
-@media screen and (max-width: 576px){
-  .work__container{
+@media screen and (max-width: 576px) {
+  .work__container {
     grid-template-columns: 1fr;
   }
-  
 }
 
-@media screen and (max-width: 350px){
-  .work__item{
+@media screen and (max-width: 350px) {
+  .work__item {
     font-size: var(--small-font-size);
   }
-  .work__filters{
+  .work__filters {
     column-gap: 0.25rem;
   }
 }

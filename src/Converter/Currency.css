@@ -43,7 +43,7 @@
   margin-bottom: 0.5em;
 }
 
-.convert-container {
+.convert-currency-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +55,7 @@
   gap: 15%;
 }
 
-.arrow {
-  height: 50%;
+.arrow-convert {
+  height: 30%;
   margin-bottom: 0.5em;
 }

@@ -6,7 +6,6 @@
   align-items: stretch;
   gap: 12vw;
   padding: 0 2vw;
- 
 }
 
 .converter-name {
@@ -33,12 +32,9 @@
   padding: 0.25vw;
 }
 
-
 .converter li:hover {
   background-color: violet;
 }
-
-
 
 .sections {
   font-size: 2.5vw;

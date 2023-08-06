@@ -1,80 +1,79 @@
-.detail-container{
- position: fixed;
- justify-self: center;
- width: 85%;
- height: 100%;
- top: 0;
- display: flex;
- flex-direction: column;
- z-index: 1500;
- background-color: #f1f2eb;
- border-radius: 8px;
- overflow: scroll;
+.detail-container {
+  position: fixed;
+  justify-self: center;
+  width: 85%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1500;
+  background-color: #f1f2eb;
+  border-radius: 8px;
+  overflow: scroll;
 }
 
-.close-icon{
+.close-icon {
   height: 8%;
   cursor: pointer;
 }
 
-.close{
+.close {
   font-size: 2.5rem;
   right: 1.2rem;
   top: 0;
   position: absolute;
 }
 
-.youtube-video{
+.youtube-video {
   align-self: center;
 }
 
-.subtitle{
+.subtitle {
   margin-top: 0.5rem;
   align-self: center;
 }
 
-.time-info{
+.time-info {
   font-style: italic;
 }
 
-.text-part{
+.text-part {
   margin-left: 3rem;
   margin-top: 1rem;
 }
 
-.description{
+.description {
   margin-top: 0.5rem;
   margin-right: 3.5rem;
   color: var(--title-color-dark);
 }
 
-.download-link{
+.download-link {
   display: block;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
 
-
-@media screen and (max-width: 768px){
-  .detail-container{
+@media screen and (max-width: 768px) {
+  .detail-container {
     width: 95%;
   }
 
-  .subtitle{
+  .subtitle {
     font-size: 1rem;
   }
 
-  .headline{
+  .headline {
     font-size: 1rem;
   }
 
-  .text-part{
+  .text-part {
     font-size: 0.8rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .youtube-video{
+  .youtube-video {
     height: 12%;
     width: 65%;
   }
@@ -90,15 +89,14 @@
   } */
 }
 
-@media screen and (max-width: 400px){
-  .text-part{
+@media screen and (max-width: 400px) {
+  .text-part {
     font-size: 0.75rem;
-    
   }
-  .subtitle{
-    font-size: .85rem
+  .subtitle {
+    font-size: 0.85rem;
   }
-  .headline{
+  .headline {
     font-size: 0.85rem;
   }
 }
