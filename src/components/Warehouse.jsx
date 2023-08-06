@@ -20,7 +20,7 @@ export const Warehouse = ({ closeComponent }) => {
         <h4 className="time-info">Jan. 2023 — May 2023</h4>
         <h4 className="description">
           In my first-year engineering class, I led a team of five people to
-          build a robot type capable of picking, palletizing, and transporting
+          build a robot prototype capable of picking, palletizing, and transporting
           objects in a warehouse with three mechanical subsystems: the gantry
           frame, a scissor lift mechanism, and a claw mechanism.
         </h4>

@@ -31,7 +31,7 @@ const Contact = () => {
               <span className="contact__card-data">yunxuant@umich.edu</span>
 
               <a href="mailto:yunxuant@umich.edu" className="contact__button">
-                Write me{" "}
+                Email me{" "}
                 <i className="bx bx bx-right-arrow-alt contact__button-icon"></i>
               </a>
             </div>
@@ -42,7 +42,7 @@ const Contact = () => {
               <span className="contact__card-data">917-680-3996</span>
 
               <a href="sms:+19176803996" className="contact__button">
-                Write me{" "}
+                Text me{" "}
                 <i className="bx bx bx-right-arrow-alt contact__button-icon"></i>
               </a>
             </div>
