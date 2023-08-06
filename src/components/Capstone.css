@@ -1,9 +1,10 @@
 .detail-container {
   position: fixed;
-  justify-self: center;
   width: 85%;
   height: 100%;
   top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   z-index: 1500;
@@ -56,7 +57,7 @@
 
 @media screen and (max-width: 768px) {
   .detail-container {
-    width: 95%;
+    width: 100%;
   }
 
   .subtitle {
@@ -90,9 +91,6 @@
 }
 
 @media screen and (max-width: 435px) {
-  .detail-container{
-    width: 100%;
-  }
   .text-part {
     font-size: 0.75rem;
   }
