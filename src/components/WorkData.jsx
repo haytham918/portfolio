@@ -3,10 +3,11 @@ import converterpic from '../assets/converter.jpg'
 import roboticspic from '../assets/roboticsCover.jpeg'
 import gantrypic from '../assets/gantryRobot.png'
 import symbioticlabpic from '../assets/symbioticlabicon.png'
+import apppic from '../assets/appCover.png'
 export const projectsData = [
   {
     id: 6,
-    image: ,
+    image: apppic,
     title: 'Ambient Learning Mobile App',
     category: 'Project'
   },

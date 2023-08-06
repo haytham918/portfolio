@@ -1,0 +1,10 @@
+.carousel-ambient{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 436px;
+  align-self: center;
+
+}

@@ -3,6 +3,7 @@ import { Capstone } from './Capstone';
 import Converter from '../Converter/Converter';
 import { Vex } from './Vex';
 import { Warehouse } from './Warehouse';
+import { Ambient } from './Ambient';
 
 export const WorksItems = ({item}) => {
   const [showComponent, setComponent] = useState(false);
@@ -24,6 +25,8 @@ export const WorksItems = ({item}) => {
     component = <Converter closeConverter={closeComponent}/>
   }else if(item.id === 4){
     component = <Warehouse closeComponent={closeComponent}/>
+  }else if(item.id === 6){
+    component = <Ambient closeComponent={closeComponent}/>
   }
   console.log(showComponent)
   return (
