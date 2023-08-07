@@ -8,13 +8,21 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_sqrqiwq",
-      "template_uc60i8n",
-      form.current,
-      "uIXRdmH3kUyJh3oXm"
-    );
-    e.target.reset();
+    if(e.target[0].value !== '' && e.target[1].value !== '' && e.target[2].value !== '')
+    {
+      emailjs.sendForm(
+        "service_sqrqiwq",
+        "template_uc60i8n",
+        form.current,
+        "uIXRdmH3kUyJh3oXm"
+      );
+      e.target.reset();
+      alert('I will get back to you soon!');
+    }else{
+      alert('Please fill out all info');
+    }
+    
+    
   };
 
   return (
