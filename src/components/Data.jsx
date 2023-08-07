@@ -56,12 +56,12 @@ const Data = () => {
       </h1>
       <h3 className="home__subtitle">唐允轩</h3>
       <p className="home__description">
-        Hello, I'm Yunxuan "Haytham" Tang, a second-year Computer Science
+        Hello, I'm Yunxuan "Haytham" Tang, a junior Computer Science
         Engineering student at University of Michigan with a minor in Electrical
         Engineering
       </p>
       <p className="home__description">
-        With over 7 years of experience in programming, I enjoy web/mobile
+        With over 6 years of experience in programming, I enjoy web/mobile
         application development and robotics that positively impacts the
         community. Moreover, I am open to learning and passionate about research
       </p>
