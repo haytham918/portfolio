@@ -18,7 +18,7 @@ const Footer = (props) => {
 
           <li>
             <a
-              href="portfolio"
+              href="#portfolio"
               className="footer__link"
               onClick={() => props.handleNav("#portfolio")}
             >

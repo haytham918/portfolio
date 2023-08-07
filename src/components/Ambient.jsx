@@ -111,7 +111,7 @@ export const Ambient = ({ closeComponent }) => {
           Furthermore, I researched and tested with hundreds of evaluation sets
           to model a space-repetition algorithm that calculates the review
           period to maintain a 90% knowledge retention based on the{" "}
-          <em>Super-Memo 2</em> algorithm
+          <em>Super-Memo 2</em> algorithm.
         </h4>
         <h4 className="description end-text">
           This mobile app is currently at the stage of internal testing, and it
