@@ -215,8 +215,8 @@ const Currency = (props) => {
 
   const clickHandler = () => {
     if (country1 !== "" && country2 !== "") {
-      let exchangeValue1 = props.exchangeList[country1];
-      let exchangeValue2 = props.exchangeList[country2];
+      let exchangeValue1 = props.exchangeList[country1].value;
+      let exchangeValue2 = props.exchangeList[country2].value;
       let ratio = exchangeValue2 / exchangeValue1;
       setRate(Number(ratio).toLocaleString("en"));
       setAfterValue(
@@ -230,7 +230,7 @@ const Currency = (props) => {
   let val = [];
   if (props.countryList !== "") {
     val = Object.keys(props.countryList).map((key) => {
-      return { label: `(${key}) ` + props.countryList[key], value: key };
+      return { label: `(${key}) ` + props.countryList[key].name, value: key };
     });
   }
 

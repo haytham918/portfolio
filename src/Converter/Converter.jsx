@@ -7,10 +7,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Converter = ({ closeConverter }) => {
-  const symbolsURL =
-    "http://data.fixer.io/api/symbols?access_key=0ccba43ed82b96bca5e8206f5f1f094a";
-  const latestURL =
-    "http://data.fixer.io/api/latest?access_key=0ccba43ed82b96bca5e8206f5f1f094a";
+  const symbolURL = "https://api.currencyapi.com/v3/currencies?apikey=cur_live_5JxHD15VHFyRkSKwd2qbx4KXQAhGJGdR3mC9Qvm0";
+  const latestURL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_5JxHD15VHFyRkSKwd2qbx4KXQAhGJGdR3mC9Qvm0";
   const [countryList, setCountryList] = useState("");
   const [exchangeList, setExchangeList] = useState("");
 
@@ -21,11 +19,11 @@ const Converter = ({ closeConverter }) => {
   console.log(countryList);
 
   async function getData() {
-    const result = await axios.get(symbolsURL);
+    const symbolResult = await axios.get(symbolURL);
     const latestResult = await axios.get(latestURL);
-    if (latestResult.data.success) {
-      const data = result.data.symbols;
-      const latestData = latestResult.data.rates;
+    if (latestResult.status === 200) {
+      const data = symbolResult.data.data;
+      const latestData = latestResult.data.data;
       setCountryList(data);
       setExchangeList(latestData);
     }
