@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import homepage from "../assets/homePage.png";
-import loadingpage from "../assets/loadingPage.png";
-import tfCard from "../assets/tfCard.png";
+import card from "../assets/card.png";
 import sessionReview from "../assets/sessionReview.png";
 import answerCard from "../assets/answerCard.png";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
@@ -9,8 +8,7 @@ import "./Ambient.css";
 export const Ambient = ({ closeComponent }) => {
   const data = [
     { src: homepage, alt: "Ambient Learning" },
-    { src: loadingpage, alt: "Ambient Learning" },
-    { src: tfCard, alt: "Ambient Learning" },
+    { src: card, alt: "Ambient Learning" },
     { src: answerCard, alt: "Ambient Learning" },
     { src: sessionReview, alt: "Ambient Learning" },
   ];
@@ -18,11 +16,11 @@ export const Ambient = ({ closeComponent }) => {
   const [slide, setSlide] = useState(0);
 
   const nextSlide = () => {
-    setSlide((slide + 1) % 5);
+    setSlide((slide + 1) % 4);
   };
   const prevSlide = () => {
     if (slide === 0) {
-      setSlide(4);
+      setSlide(3);
     } else {
       setSlide(slide - 1);
     }
@@ -69,8 +67,11 @@ export const Ambient = ({ closeComponent }) => {
       </div>
       <h3 className="subtitle">Screenshots of Ambient Learning Mobile App</h3>
       <div className="text-part">
-        <h3 className="headline">Ambient Learning Mobile App</h3>
-        <h4 className="time-info">May 2023 — Present</h4>
+        <h3 className="headline">Ambient Learning Mobile App  {"       "}
+        <a href="https://apps.apple.com/us/app/ambient-learning/id6456572536" style={{fontSize: '1.3rem', color: 'blue'}}><i className="uil uil-apple-alt" /></a>{"      /     "}
+        <a href="https://play.google.com/store/apps/details?id=com.etc.ambientlearning&pcampaignid=APPU_1_ZdnbZNTTL4mfptQPq-ef6A0&pli=1" style={{fontSize: '1.3rem', color: 'blue'}}><i className="uil uil-google-play" /></a>
+        </h3>
+        <h4 className="time-info">May 2023 — Aug. 2023</h4>
         <h4 className="description">
           In summer 2023, I interned as a full-stack developer at Educational
           Technology Collective coordinated by Professor Christopher Brooks. I
@@ -111,11 +112,10 @@ export const Ambient = ({ closeComponent }) => {
           Furthermore, I researched and tested with hundreds of evaluation sets
           to model a space-repetition algorithm that calculates the review
           period to maintain a 90% knowledge retention based on the{" "}
-          <em>Super-Memo 2</em> algorithm.
+          <em>Super-Memo 2</em> algorithm. 
         </h4>
-        <h4 className="description end-text">
-          This mobile app is currently at the stage of internal testing, and it
-          will be published to App Store and Google Play Store in Fall 2023.
+        <h4 className="description">
+         In addition, I improved the query time of cards by 72% by implementing a MongoDB View, optimizing 6 API Gateway routes and Lambda function costs by 120%. Deployed Firebase Cloud Messaging that enabled daily push notifications.
         </h4>
       </div>
     </div>

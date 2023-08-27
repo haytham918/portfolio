@@ -4,10 +4,12 @@ import "./Header.css";
 const Header = (props) => {
   window.addEventListener("scroll", function () {
     const header = document.querySelector(".header");
-    if (this.scrollY >= 80) {
-      header.classList.add("scroll-header");
-    } else {
-      header.classList.remove("scroll-header");
+    if (header) {
+      if (this.scrollY >= 80) {
+        header.classList.add("scroll-header");
+      } else {
+        header.classList.remove("scroll-header");
+      }
     }
   });
 

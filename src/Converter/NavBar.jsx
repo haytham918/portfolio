@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-const NavBar = ({ gotoUnit, gotoCurrency, gotoTime, closeConverter }) => {
+const NavBar = ({ gotoUnit, gotoCurrency, gotoTime }) => {
   return (
     <nav className="converter">
       <a href={() => false} onClick={gotoUnit} className="converter-name">
@@ -24,7 +24,7 @@ const NavBar = ({ gotoUnit, gotoCurrency, gotoTime, closeConverter }) => {
         </li>
 
         <li className="close-it">
-          <a href={() => false} onClick={closeConverter} className="sections">
+          <a href="/" className="sections">
             <i className="uil uil-times"></i>
           </a>
         </li>

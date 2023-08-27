@@ -14,6 +14,9 @@ function App() {
   };
   window.addEventListener("scroll", function () {
     const contactSec = document.getElementById("contact");
+    if(contactSec)
+    {
+
     const rect = contactSec.getBoundingClientRect();
     const contactY = rect.y;
     const portfolioSec = document.getElementById("portfolio");
@@ -26,6 +29,7 @@ function App() {
     } else {
       setActiveNav("#about");
     }
+  }
   });
   return (
     <>

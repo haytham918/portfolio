@@ -6,9 +6,11 @@ import Time from "./Time";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Converter = ({ closeConverter }) => {
-  const symbolURL = "https://api.currencyapi.com/v3/currencies?apikey=cur_live_5JxHD15VHFyRkSKwd2qbx4KXQAhGJGdR3mC9Qvm0";
-  const latestURL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_5JxHD15VHFyRkSKwd2qbx4KXQAhGJGdR3mC9Qvm0";
+const Converter = () => {
+  const symbolURL =
+    "https://api.currencyapi.com/v3/currencies?apikey=cur_live_5JxHD15VHFyRkSKwd2qbx4KXQAhGJGdR3mC9Qvm0";
+  const latestURL =
+    "https://api.currencyapi.com/v3/latest?apikey=cur_live_5JxHD15VHFyRkSKwd2qbx4KXQAhGJGdR3mC9Qvm0";
   const [countryList, setCountryList] = useState("");
   const [exchangeList, setExchangeList] = useState("");
 
@@ -62,7 +64,6 @@ const Converter = ({ closeConverter }) => {
           gotoUnit={gotoUnit}
           gotoCurrency={gotoCurrency}
           gotoTime={gotoTime}
-          closeConverter={closeConverter}
         />
       </div>
       <div className="page-container">{converterBody}</div>
