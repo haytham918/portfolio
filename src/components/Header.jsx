@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
+import { HashLink } from "react-router-hash-link";
 
 const Header = (props) => {
   window.addEventListener("scroll", function () {
@@ -25,45 +26,45 @@ const Header = (props) => {
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className="nav__list grid">
             <li className="nav__item">
-              <a
-                href="#about"
+              <HashLink
+                to="#about"
                 className={
                   props.activeNav === "#about"
                     ? "nav__link active-link"
                     : "nav__link"
                 }
-                onClick={() => props.handleNav("#about")}
+                onClick={() => {props.handleNav("#about"); showMenu(false)}}
               >
                 <i className="uil uil-user nav__icon"></i> About
-              </a>
+              </HashLink>
             </li>
 
             <li className="nav__item">
-              <a
-                href="#portfolio"
+              <HashLink
+                to="#portfolio"
                 className={
                   props.activeNav === "#portfolio"
                     ? "nav__link active-link"
                     : "nav__link"
                 }
-                onClick={() => props.handleNav("#portfolio")}
+                onClick={() => {props.handleNav("#portfolio"); showMenu(false)}}
               >
                 <i className="uil uil-file-alt nav__icon"></i> Portfolio
-              </a>
+              </HashLink>
             </li>
 
             <li className="nav__item">
-              <a
-                href="#contact"
+              <HashLink
+                to="#contact"
                 className={
                   props.activeNav === "#contact"
                     ? "nav__link active-link"
                     : "nav__link"
                 }
-                onClick={() => props.handleNav("#contact")}
+                onClick={() => {props.handleNav("#contact"); showMenu(false)}}
               >
                 <i className="uil uil-message nav__icon"></i> Contact
-              </a>
+              </HashLink>
             </li>
           </ul>
 
