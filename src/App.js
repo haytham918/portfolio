@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import { ScrollUp } from "./components/ScrollUp";
 import { useState } from "react";
 import { Work } from "./components/Work";
+
 function App() {
   const [activeNav, setActiveNav] = useState("#about");
 
@@ -33,7 +34,7 @@ function App() {
   });
   return (
     <>
-      <Header activeNav={activeNav} handleNav={handleNav} />
+      <Header activeNav={activeNav} handleNav={handleNav} isHonors={false}/>
 
       <main className="main">
         <Home />

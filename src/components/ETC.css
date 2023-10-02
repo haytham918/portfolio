@@ -1,0 +1,47 @@
+.etc_title{
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 900;
+  color: var(--title-color);
+  font-size: 1.35rem;
+}
+
+.subtitle{
+  text-align: center;
+  font-size: 1.2rem;
+  align-self: center;
+  justify-self: center;
+}
+
+
+.etc_content{
+  display: grid;
+  margin-inline: 4rem;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.a_link{
+  text-decoration: underline;
+}
+
+.caption{
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.homepage_img{
+  height: 450px;
+  padding: 0.5rem;
+}
+
+.conclusion{
+  margin-inline: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}

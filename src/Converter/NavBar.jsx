@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavBar.css";
+import { useNavigate } from "react-router-dom";
 const NavBar = ({ gotoUnit, gotoCurrency, gotoTime }) => {
   return (
     <nav className="converter">
@@ -24,7 +25,7 @@ const NavBar = ({ gotoUnit, gotoCurrency, gotoTime }) => {
         </li>
 
         <li className="close-it">
-          <a href="/" className="sections">
+          <a href="/#/honors" className="sections">
             <i className="uil uil-times"></i>
           </a>
         </li>
