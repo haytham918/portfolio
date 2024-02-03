@@ -21,14 +21,21 @@ export const WorksItems = ({ item }) => {
     setComponent(false);
   };
   let component;
+  let descriptText;
   if (item.id === 1) {
     component = <Capstone closeComponent={closeComponent} />;
+    descriptText = <h4 className="check-out">Learn More</h4>;
   } else if (item.id === 2) {
     component = <Vex closeComponent={closeComponent} />;
+    descriptText = <h4 className="check-out">Learn More</h4>;
   } else if (item.id === 4) {
     component = <Warehouse closeComponent={closeComponent} />;
+    descriptText = <h4 className="check-out">Learn More</h4>;
   } else if (item.id === 6) {
     component = <Ambient closeComponent={closeComponent} />;
+    descriptText = <h4 className="check-out">Learn More</h4>;
+  } else {
+    descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
   return (
     <>
@@ -39,8 +46,12 @@ export const WorksItems = ({ item }) => {
         onClick={openComponent}
       >
         <img src={item.image} alt="" className="work__img" />
-        <h3 className="work__title">{item.title}{item.id === 6?  <i className="uil uil-apple-alt" /> : null}{item.id === 6? <i className="uil uil-google-play" /> : null}</h3>
-        <h4 className="check-out">Learn More</h4>
+        <h3 className="work__title">
+          {item.title}
+          {item.id === 6 ? <i className="uil uil-apple-alt" /> : null}
+          {item.id === 6 ? <i className="uil uil-google-play" /> : null}
+        </h3>
+        {descriptText}
       </a>
       {showComponent ? component : null}
     </>

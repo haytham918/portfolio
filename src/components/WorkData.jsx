@@ -4,7 +4,21 @@ import roboticspic from "../assets/roboticsCover.jpeg";
 import gantrypic from "../assets/gantryRobot.png";
 import symbioticlabpic from "../assets/symbioticlabicon.png";
 import apppic from "../assets/appCover.png";
+import thdssppcover from "../assets/3DSSPP-Cover.jpg";
+
 export const projectsData = [
+  {
+    id: 8,
+    image: thdssppcover,
+    title: "Automated 3DSSPP Software",
+    category: "Project",
+  },
+  {
+    id: 7,
+    image: null,
+    title: "Low-Rank Expectile Factor Analysis for Heart Rate Analysis",
+    category: "Research",
+  },
   {
     id: 6,
     image: apppic,
@@ -14,7 +28,7 @@ export const projectsData = [
   {
     id: 5,
     image: symbioticlabpic,
-    title: "QoS Memory System(Working on)",
+    title: "QoS Memory System",
     category: "Research",
   },
   {
