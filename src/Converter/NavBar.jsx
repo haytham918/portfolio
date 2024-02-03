@@ -24,7 +24,7 @@ const NavBar = ({ gotoUnit, gotoCurrency, gotoTime }) => {
         </li>
 
         <li className="close-it">
-          <a href="/#/honors" className="sections">
+          <a href="/#" className="sections">
             <i className="uil uil-times"></i>
           </a>
         </li>

@@ -34,7 +34,10 @@ export const WorksItems = ({ item }) => {
   } else if (item.id === 6) {
     component = <Ambient closeComponent={closeComponent} />;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else {
+  } else if(item.id === 3){
+    descriptText = <h4 className="check-out">Learn More</h4>
+  }
+  else{
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
   return (
