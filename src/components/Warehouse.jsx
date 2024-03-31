@@ -20,9 +20,9 @@ export const Warehouse = ({ closeComponent }) => {
         <h4 className="time-info">Jan. 2023 — May 2023</h4>
         <h4 className="description">
           In my first-year engineering class, I led a team of five people to
-          build a robot prototype capable of picking, palletizing, and transporting
-          objects in a warehouse with three mechanical subsystems: the gantry
-          frame, a scissor lift mechanism, and a claw mechanism.
+          build a robot prototype capable of picking, palletizing, and
+          transporting objects in a warehouse with three mechanical subsystems:
+          the gantry frame, a scissor lift mechanism, and a claw mechanism.
         </h4>
         <h4 className="description">
           The goal of this project was the development of an automated system
@@ -31,11 +31,19 @@ export const Warehouse = ({ closeComponent }) => {
           kilograms steadily.
         </h4>
         <h4 className="description">
-          For the prototype, I designed a custom User-Interface using
-          Processing, which is a a 5x5 grid representing the warehouse inventory
-          with buttons for item reallocation, retrieval, and storage. The user
-          can easily select the mode and location for objects by clicking
-          options on the screen.
+          For user interaction, I developed a custom User Interface using
+          Processing, featuring a 5x5 grid that mirrors the warehouse inventory.
+          It includes intuitive buttons for item reallocation, retrieval, and
+          storage, enabling users to efficiently select the mode and location
+          for the objects directly on the screen.
+        </h4>
+        <h4 className="description">
+          This project was not only a technical journey but also an invaluable
+          opportunity to enhance my leadership and communication skills.
+          Navigating through challenges, we forged a strong bond within the
+          team, transforming professional collaboration into lasting
+          friendships. It was a testament to how shared goals and teamwork can
+          lead to both innovative solutions and meaningful connections.
         </h4>
         <a
           className="download-link"

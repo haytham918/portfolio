@@ -19,24 +19,31 @@ export const Capstone = ({ closeComponent }) => {
         <h3 className="headline">Linear Programming Capstone Research</h3>
         <h4 className="time-info">Aug. 2021 — May 2022</h4>
         <h4 className="description">
-          In my senior year at high school, I did my capstone project that
-          researched Linear Programming under the advising of Mr. Reed Coots and
-          Dr. Greg Martin. I spent roughly ten months on this project, and
-          finished with a 110-page paper and a schoolwide presentation.
+          In my senior year of high school, under the mentorship of Mr. Reed
+          Coots and Dr. Greg Martin, I embarked on a capstone project centered
+          around Linear Programming, dedicating ten months to produce a
+          comprehensive 110-page research paper complemented by a school-wide
+          presentation.
         </h4>
         <h4 className="description">
-          Over the course of my capstone, I analyzed over 30 literatures on the
-          history of the development of Linear Programming as well as its
-          variant algorithms and applications. I studied the essense of the
-          distinct algorithms such as the Simplex Method and the Graph Method,
-          comparing their advantages and drawbacks. Then, I devised my own
-          Python programs that solve optimization problems, which is the goal of
-          Linear Programming, based on different algorithms.
+          This capstone project entailed an in-depth analysis of over thirty
+          pieces of literature, tracing the historical evolution of Linear
+          Programming and its various algorithms and applications. I delved into
+          the essence of notable algorithms such as the Simplex Method and the
+          Graph Method, evaluating their respective benefits and limitations.
+          Further, I crafted custom Python programs to tackle optimization
+          problems—the core objective of Linear Programming—leveraging different
+          algorithmic approaches.
         </h4>
         <h4 className="description">
-          Throughout the process, I gained a lot of experience conducting
-          independent research and improved my academic writing skills with the
-          help of my advisors.<br></br>
+          This endeavor not only honed my capabilities in conducting rigorous
+          independent research but also significantly refined my academic
+          writing skills. The guidance from my advisors was instrumental in
+          cultivating a sophisticated understanding of complex mathematical
+          concepts and their practical applications. This project underscored
+          the value of interdisciplinary scholarship and marked a pivotal moment
+          in my academic journey, reinforcing my commitment to leveraging
+          computational tools to solve real-world challenges.<br></br>
         </h4>
         <a className="download-link" href={capstonePdf} download="LP-Paper">
           Check out the paper

@@ -8,6 +8,12 @@ import thdssppcover from "../assets/3DSSPP-Cover.jpg";
 
 export const projectsData = [
   {
+    id: 9,
+    image: null,
+    title: "JishoGPT",
+    category: "Project",
+  },
+  {
     id: 8,
     image: thdssppcover,
     title: "Automated 3DSSPP Software",
@@ -63,5 +69,8 @@ export const projectsNav = [
   },
   {
     name: "Research",
+  },
+  {
+    name: "Honors Plan",
   },
 ];

@@ -71,24 +71,40 @@ export const Vex = ({ closeComponent }) => {
         <h3 className="headline">VEX Robotics Competition</h3>
         <h4 className="time-info">2021 — 2023</h4>
         <h4 className="description">
-          During high school, I competed in the VEX Robotics Competition with
-          four other teammates and qualified for New Jersey State Competition.
-          After graduation, I mentored a robotics team from my high school and
-          ranked 5th in New Jersey State Championship.
+          During my high school years, I was an active participant in the VEX
+          Robotics Competition, collaborating with four teammates to secure a
+          spot in the New Jersey State Competition. My journey with robotics
+          didn’t end with graduation; I returned as a mentor for a team from my
+          alma mater, leading them to achieve a remarkable 5th place in the New
+          Jersey State Championship.
         </h4>
         <h4 className="description">
-          In the 2022-2023 Season, the challenges focuses on the manipulation of
-          small disks. The competition also awards points to each foam tile
-          contacted by a team's robot. Our design has three main components: 1.
-          Base 2. Disk Launcher 3. String Launcher.
+          In the 2022-2023 season, the competition’s focus was on the precise
+          manipulation of small disks, with additional points awarded for each
+          foam tile contacted by a team's robot. Our robot design was
+          strategically divided into three key components: a robust Base, a
+          precise Disk Launcher, and an innovative String Launcher.
+        </h4>
+        <h4 className="description">
+          In my role as a mentor, my primary responsibility was to orchestrate
+          the team's efforts, ensuring that our strategic objectives were
+          aligned and that progress was consistent. Beyond coordination, I
+          actively engaged in the design and programming of the robot's
+          foundational base, its disk launch mechanism, and the unique string
+          launch system. My contributions were pivotal in integrating rubber
+          bands and pneumatics into the design, enabling the simultaneous launch
+          of five strings with remarkable precision and distance.
         </h4>
         <h4 className="description end-text">
-          As a mentor, I mostly coordinated the tasks between different team
-          members to make sure we were on the right track. Moreover, I
-          contributed to help design and program the robot's base, disk launch
-          mechanism, and string launch mechanism. I helped implement the rubber
-          bands and pneumatics that can guide and launch 5 strings far away
-          simultaneously.
+          This mentorship experience enriched me professionally and personally.
+          It honed my leadership skills, particularly in project coordination
+          and team dynamics. Technically, it deepened my understanding of
+          mechanical design and programming in a competitive setting.
+          Importantly, it underscored the value of patience, clear
+          communication, and the power of collaborative problem-solving.
+          Mentoring not only allowed me to impact young enthusiasts positively
+          but also facilitated a deeper appreciation for innovation and the
+          pursuit of engineering excellence.
         </h4>
       </div>
     </div>
