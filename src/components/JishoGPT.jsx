@@ -102,13 +102,18 @@ const JishoGPT = ({ closeComponent }) => {
           features by our users.
         </h4>
 
-        <h4 className="description end-text">
+        <h4 className="description">
           Despite scrapping plans for an authentication service due to market
           size considerations, the project was a significant opportunity for me
           to deepen my front-end and back-end development skills, specifically
           with Next.js and MongoDB. It was a fulfilling collaboration that not
           only strengthened my technical abilities but also contributed a
           meaningful and innovative tool to the language learning community.
+        </h4>
+        <h4 className="description end-text">
+          <a href="https://jisho-gpt-monorepo.vercel.app/">
+            Check out the website!
+          </a>
         </h4>
       </div>
     </div>

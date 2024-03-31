@@ -5,7 +5,7 @@ import gantrypic from "../assets/gantryRobot.png";
 import symbioticlabpic from "../assets/symbioticlabicon.png";
 import apppic from "../assets/appCover.png";
 import thdssppcover from "../assets/3DSSPP-Cover.jpg";
-import JishoCover from '../assets/JishoCover.jpg'
+import JishoCover from "../assets/JishoCover.jpg";
 
 export const projectsData = [
   {
@@ -62,12 +62,25 @@ export const projectsData = [
     title: "Universal Converter Web App",
     category: "Project",
   },
+
   {
-    id:10,
+    id: 10,
     image: null,
     title: "Focus Area Reflection",
     category: "Honors Plan",
-  }
+  },
+  {
+    id: 12,
+    image: null,
+    title: "Current SMART GoalS",
+    category: "Honors Plan",
+  },
+  {
+    id: 11,
+    image: null,
+    title: "Competency Worksheet",
+    category: "Honors Plan",
+  },
 ];
 
 export const projectsNav = [

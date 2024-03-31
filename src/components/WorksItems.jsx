@@ -41,11 +41,34 @@ export const WorksItems = ({ item }) => {
   } else if (item.id === 8) {
     component = <ThreeDSSPP closeComponent={closeComponent}></ThreeDSSPP>;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if (item.id === 9){
+  } else if (item.id === 9) {
     component = <JishoGPT closeComponent={closeComponent}></JishoGPT>;
-    descriptText = <h4 className="check-out">Learn More</h4>
-  }
-  else {
+    descriptText = <h4 className="check-out">Learn More</h4>;
+  } else if (item.id === 12) {
+    descriptText = (
+      <h4 className="check-out">
+        <a href="https://docs.google.com/document/d/1ucFK-MBJ8KPvFT034nsqrBablplPT48mP7rNmZRTSQ8/edit">
+          Learn More
+        </a>
+      </h4>
+    );
+  } else if (item.id === 10) {
+    descriptText = (
+      <h4 className="check-out">
+        <a href="https://docs.google.com/document/d/1W2UxzEufvzUFMtvvxZtFbr-SXE1dEpVJ/edit">
+          Learn More
+        </a>
+      </h4>
+    );
+  } else if (item.id === 11) {
+    descriptText = (
+      <h4 className="check-out">
+        <a href="https://docs.google.com/document/d/1rVV0qFgJWr93O9DXIFsgCS70Jzi1bjP6/edit">
+          Learn More
+        </a>
+      </h4>
+    );
+  } else {
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
   return (
