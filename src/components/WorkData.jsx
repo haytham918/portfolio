@@ -16,7 +16,7 @@ export const projectsData = [
   {
     id: 7,
     image: null,
-    title: "Low-Rank Expectile Factor Analysis for Heart Rate Analysis",
+    title: "Low-Rank Expectile Analysis of Diurnal Heart Rates",
     category: "Research",
   },
   {

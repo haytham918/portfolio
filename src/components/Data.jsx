@@ -1,4 +1,6 @@
 import React from "react";
+import barcaLogo from "../assets/barca.png";
+
 const Data = () => {
   return (
     <div className="home__data">
@@ -56,14 +58,34 @@ const Data = () => {
       </h1>
       <h3 className="home__subtitle">唐允轩</h3>
       <p className="home__description">
-        Hello, I'm Yunxuan "Haytham" Tang, a junior Computer Science
+        Hello there, I'm Yunxuan "Haytham" Tang, a junior Computer Science
         Engineering student at University of Michigan with a minor in Electrical
-        Engineering
+        Engineering.
       </p>
       <p className="home__description">
-        With over 6 years of experience in programming, I enjoy web/mobile
-        application development and robotics that positively impacts the
-        community. Moreover, I am open to learning and passionate about research
+        With more than six years of programming experience, I'm passionate about
+        creating impactful web and mobile applications, whether for community
+        benefit or fun. My interest in Machine Learning and Predictive AI has
+        led me to research and implement models in education and public health,
+        blending technical expertise with a desire to make a difference.
+      </p>
+      <p className="home_description">
+        Over 10 years with Barcelona{" "}
+        <img
+          src={barcaLogo}
+          alt="barca-logo"
+          style={{ verticalAlign: "middle" }}
+        ></img>
+        . <span style={{ color: "#000000" }}>F</span>
+        <span style={{ color: "#004D98" }}>o</span>
+        <span style={{ color: "#A50044" }}>r</span>
+        <span style={{ color: "#DB0030" }}>ç</span>
+        <span style={{ color: "#EDBB00" }}>a </span>
+        <span style={{ color: "#EDBB00" }}>B</span>
+        <span style={{ color: "#004D98" }}>a</span>
+        <span style={{ color: "#A50044" }}>r</span>
+        <span style={{ color: "#DB0030" }}>ç</span>
+        <span style={{ color: "#000000" }}>a!</span>
       </p>
     </div>
   );
