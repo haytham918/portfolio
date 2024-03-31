@@ -66,8 +66,9 @@ const Data = () => {
         With more than six years of programming experience, I'm passionate about
         creating impactful web and mobile applications, whether for community
         benefit or fun. My interest in Machine Learning and Predictive AI has
-        led me to research and implement models in education and public health,
-        blending technical expertise with a desire to make a difference.
+        led me to research and implement models in education, construction, and
+        public health, blending technical expertise with a desire to make a
+        difference.
       </p>
       <p className="home_description">
         Over 10 years with Barcelona{" "}

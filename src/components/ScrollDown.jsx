@@ -1,8 +1,9 @@
 import React from "react";
+import { HashLink } from "react-router-hash-link";
 const ScrollDown = () => {
   return (
     <div className="home__scroll">
-      <a href="#portfolio" className="home__scroll-button button--flex">
+      <HashLink to="#portfolio" className="home_scroll-button button--flex">
         <svg
           width="32px"
           height="32px"
@@ -40,7 +41,7 @@ const ScrollDown = () => {
         </svg>
         <span className="home__scroll-name">Scroll Down</span>
         <i className="uil uil-arrow-down home__scroll-arrow"></i>
-      </a>
+      </HashLink>
     </div>
   );
 };

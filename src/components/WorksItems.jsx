@@ -5,6 +5,7 @@ import { Warehouse } from "./Warehouse";
 import { Ambient } from "./Ambient";
 import { useNavigate } from "react-router-dom";
 import ThreeDSSPP from "./ThreeDSSPP";
+import JishoGPT from "./JishoGPT";
 
 export const WorksItems = ({ item }) => {
   const history = useNavigate();
@@ -40,7 +41,11 @@ export const WorksItems = ({ item }) => {
   } else if (item.id === 8) {
     component = <ThreeDSSPP closeComponent={closeComponent}></ThreeDSSPP>;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else {
+  } else if (item.id === 9){
+    component = <JishoGPT closeComponent={closeComponent}></JishoGPT>;
+    descriptText = <h4 className="check-out">Learn More</h4>
+  }
+  else {
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
   return (

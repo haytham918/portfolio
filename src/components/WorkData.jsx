@@ -5,11 +5,12 @@ import gantrypic from "../assets/gantryRobot.png";
 import symbioticlabpic from "../assets/symbioticlabicon.png";
 import apppic from "../assets/appCover.png";
 import thdssppcover from "../assets/3DSSPP-Cover.jpg";
+import JishoCover from '../assets/JishoCover.jpg'
 
 export const projectsData = [
   {
     id: 9,
-    image: null,
+    image: JishoCover,
     title: "JishoGPT",
     category: "Project",
   },

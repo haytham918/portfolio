@@ -1,5 +1,6 @@
 import React from "react";
 import "./ScrollUp.css";
+import { HashLink } from "react-router-hash-link";
 export const ScrollUp = () => {
   window.addEventListener("scroll", function () {
     const scrollUp = document.querySelector(".scrollup");
@@ -12,8 +13,8 @@ export const ScrollUp = () => {
     }
   });
   return (
-    <a href="/" className="scrollup">
+    <HashLink to="#about" className="scrollup">
       <i className="uil uil-arrow-up scrollup__icon"></i>
-    </a>
+    </HashLink>
   );
 };
