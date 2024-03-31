@@ -1,10 +1,14 @@
-.carousel-ambient {
+.carousel-jisho {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 436px;
+  width: 75%;
+  height: auto;
   align-self: center;
-  margin-top: 50px;
+  margin-top: 30px;
+}
+
+.headline {
+  font-size: 1.5rem;
 }

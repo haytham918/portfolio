@@ -10,8 +10,8 @@ const ThreeDSSPP = ({ closeComponent }) => {
       <img src={TDSSPPDemo} alt="3DSSPP-Demo" className="ThreeDSSPP-img"></img>
       <h3 className="subtitle">Figure of Example Application</h3>
       <div className="text-part">
-        <h3 className="head-line">Automated 3DSSPP Software</h3>
-        <h4 className="time-info">Oct. 2023 - Apr. 2024</h4>
+        <h3 className="headline">Automated 3DSSPP Software</h3>
+        <h4 className="time-info">Oct. 2023 — Apr. 2024</h4>
         <h4 className="description">
           In my sophomore year at college, I had the privilege of contributing
           to the{" "}

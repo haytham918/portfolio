@@ -62,6 +62,12 @@ export const projectsData = [
     title: "Universal Converter Web App",
     category: "Project",
   },
+  {
+    id:10,
+    image: null,
+    title: "Focus Area Reflection",
+    category: "Honors Plan",
+  }
 ];
 
 export const projectsNav = [
