@@ -1,29 +1,22 @@
 import React from "react";
 import "./Footer.css";
-const Footer = (props) => {
+import { HashLink } from "react-router-hash-link";
+const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container container">
         <h1 className="footer__title">Haytham Tang</h1>
         <ul className="footer__list">
           <li>
-            <a
-              href="#about"
-              className="footer__link"
-              onClick={() => props.handleNav("#about")}
-            >
+            <HashLink to="#about" className="footer__link">
               About
-            </a>
+            </HashLink>
           </li>
 
           <li>
-            <a
-              href="#portfolio"
-              className="footer__link"
-              onClick={() => props.handleNav("#portfolio")}
-            >
+            <HashLink to="#portfolio" className="footer__link">
               Portfolio
-            </a>
+            </HashLink>
           </li>
         </ul>
 
