@@ -1,11 +1,11 @@
 import "./App.css";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import { ScrollUp } from "./components/ScrollUp";
+import Header from "./layout_components/Header";
+import Home from "./layout_components/Home";
+import Contact from "./layout_components/Contact";
+import Footer from "./layout_components/Footer";
+import { ScrollUp } from "./layout_components/ScrollUp";
 import { useState } from "react";
-import { Work } from "./components/Work";
+import { Work } from "./layout_components/Work";
 
 function App() {
   const [activeNav, setActiveNav] = useState("#about");

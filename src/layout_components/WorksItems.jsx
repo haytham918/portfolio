@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Capstone } from "./Capstone";
-import { Vex } from "./Vex";
-import { Warehouse } from "./Warehouse";
-import { Ambient } from "./Ambient";
+import { Capstone } from "../project_components/Capstone";
+import { Vex } from "../project_components/Vex";
+import { Warehouse } from "../project_components/Warehouse";
+import { Ambient } from "../project_components/Ambient";
 import { useNavigate } from "react-router-dom";
-import ThreeDSSPP from "./ThreeDSSPP";
-import JishoGPT from "./JishoGPT";
+import ThreeDSSPP from "../project_components/ThreeDSSPP";
+import JishoGPT from "../project_components/JishoGPT";
 
 export const WorksItems = ({ item }) => {
   const history = useNavigate();
