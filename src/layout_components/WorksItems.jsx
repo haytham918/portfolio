@@ -6,6 +6,7 @@ import { Ambient } from "../project_components/Ambient";
 import { useNavigate } from "react-router-dom";
 import ThreeDSSPP from "../project_components/ThreeDSSPP";
 import JishoGPT from "../project_components/JishoGPT";
+import "iconify-icon";
 
 export const WorksItems = ({ item }) => {
   const history = useNavigate();
@@ -56,30 +57,74 @@ export const WorksItems = ({ item }) => {
   } else if (item.id === 9) {
     component = <JishoGPT closeComponent={closeComponent}></JishoGPT>;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  }  else {
+  } else {
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
 
-  let project_icon;
-  if(item.id === 6){
-    project_icon = (<>{" "}<i className="uil uil-apple-alt"/> 
-         <i className="uil uil-google-play" /> </>)
-  }else{
-    project_icon = null
+  let project_icon = null;
+  if (item.title === "Ambient Learning Mobile App") {
+    project_icon = (
+      <>
+        <iconify-icon icon="skill-icons:react-light" width="1.5em" height="1.5em"></iconify-icon>{" "}
+        <iconify-icon icon="logos:aws-lambda" width="1.5em" height="1.5em"></iconify-icon>{" "}
+        <iconify-icon icon="skill-icons:mongodb" width="1.5em" height="1.5em"></iconify-icon>{" "}
+        <iconify-icon icon="skill-icons:postgresql-light" width="1.5em" height="1.5em"></iconify-icon>
+      </>
+    );
+  } else if (item.title === "Universal Converter Web App") {
+    project_icon = (
+      <>
+       <iconify-icon icon="skill-icons:react-light" width="1.5em" height="1.5em"></iconify-icon>
+      </>
+    );
+  } else if(item.title === "Automated 3DSSPP Software"){
+    project_icon = (
+      <>
+      <iconify-icon icon="skill-icons:cpp" width="1.5em" height="1.5em"></iconify-icon> {" "}
+      <iconify-icon icon="skill-icons:bash-dark" width="1.5em" height="1.5em"></iconify-icon>
+      </>
+    )
+  }else if(item.title === "JishoGPT"){
+    project_icon = (
+      <>
+      <iconify-icon icon="skill-icons:nextjs-dark" width="1.5em" height="1.5em"></iconify-icon>{" "}
+      <iconify-icon icon="skill-icons:expressjs-light" width="1.5em" height="1.5em"></iconify-icon> {" "}
+      <iconify-icon icon="skill-icons:mongodb" width="1.5em" height="1.5em"></iconify-icon>{" "}
+      <iconify-icon icon="bi:stripe" width="1.5em" height="1.5em"></iconify-icon>
+      </>
+    )
+  }else if(item.title === "Warehouse Robot"){
+    project_icon = (
+      <iconify-icon icon="skill-icons:processing-light" width="1.5em" height="1.5em"></iconify-icon>
+    )
+  }else if(item.title === "Linear Programming Capstone"){
+    project_icon = (
+      <iconify-icon icon="skill-icons:python-light" width="1.5em" height="1.5em"></iconify-icon>
+    )
+  }else if(item.title === "Low-Rank Expectile Analysis of Diurnal Heart Rates"){
+    project_icon = (
+      <iconify-icon icon="skill-icons:python-light" width="1.5em" height="1.5em"></iconify-icon>
+    )
+  }else if(item.title === "Mercury - QoS Memory System"){
+    project_icon = (
+     <>
+     <iconify-icon icon="skill-icons:cpp" width="1.5em" height="1.5em"></iconify-icon>{" "}
+     <iconify-icon icon="skill-icons:docker" width="1.5em" height="1.5em"></iconify-icon>
+     </>
+    )
   }
+
   return (
     <>
       <a
-        href={()=>false}
+        href={() => false}
         className="work__card"
         key={item.id}
         onClick={openComponent}
       >
         <img src={item.image} alt="" className="work__img" />
-        <h3 className="work__title">
-          {item.title}
-          {project_icon}
-        </h3>
+        <h3 className="work__title">{item.title}</h3>
+        <div>{project_icon}</div>
         {descriptText}
       </a>
       {showComponent ? component : null}

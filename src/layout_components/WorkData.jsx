@@ -35,7 +35,7 @@ export const projectsData = [
   {
     id: 5,
     image: symbioticlabpic,
-    title: "QoS Memory System",
+    title: "Mercury - QoS Memory System",
     category: "Research",
   },
   {

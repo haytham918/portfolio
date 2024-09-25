@@ -154,6 +154,12 @@ img {
   align-items: center;
 }
 
+iconify-icon {
+  display: inline-block;
+  
+}
+
+
 @media screen and (max-width: 992px) {
   .container {
     margin-left: var(--mb-1-5);
