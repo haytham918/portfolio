@@ -39,19 +39,6 @@ const Header = (props) => {
               </HashLink>
             </li>
 
-        {props.isHonors?  <li className="nav__item">
-              <HashLink
-              to="#blog"
-              className={
-                props.activeNav === "#blog"?
-                "nav__link active-link":"nav__link"
-              }
-              onClick={() => {props.handleNav("#blog"); showMenu(false)}}
-              >
-                <i className="uil uil-book-alt nav__icon"></i> Blog
-              </HashLink>
-            </li> : null}
-
             <li className="nav__item">
               <HashLink
                 to="#portfolio"

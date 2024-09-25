@@ -63,24 +63,24 @@ export const projectsData = [
     category: "Project",
   },
 
-  {
-    id: 10,
-    image: null,
-    title: "Focus Area Reflection",
-    category: "Honors Plan",
-  },
-  {
-    id: 12,
-    image: null,
-    title: "Current SMART GoalS",
-    category: "Honors Plan",
-  },
-  {
-    id: 11,
-    image: null,
-    title: "Competency Worksheet",
-    category: "Honors Plan",
-  },
+  // {
+  //   id: 10,
+  //   image: null,
+  //   title: "Focus Area Reflection",
+  //   category: "Honors Plan",
+  // },
+  // {
+  //   id: 12,
+  //   image: null,
+  //   title: "Current SMART GoalS",
+  //   category: "Honors Plan",
+  // },
+  // {
+  //   id: 11,
+  //   image: null,
+  //   title: "Competency Worksheet",
+  //   category: "Honors Plan",
+  // },
 ];
 
 export const projectsNav = [
@@ -90,7 +90,7 @@ export const projectsNav = [
   {
     name: "Research",
   },
-  {
-    name: "Honors Plan",
-  },
+  // {
+  //   name: "Honors Plan",
+  // },
 ];

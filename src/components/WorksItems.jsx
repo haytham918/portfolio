@@ -19,17 +19,17 @@ export const WorksItems = ({ item }) => {
     };
   }
 
-  let hrefLink = () => false;
-  if (item.id === 10) {
-    hrefLink =
-      "https://docs.google.com/document/d/1W2UxzEufvzUFMtvvxZtFbr-SXE1dEpVJ/edit";
-  } else if (item.id === 11) {
-    hrefLink =
-      "https://docs.google.com/document/d/1rVV0qFgJWr93O9DXIFsgCS70Jzi1bjP6/edit";
-  } else if (item.id === 12) {
-    hrefLink =
-      "https://docs.google.com/document/d/1ucFK-MBJ8KPvFT034nsqrBablplPT48mP7rNmZRTSQ8/edit";
-  }
+  // let hrefLink = () => false;
+  // if (item.id === 10) {
+  //   hrefLink =
+  //     "https://docs.google.com/document/d/1W2UxzEufvzUFMtvvxZtFbr-SXE1dEpVJ/edit";
+  // } else if (item.id === 11) {
+  //   hrefLink =
+  //     "https://docs.google.com/document/d/1rVV0qFgJWr93O9DXIFsgCS70Jzi1bjP6/edit";
+  // } else if (item.id === 12) {
+  //   hrefLink =
+  //     "https://docs.google.com/document/d/1ucFK-MBJ8KPvFT034nsqrBablplPT48mP7rNmZRTSQ8/edit";
+  // }
 
   const closeComponent = () => {
     setComponent(false);
@@ -56,21 +56,13 @@ export const WorksItems = ({ item }) => {
   } else if (item.id === 9) {
     component = <JishoGPT closeComponent={closeComponent}></JishoGPT>;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if (item.id === 12) {
-    descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if (item.id === 10) {
-    descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if (item.id === 11) {
-    descriptText = <h4 className="check-out">Learn More</h4>;
-
-    descriptText = <h4 className="check-out">Learn More</h4>;
-  } else {
+  }  else {
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
   return (
     <>
       <a
-        href={hrefLink}
+        href={()=>false}
         className="work__card"
         key={item.id}
         onClick={openComponent}
