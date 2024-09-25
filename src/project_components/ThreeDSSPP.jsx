@@ -17,7 +17,8 @@ const ThreeDSSPP = ({ closeComponent }) => {
           to the{" "}
           <a href="https://dpm.engin.umich.edu/">Dynamic Project Management </a>
           lab, led by Professor SangHyun Lee, on a project to renovate the
-          3DSSPP Software, commissioned by VelocityEHS. Due to a Non-Disclosure
+          3DSSPP Software, commissioned by VelocityEHS. The work I have contributed to
+          led to a $5 million-worth patent in application. Due to a Non-Disclosure
           Agreement, I'm limited in the specifics I can share. However, I can
           outline my contributions to this innovative endeavor.
         </h4>

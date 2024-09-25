@@ -59,6 +59,14 @@ export const WorksItems = ({ item }) => {
   }  else {
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
+
+  let project_icon;
+  if(item.id === 6){
+    project_icon = (<>{" "}<i className="uil uil-apple-alt"/> 
+         <i className="uil uil-google-play" /> </>)
+  }else{
+    project_icon = null
+  }
   return (
     <>
       <a
@@ -70,8 +78,7 @@ export const WorksItems = ({ item }) => {
         <img src={item.image} alt="" className="work__img" />
         <h3 className="work__title">
           {item.title}
-          {item.id === 6 ? <i className="uil uil-apple-alt" /> : null}
-          {item.id === 6 ? <i className="uil uil-google-play" /> : null}
+          {project_icon}
         </h3>
         {descriptText}
       </a>
