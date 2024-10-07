@@ -10,6 +10,7 @@ import "iconify-icon";
 import Expectile from "../project_components/Expectile";
 import Mercury from "../project_components/Mercury";
 import FairnessWeb from "../project_components/FairnessWeb";
+import MetaLearning from "../project_components/MetaLearning";
 
 export const WorksItems = ({ item }) => {
   const history = useNavigate();
@@ -71,7 +72,11 @@ export const WorksItems = ({ item }) => {
   } else if (item.title === "Fairness in Educational Models") {
     component = <FairnessWeb closeComponent={closeComponent}></FairnessWeb>;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else {
+  } else if(item.title === "Meta-Reinforcement Learning for Human-Robot Collaboration"){
+    component = <MetaLearning closeComponent={closeComponent}></MetaLearning>
+    descriptText = <h4 className="check-out">Learn More</h4>
+  } 
+  else {
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
 
@@ -159,15 +164,8 @@ export const WorksItems = ({ item }) => {
         height="1.5em"
       ></iconify-icon>
     );
-  } else if (item.title === "Linear Programming Capstone") {
-    project_icon = (
-      <iconify-icon
-        icon="skill-icons:python-light"
-        width="1.5em"
-        height="1.5em"
-      ></iconify-icon>
-    );
   } else if (
+    item.title === "Linear Programming Capstone" ||
     item.title === "Low-Rank Expectile Analysis of Diurnal Heart Rates"
   ) {
     project_icon = (
@@ -192,7 +190,10 @@ export const WorksItems = ({ item }) => {
         ></iconify-icon>
       </>
     );
-  } else if (item.title === "Fairness in Educational Models") {
+  } else if (
+    item.title === "Fairness in Educational Models" ||
+    item.title === "Multiverse Analysis of Educational Models"
+  ) {
     project_icon = (
       <>
         <iconify-icon
@@ -202,6 +203,23 @@ export const WorksItems = ({ item }) => {
         ></iconify-icon>{" "}
         <iconify-icon
           icon="skill-icons:python-light"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>
+      </>
+    );
+  } else if (
+    item.title === "Meta-Reinforcement Learning for Human-Robot Collaboration"
+  ) {
+    project_icon = (
+      <>
+        <iconify-icon
+          icon="skill-icons:python-light"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="eos-icons:cloud-computing-outlined"
           width="1.5em"
           height="1.5em"
         ></iconify-icon>
