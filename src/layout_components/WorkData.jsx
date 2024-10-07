@@ -2,63 +2,65 @@ import capstonepic from "../assets/capstone.jpeg";
 import converterpic from "../assets/converter.jpg";
 import roboticspic from "../assets/roboticsCover.jpeg";
 import gantrypic from "../assets/gantryRobot.png";
-import symbioticlabpic from "../assets/symbioticlabicon.png";
+// import symbioticlabpic from "../assets/symbioticlabicon.png";
 import apppic from "../assets/appCover.png";
 import thdssppcover from "../assets/3DSSPP-Cover.jpg";
 import JishoCover from "../assets/JishoCover.jpg";
 import expectileCover from "../assets/expectile.jpg"
+import mercuryCover from "../assets/mercury.jpg"
 
+let work_id = 0;
 export const projectsData = [
   {
-    id: 9,
+    id: work_id++,
     image: JishoCover,
     title: "JishoGPT",
     category: "Project",
   },
   {
-    id: 8,
+    id: work_id++,
     image: thdssppcover,
     title: "Automated 3DSSPP Software",
     category: "Project",
   },
   {
-    id: 7,
+    id: work_id++,
     image: expectileCover,
     title: "Low-Rank Expectile Analysis of Diurnal Heart Rates",
     category: "Research",
   },
   {
-    id: 6,
+    id: work_id++,
     image: apppic,
     title: "Ambient Learning Mobile App",
     category: "Project",
   },
   {
-    id: 5,
-    image: symbioticlabpic,
+    id: work_id++,
+    image: mercuryCover,
     title: "Mercury - QoS Memory System",
     category: "Research",
   },
   {
-    id: 1,
+    id: work_id++,
     image: capstonepic,
     title: "Linear Programming Capstone",
     category: "Research",
   },
   {
-    id: 4,
+    id: work_id++,
     image: gantrypic,
     title: "Warehouse Robot",
     category: "Project",
   },
   {
-    id: 2,
+    id: work_id++,
     image: roboticspic,
     title: "VEX Robotics Competition",
     category: "Project",
   },
   {
-    id: 3,
+    id: work_id++,
     image: converterpic,
     title: "Universal Converter Web App",
     category: "Project",

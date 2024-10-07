@@ -8,6 +8,7 @@ import ThreeDSSPP from "../project_components/ThreeDSSPP";
 import JishoGPT from "../project_components/JishoGPT";
 import "iconify-icon";
 import Expectile from "../project_components/Expectile";
+import Mercury from "../project_components/Mercury";
 
 export const WorksItems = ({ item }) => {
   const history = useNavigate();
@@ -61,7 +62,10 @@ export const WorksItems = ({ item }) => {
   } else if(item.title === "Low-Rank Expectile Analysis of Diurnal Heart Rates"){
     component = <Expectile closeComponent={closeComponent}></Expectile>
     descriptText = <h4 className="check-out">Learn More</h4>
-  } 
+  } else if(item.title === "Mercury - QoS Memory System"){
+    component = <Mercury closeComponent={closeComponent}></Mercury>
+    descriptText = <h4 className="check-out">Learn More</h4>
+  }
   else {
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
