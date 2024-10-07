@@ -8,9 +8,16 @@ import thdssppcover from "../assets/3DSSPP-Cover.jpg";
 import JishoCover from "../assets/JishoCover.jpg";
 import expectileCover from "../assets/expectile.jpg"
 import mercuryCover from "../assets/mercury.jpg"
+import fairnessCover from "../assets/fairnessWebCover.jpg"
 
 let work_id = 0;
 export const projectsData = [
+  {
+    id: work_id++,
+    image: fairnessCover,
+    title: "Fairness in Educational Models",
+    category: "Project",
+  }, 
   {
     id: work_id++,
     image: JishoCover,

@@ -9,6 +9,7 @@ import JishoGPT from "../project_components/JishoGPT";
 import "iconify-icon";
 import Expectile from "../project_components/Expectile";
 import Mercury from "../project_components/Mercury";
+import FairnessWeb from "../project_components/FairnessWeb";
 
 export const WorksItems = ({ item }) => {
   const history = useNavigate();
@@ -16,7 +17,7 @@ export const WorksItems = ({ item }) => {
   let openComponent = () => {
     setComponent(true);
   };
-  if (item.id === 3) {
+  if (item.title === "Universal Converter Web App") {
     openComponent = () => {
       history("/converter");
     };
@@ -59,14 +60,18 @@ export const WorksItems = ({ item }) => {
   } else if (item.title === "JishoGPT") {
     component = <JishoGPT closeComponent={closeComponent}></JishoGPT>;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if(item.title === "Low-Rank Expectile Analysis of Diurnal Heart Rates"){
-    component = <Expectile closeComponent={closeComponent}></Expectile>
-    descriptText = <h4 className="check-out">Learn More</h4>
-  } else if(item.title === "Mercury - QoS Memory System"){
-    component = <Mercury closeComponent={closeComponent}></Mercury>
-    descriptText = <h4 className="check-out">Learn More</h4>
-  }
-  else {
+  } else if (
+    item.title === "Low-Rank Expectile Analysis of Diurnal Heart Rates"
+  ) {
+    component = <Expectile closeComponent={closeComponent}></Expectile>;
+    descriptText = <h4 className="check-out">Learn More</h4>;
+  } else if (item.title === "Mercury - QoS Memory System") {
+    component = <Mercury closeComponent={closeComponent}></Mercury>;
+    descriptText = <h4 className="check-out">Learn More</h4>;
+  } else if (item.title === "Fairness in Educational Models") {
+    component = <FairnessWeb closeComponent={closeComponent}></FairnessWeb>;
+    descriptText = <h4 className="check-out">Learn More</h4>;
+  } else {
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
 
@@ -74,53 +79,134 @@ export const WorksItems = ({ item }) => {
   if (item.title === "Ambient Learning Mobile App") {
     project_icon = (
       <>
-        <iconify-icon icon="skill-icons:react-light" width="1.5em" height="1.5em"></iconify-icon>{" "}
-        <iconify-icon icon="logos:aws-lambda" width="1.5em" height="1.5em"></iconify-icon>{" "}
-        <iconify-icon icon="skill-icons:mongodb" width="1.5em" height="1.5em"></iconify-icon>{" "}
-        <iconify-icon icon="skill-icons:postgresql-light" width="1.5em" height="1.5em"></iconify-icon>
+        <iconify-icon
+          icon="skill-icons:react-light"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="logos:aws-lambda"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="skill-icons:mongodb"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="skill-icons:postgresql-light"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>
       </>
     );
   } else if (item.title === "Universal Converter Web App") {
     project_icon = (
       <>
-       <iconify-icon icon="skill-icons:react-light" width="1.5em" height="1.5em"></iconify-icon>
+        <iconify-icon
+          icon="skill-icons:react-light"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>
       </>
     );
-  } else if(item.title === "Automated 3DSSPP Software"){
+  } else if (item.title === "Automated 3DSSPP Software") {
     project_icon = (
       <>
-      <iconify-icon icon="skill-icons:cpp" width="1.5em" height="1.5em"></iconify-icon> {" "}
-      <iconify-icon icon="skill-icons:bash-dark" width="1.5em" height="1.5em"></iconify-icon>
+        <iconify-icon
+          icon="skill-icons:cpp"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="skill-icons:bash-dark"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>
       </>
-    )
-  }else if(item.title === "JishoGPT"){
+    );
+  } else if (item.title === "JishoGPT") {
     project_icon = (
       <>
-      <iconify-icon icon="skill-icons:nextjs-dark" width="1.5em" height="1.5em"></iconify-icon>{" "}
-      <iconify-icon icon="skill-icons:expressjs-light" width="1.5em" height="1.5em"></iconify-icon> {" "}
-      <iconify-icon icon="skill-icons:mongodb" width="1.5em" height="1.5em"></iconify-icon>{" "}
-      <iconify-icon icon="bi:stripe" width="1.5em" height="1.5em"></iconify-icon>
+        <iconify-icon
+          icon="skill-icons:nextjs-dark"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="skill-icons:expressjs-light"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="skill-icons:mongodb"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="bi:stripe"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>
       </>
-    )
-  }else if(item.title === "Warehouse Robot"){
+    );
+  } else if (item.title === "Warehouse Robot") {
     project_icon = (
-      <iconify-icon icon="skill-icons:processing-light" width="1.5em" height="1.5em"></iconify-icon>
-    )
-  }else if(item.title === "Linear Programming Capstone"){
+      <iconify-icon
+        icon="skill-icons:processing-light"
+        width="1.5em"
+        height="1.5em"
+      ></iconify-icon>
+    );
+  } else if (item.title === "Linear Programming Capstone") {
     project_icon = (
-      <iconify-icon icon="skill-icons:python-light" width="1.5em" height="1.5em"></iconify-icon>
-    )
-  }else if(item.title === "Low-Rank Expectile Analysis of Diurnal Heart Rates"){
+      <iconify-icon
+        icon="skill-icons:python-light"
+        width="1.5em"
+        height="1.5em"
+      ></iconify-icon>
+    );
+  } else if (
+    item.title === "Low-Rank Expectile Analysis of Diurnal Heart Rates"
+  ) {
     project_icon = (
-      <iconify-icon icon="skill-icons:python-light" width="1.5em" height="1.5em"></iconify-icon>
-    )
-  }else if(item.title === "Mercury - QoS Memory System"){
+      <iconify-icon
+        icon="skill-icons:python-light"
+        width="1.5em"
+        height="1.5em"
+      ></iconify-icon>
+    );
+  } else if (item.title === "Mercury - QoS Memory System") {
     project_icon = (
-     <>
-     <iconify-icon icon="skill-icons:cpp" width="1.5em" height="1.5em"></iconify-icon>{" "}
-     <iconify-icon icon="skill-icons:docker" width="1.5em" height="1.5em"></iconify-icon>
-     </>
-    )
+      <>
+        <iconify-icon
+          icon="skill-icons:cpp"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="skill-icons:docker"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>
+      </>
+    );
+  } else if (item.title === "Fairness in Educational Models") {
+    project_icon = (
+      <>
+        <iconify-icon
+          icon="logos:jupyter"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="skill-icons:python-light"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>
+      </>
+    );
   }
 
   return (

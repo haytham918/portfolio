@@ -1,0 +1,11 @@
+.carousel-fairness {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 550px;
+    align-self: center;
+    margin-top: 30px;
+  }
+  

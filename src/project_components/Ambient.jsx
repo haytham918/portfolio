@@ -91,11 +91,19 @@ export const Ambient = ({ closeComponent }) => {
         <h4 className="description">
           In the summer of 2023, I embarked on an enriching internship as a
           full-stack developer at the Educational Technology Collective, under
-          the guidance of Professor Christopher Brooks. Our project aimed to
-          bolster student long-term retention using spaced repetition, a
-          technique facilitated by software agents that monitor genuine learning
-          activities, such as video watching and code writing, to support these
-          activities with flashcard-style review opportunities.
+          the guidance of{" "}
+          <a
+            href="https://www.si.umich.edu/people/christopher-brooks"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Dr. Christopher Brooks
+          </a>
+          . Our project aimed to bolster student long-term retention using
+          spaced repetition, a technique facilitated by software agents that
+          monitor genuine learning activities, such as video watching and code
+          writing, to support these activities with flashcard-style review
+          opportunities.
         </h4>
         <h4 className="description">
           My team's contribution involved developing the Coursera Course
