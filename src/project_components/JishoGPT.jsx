@@ -67,17 +67,29 @@ const JishoGPT = ({ closeComponent }) => {
       </h3>
       <div className="text-part">
         <h3 className="headline">
-          <a href="https://jisho-gpt-monorepo.vercel.app/">JishoGPT</a>
+          <a
+            href="https://jisho-gpt-monorepo.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JishoGPT
+          </a>
         </h3>
         <h4 className="time-info">Sep. 2023 — Dec. 2023</h4>
         <h4 className="description">
           In response to the growing popularity of ChatGPT, I joined forces with
           my high school friend{" "}
-          <a href="https://vincentbai.com">Vincent Bai </a>(NYU'24, TikTok) to
-          create JishoGPT, a pioneering Japanese Dictionary powered by OpenAI's
-          GPT technology. Our platform caters to users seeking definitions for
-          words in English, Japanese, or Kanji, offering a comprehensive and
-          dynamic language tool.
+          <a
+            href="https://vincentbai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vincent Bai{" "}
+          </a>
+          (NYU'24, TikTok) to create JishoGPT, a pioneering Japanese Dictionary
+          powered by OpenAI's GPT technology. Our platform caters to users
+          seeking definitions for words in English, Japanese, or Kanji, offering
+          a comprehensive and dynamic language tool.
         </h4>
         <h4 className="description">
           JishoGPT stands out by presenting detailed lookup results in several
@@ -111,7 +123,11 @@ const JishoGPT = ({ closeComponent }) => {
           meaningful and innovative tool to the language learning community.
         </h4>
         <h4 className="description end-text">
-          <a href="https://jisho-gpt-monorepo.vercel.app/">
+          <a
+            href="https://jisho-gpt-monorepo.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Check out the website!
           </a>
         </h4>

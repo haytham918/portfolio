@@ -7,6 +7,7 @@ const Social = () => {
         href="https://www.linkedin.com/in/yunxuan-tang-263623227/"
         className="home__social__icon"
         target="_bliank"
+        rel="noopener noreferrer"
       >
         <i className="uil uil-linkedin-alt"></i>
       </a>
@@ -14,6 +15,7 @@ const Social = () => {
         href="https://github.com/haytham918"
         className="home__social__icon"
         target="_bliank"
+        rel="noopener noreferrer"
       >
         <i className="uil uil-github-alt"></i>
       </a>

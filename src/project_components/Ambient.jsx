@@ -72,6 +72,8 @@ export const Ambient = ({ closeComponent }) => {
           <a
             href="https://apps.apple.com/us/app/ambient-learning/id6456572536"
             style={{ fontSize: "1.3rem", color: "blue" }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i className="uil uil-apple-alt" />
           </a>
@@ -79,6 +81,8 @@ export const Ambient = ({ closeComponent }) => {
           <a
             href="https://play.google.com/store/apps/details?id=com.etc.ambientlearning&pcampaignid=APPU_1_ZdnbZNTTL4mfptQPq-ef6A0&pli=1"
             style={{ fontSize: "1.3rem", color: "blue" }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i className="uil uil-google-play" />
           </a>

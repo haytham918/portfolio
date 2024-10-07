@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import ThreeDSSPP from "../project_components/ThreeDSSPP";
 import JishoGPT from "../project_components/JishoGPT";
 import "iconify-icon";
+import Expectile from "../project_components/Expectile";
 
 export const WorksItems = ({ item }) => {
   const history = useNavigate();
@@ -37,27 +38,31 @@ export const WorksItems = ({ item }) => {
   };
   let component;
   let descriptText;
-  if (item.id === 1) {
+  if (item.title === "Linear Programming Capstone") {
     component = <Capstone closeComponent={closeComponent} />;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if (item.id === 2) {
+  } else if (item.title === "VEX Robotics Competition") {
     component = <Vex closeComponent={closeComponent} />;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if (item.id === 4) {
+  } else if (item.title === "Warehouse Robot") {
     component = <Warehouse closeComponent={closeComponent} />;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if (item.id === 6) {
+  } else if (item.title === "Ambient Learning Mobile App") {
     component = <Ambient closeComponent={closeComponent} />;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if (item.id === 3) {
+  } else if (item.title === "Universal Converter Web App") {
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if (item.id === 8) {
+  } else if (item.title === "Automated 3DSSPP Software") {
     component = <ThreeDSSPP closeComponent={closeComponent}></ThreeDSSPP>;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if (item.id === 9) {
+  } else if (item.title === "JishoGPT") {
     component = <JishoGPT closeComponent={closeComponent}></JishoGPT>;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else {
+  } else if(item.title === "Low-Rank Expectile Analysis of Diurnal Heart Rates"){
+    component = <Expectile closeComponent={closeComponent}></Expectile>
+    descriptText = <h4 className="check-out">Learn More</h4>
+  } 
+  else {
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
 

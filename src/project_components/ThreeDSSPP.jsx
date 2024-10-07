@@ -15,12 +15,26 @@ const ThreeDSSPP = ({ closeComponent }) => {
         <h4 className="description">
           In my sophomore year at college, I had the privilege of contributing
           to the{" "}
-          <a href="https://dpm.engin.umich.edu/">Dynamic Project Management </a>
-          lab, led by Professor SangHyun Lee, on a project to renovate the
-          3DSSPP Software, commissioned by VelocityEHS. The work I have contributed to
-          led to a $5 million-worth patent in application. Due to a Non-Disclosure
-          Agreement, I'm limited in the specifics I can share. However, I can
-          outline my contributions to this innovative endeavor.
+          <a
+            href="https://dpm.engin.umich.edu/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Dynamic Project Management{" "}
+          </a>
+          lab, led by{" "}
+          <a
+            href="https://cee.engin.umich.edu/people/lee-sanghyun/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Dr. SangHyun Lee
+          </a>
+          , on a project to renovate the 3DSSPP Software, commissioned by
+          VelocityEHS. The work I have contributed to led to a $5 million-worth
+          patent in application. Due to a Non-Disclosure Agreement, I'm limited
+          in the specifics I can share. However, I can outline my contributions
+          to this innovative endeavor.
         </h4>
         <h4 className="description">
           My role centered on reengineering the existing 3DSSPP software

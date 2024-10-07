@@ -6,6 +6,7 @@ import symbioticlabpic from "../assets/symbioticlabicon.png";
 import apppic from "../assets/appCover.png";
 import thdssppcover from "../assets/3DSSPP-Cover.jpg";
 import JishoCover from "../assets/JishoCover.jpg";
+import expectileCover from "../assets/expectile.jpg"
 
 export const projectsData = [
   {
@@ -22,7 +23,7 @@ export const projectsData = [
   },
   {
     id: 7,
-    image: null,
+    image: expectileCover,
     title: "Low-Rank Expectile Analysis of Diurnal Heart Rates",
     category: "Research",
   },
