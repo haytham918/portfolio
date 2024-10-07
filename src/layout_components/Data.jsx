@@ -63,7 +63,7 @@ const Data = () => {
         Engineering.
       </p>
       <p className="home__description">
-        With more than six years of programming experience, I'm passionate about
+        With more than seven years of programming experience, I'm passionate about
         creating impactful web and mobile applications, whether for community
         benefit or fun. My interest in Machine Learning and AI has
         led me to research and implement models in education, construction, and

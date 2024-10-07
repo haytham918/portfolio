@@ -11,6 +11,7 @@ import mercuryCover from "../assets/mercury.jpg";
 import fairnessCover from "../assets/fairnessWebCover.jpg";
 import multiverseCover from "../assets/multiverseCover.jpg";
 import rlCover from "../assets/rlCover.jpg";
+import fabulousSalerCover from "../assets/fabulousSalerCover.jpg";
 
 let work_id = 0;
 export const projectsData = [
@@ -30,6 +31,12 @@ export const projectsData = [
     id: work_id++,
     image: fairnessCover,
     title: "Fairness in Educational Models",
+    category: "Project",
+  },
+  {
+    id: work_id++,
+    image: fabulousSalerCover,
+    title: "Fabulous Saler",
     category: "Project",
   },
   {

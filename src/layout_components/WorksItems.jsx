@@ -11,6 +11,7 @@ import Expectile from "../project_components/Expectile";
 import Mercury from "../project_components/Mercury";
 import FairnessWeb from "../project_components/FairnessWeb";
 import MetaLearning from "../project_components/MetaLearning";
+import FabulousSaler from "../project_components/FabulousSaler";
 
 export const WorksItems = ({ item }) => {
   const history = useNavigate();
@@ -72,11 +73,15 @@ export const WorksItems = ({ item }) => {
   } else if (item.title === "Fairness in Educational Models") {
     component = <FairnessWeb closeComponent={closeComponent}></FairnessWeb>;
     descriptText = <h4 className="check-out">Learn More</h4>;
-  } else if(item.title === "Meta-Reinforcement Learning for Human-Robot Collaboration"){
-    component = <MetaLearning closeComponent={closeComponent}></MetaLearning>
-    descriptText = <h4 className="check-out">Learn More</h4>
-  } 
-  else {
+  } else if (
+    item.title === "Meta-Reinforcement Learning for Human-Robot Collaboration"
+  ) {
+    component = <MetaLearning closeComponent={closeComponent}></MetaLearning>;
+    descriptText = <h4 className="check-out">Learn More</h4>;
+  } else if (item.title === "Fabulous Saler") {
+    component = <FabulousSaler closeComponent={closeComponent}></FabulousSaler>;
+    descriptText = <h4 className="check-out">Learn More</h4>;
+  } else {
     descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
   }
 
@@ -220,6 +225,31 @@ export const WorksItems = ({ item }) => {
         ></iconify-icon>{" "}
         <iconify-icon
           icon="eos-icons:cloud-computing-outlined"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>
+      </>
+    );
+  } else if (item.title === "Fabulous Saler") {
+    project_icon = (
+      <>
+        <iconify-icon
+          icon="skill-icons:react-light"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="skill-icons:expressjs-light"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="skill-icons:python-light"
+          width="1.5em"
+          height="1.5em"
+        ></iconify-icon>{" "}
+        <iconify-icon
+          icon="skill-icons:mysql-light"
           width="1.5em"
           height="1.5em"
         ></iconify-icon>
