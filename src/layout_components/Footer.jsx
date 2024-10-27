@@ -24,14 +24,16 @@ const Footer = () => {
           <a
             href="https://www.linkedin.com/in/yunxuan-tang-263623227/"
             className="footer__social-link"
-            target="_bliank"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i className="uil uil-linkedin-alt"></i>
           </a>
           <a
             href="https://github.com/haytham918"
             className="footer__social-link"
-            target="_bliank"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i className="uil uil-github-alt"></i>
           </a>
