@@ -2,7 +2,6 @@ import capstonepic from "../assets/capstone.jpeg";
 import converterpic from "../assets/converter.jpg";
 import roboticspic from "../assets/roboticsCover.jpeg";
 import gantrypic from "../assets/gantryRobot.png";
-// import symbioticlabpic from "../assets/symbioticlabicon.png";
 import apppic from "../assets/appCover.png";
 import thdssppcover from "../assets/3DSSPP-Cover.jpg";
 import JishoCover from "../assets/JishoCover.jpg";
@@ -121,7 +120,4 @@ export const projectsNav = [
   {
     name: "Research",
   },
-  // {
-  //   name: "Honors Plan",
-  // },
 ];

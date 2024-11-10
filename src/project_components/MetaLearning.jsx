@@ -1,13 +1,12 @@
 import React from "react";
 import rlCover from "../assets/rlCover.jpg";
 import "./MetaLearning.css";
+import CloseButton from "../layout_components/CloseButton";
 
 const MetaLearning = ({ closeComponent }) => {
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <img
         src={rlCover}
         alt="MetaLearning-Img"

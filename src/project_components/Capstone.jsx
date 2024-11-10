@@ -1,12 +1,11 @@
 import React from "react";
 import "./Capstone.css";
 import capstonePdf from "../assets/Linear-Programming-Capstone.pdf";
+import CloseButton from "../layout_components/CloseButton";
 export const Capstone = ({ closeComponent }) => {
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <iframe
         title="Video of Capstone Presentation"
         src="https://www.youtube.com/embed/j4yqDeWVyC8"

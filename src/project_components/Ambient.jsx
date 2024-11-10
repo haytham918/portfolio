@@ -5,6 +5,7 @@ import sessionReview from "../assets/sessionReview.png";
 import answerCard from "../assets/answerCard.png";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import "./Ambient.css";
+import CloseButton from "../layout_components/CloseButton";
 export const Ambient = ({ closeComponent }) => {
   const data = [
     { src: homepage, alt: "Ambient Learning" },
@@ -28,9 +29,7 @@ export const Ambient = ({ closeComponent }) => {
 
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <div className="carousel-ambient">
         <BsArrowLeftCircleFill
           className="arrow arrow-left"

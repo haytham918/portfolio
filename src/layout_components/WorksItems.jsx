@@ -42,6 +42,7 @@ export const WorksItems = ({ item }) => {
   };
   let component;
   let descriptText;
+
   if (item.title === "Linear Programming Capstone") {
     component = <Capstone closeComponent={closeComponent} />;
     descriptText = <h4 className="check-out">Learn More</h4>;
@@ -259,17 +260,12 @@ export const WorksItems = ({ item }) => {
 
   return (
     <>
-      <a
-        href={() => false}
-        className="work__card"
-        key={item.id}
-        onClick={openComponent}
-      >
+      <button className="work__card" key={item.id} onClick={openComponent}>
         <img src={item.image} alt="" className="work__img" />
         <h3 className="work__title">{item.title}</h3>
         <div>{project_icon}</div>
         {descriptText}
-      </a>
+      </button>
       {showComponent ? component : null}
     </>
   );

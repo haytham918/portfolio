@@ -6,8 +6,15 @@ import Footer from "./layout_components/Footer";
 import { ScrollUp } from "./layout_components/ScrollUp";
 import { useState } from "react";
 import { Work } from "./layout_components/Work";
+import { useLocation } from "react-router-dom";
+import { Blog } from "./layout_components/Blog";
 
 function App() {
+  // Get current route
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  // Function used to set the active navigation section with bold text
   const [activeNav, setActiveNav] = useState("#about");
 
   const handleNav = (section) => {
@@ -30,6 +37,7 @@ function App() {
       }
     }
   });
+
   return (
     <>
       <Header activeNav={activeNav} handleNav={handleNav} isHonors={false} />

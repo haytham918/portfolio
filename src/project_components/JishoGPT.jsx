@@ -4,6 +4,7 @@ import "./JishoGPT.css";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import JishoDemo from "../assets/jishouse.jpg";
 import JishoDef from "../assets/jishouse2.jpg";
+import CloseButton from "../layout_components/CloseButton";
 const JishoGPT = ({ closeComponent }) => {
   const jishodata = [
     { src: JishoDemo, alt: "Jisho Search" },
@@ -25,9 +26,7 @@ const JishoGPT = ({ closeComponent }) => {
 
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <div className="carousel-jisho">
         <BsArrowLeftCircleFill
           className="arrow arrow-left"

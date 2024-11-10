@@ -1,6 +1,18 @@
 import React from "react";
 import "./NavBar.css";
+import { useNavigate } from "react-router-dom";
 const NavBar = ({ gotoUnit, gotoCurrency, gotoTime }) => {
+  // Function to handle go back inside the converter
+  const navigate = useNavigate();
+
+  const handleClose = () => {
+    // If there is back page
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/#");
+    }
+  };
   return (
     <nav className="converter">
       <a href={() => false} onClick={gotoUnit} className="converter-name">
@@ -24,7 +36,7 @@ const NavBar = ({ gotoUnit, gotoCurrency, gotoTime }) => {
         </li>
 
         <li className="close-it">
-          <a href="/#" className="sections">
+          <a href={() => false} className="sections" onClick={handleClose}>
             <i className="uil uil-times"></i>
           </a>
         </li>

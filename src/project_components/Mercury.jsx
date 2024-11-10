@@ -1,11 +1,10 @@
 import React from "react";
 import mercury_cover from "../assets/mercury.jpg";
+import CloseButton from "../layout_components/CloseButton";
 const Mercury = ({ closeComponent }) => {
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <img
         src={mercury_cover}
         alt="Mercury-Cover"
