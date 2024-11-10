@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import "./Header.css";
 import { HashLink } from "react-router-hash-link";
+import { useLocation } from "react-router-dom";
 
 const Header = (props) => {
+  // Check my current location for heading redirection
+  const location = useLocation();
+  const path = location.pathname;
+
   window.addEventListener("scroll", function () {
     const header = document.querySelector(".header");
     if (header) {
@@ -19,7 +24,11 @@ const Header = (props) => {
   return (
     <header className="header">
       <nav className="nav container">
-        <a href="/" className="nav__logo">
+        <a
+          href={path !== "/enghonors" ? "/" : "#enghonors"}
+          onClick={() => window.location.reload()}
+          className="nav__logo"
+        >
           Haytham Tang
         </a>
 
@@ -33,7 +42,10 @@ const Header = (props) => {
                     ? "nav__link active-link"
                     : "nav__link"
                 }
-                onClick={() => {props.handleNav("#about"); showMenu(false)}}
+                onClick={() => {
+                  props.handleNav("#about");
+                  showMenu(false);
+                }}
               >
                 <i className="uil uil-user nav__icon"></i> About
               </HashLink>
@@ -47,7 +59,10 @@ const Header = (props) => {
                     ? "nav__link active-link"
                     : "nav__link"
                 }
-                onClick={() => {props.handleNav("#portfolio"); showMenu(false)}}
+                onClick={() => {
+                  props.handleNav("#portfolio");
+                  showMenu(false);
+                }}
               >
                 <i className="uil uil-file-alt nav__icon"></i> Portfolio
               </HashLink>
@@ -61,7 +76,10 @@ const Header = (props) => {
                     ? "nav__link active-link"
                     : "nav__link"
                 }
-                onClick={() => {props.handleNav("#contact"); showMenu(false)}}
+                onClick={() => {
+                  props.handleNav("#contact");
+                  showMenu(false);
+                }}
               >
                 <i className="uil uil-message nav__icon"></i> Contact
               </HashLink>
