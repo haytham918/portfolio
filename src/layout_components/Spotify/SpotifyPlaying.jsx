@@ -100,7 +100,12 @@ export const SpotifyPlaying = () => {
       </div>
 
       {nowPlaying && nowPlaying.isPlaying ? (
-        <a href={nowPlaying.songUrl} className="playing-song">
+        <a
+          href={nowPlaying.songUrl}
+          className="playing-song"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src={nowPlaying.albumCover}
             className="album-cover"
