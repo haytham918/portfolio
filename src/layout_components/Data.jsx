@@ -89,7 +89,7 @@ const Data = () => {
         <span style={{ color: "#DB0030" }}>ç</span>
         <span style={{ color: "#000000" }}>a!</span>
       </p>
-      Updated: Oct. 7, 2024
+      Updated: Nov. 10, 2024
 
       <SpotifyPlaying />
     </div>
