@@ -10,8 +10,18 @@ const SPOTIFY_REFRESH_TOKEN = process.env.REACT_APP_SPOTIFY_REFRESH_TOKEN;
 const NOW_PLAYING_ENDPOINT =
   "https://api.spotify.com/v1/me/player/currently-playing";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
+
+let cachedAccessToken = null;
+let tokenExpiryTime = null;
+
 // Function to get a new access token using the refresh token
 const getAccessToken = async () => {
+  const currentTime = Date.now();
+
+  if (cachedAccessToken && tokenExpiryTime && currentTime < tokenExpiryTime) {
+    return cachedAccessToken; // Return the cached token if it hasn't expired
+  }
+
   const response = await axios.post(
     TOKEN_ENDPOINT,
     new URLSearchParams({
@@ -27,7 +37,10 @@ const getAccessToken = async () => {
     }
   );
 
-  return response.data.access_token;
+  cachedAccessToken = response.data.access_token;
+  tokenExpiryTime = currentTime + response.data.expires_in * 1000; // Set expiry time
+
+  return cachedAccessToken;
 };
 
 // Function to get currently playing track
@@ -89,8 +102,8 @@ export const SpotifyPlaying = () => {
       <div className="playing-header">
         <iconify-icon
           icon="logos:spotify-icon"
-          width="3em"
-          height="3em"
+          width="2.25em"
+          height="2.25em"
         ></iconify-icon>
         {!nowPlaying || !nowPlaying.isPlaying ? (
           <h4 className="song-bold-text">Not Playing</h4>
