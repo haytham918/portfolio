@@ -11,7 +11,7 @@ const Main = () => {
         <Route exact path="/" Component={App} />
         <Route exact path="/converter" Component={Converter} />
         <Route exact path="/enghonors" Component={App} />
-        <Route exact path="/philosophy" Component={Philosophy}/>
+        <Route exact path="/philosophy" Component={Philosophy} />
       </Routes>
     </HashRouter>
   );
