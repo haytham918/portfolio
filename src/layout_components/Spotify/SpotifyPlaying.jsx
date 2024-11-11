@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import "./SpotifyPlaying.css";
-import philosophyCover from "../../assets/philstatement.webp";
 
 const SPOTIFY_CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 const SPOTIFY_CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
@@ -79,8 +78,8 @@ export const SpotifyPlaying = () => {
 
     fetchNowPlaying();
 
-    // Optional: Set up an interval to refresh every 6 seconds
-    const interval = setInterval(fetchNowPlaying, 6000);
+    // Optional: Set up an interval to refresh every 5 seconds
+    const interval = setInterval(fetchNowPlaying, 5000);
     return () => clearInterval(interval); // Cleanup on component unmount
   }, [nowPlaying, nowPlaying?.id, nowPlaying?.isPlaying]);
 
