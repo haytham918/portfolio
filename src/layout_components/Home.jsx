@@ -1,10 +1,10 @@
 import React from "react";
 import Social from "./Social";
 import Data from "./Data";
-import ScrollDown from "./ScrollDown";
 import "./Home.css";
 import { Blog } from "./Blog";
 import { useLocation } from "react-router-dom";
+import { SpotifyPlaying } from "./Spotify/SpotifyPlaying";
 const Home = () => {
   // Get the current location path
   const location = useLocation();
@@ -20,7 +20,6 @@ const Home = () => {
 
           <Data />
         </div>
-        <ScrollDown />
         {/*Add Philosophy Statement for honors*/}
         {path === "/enghonors" ? <Blog /> : null}{" "}
       </div>

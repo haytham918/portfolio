@@ -1,5 +1,6 @@
 import React from "react";
 import barcaLogo from "../assets/barca.png";
+import { SpotifyPlaying } from "./Spotify/SpotifyPlaying";
 
 const Data = () => {
   return (
@@ -89,6 +90,8 @@ const Data = () => {
         <span style={{ color: "#000000" }}>a!</span>
       </p>
       Updated: Oct. 7, 2024
+
+      <SpotifyPlaying />
     </div>
   );
 };
