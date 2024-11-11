@@ -1,46 +1,54 @@
-.playing-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    column-gap: 1em;
-    padding: 5px;
-
+.playing-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 1em;
+  padding: 5px;
 }
 
-.song-bold-text{
-    font-weight: bold;
-    color: #00274C;
-    display: flex;
-    align-items: center;
-    column-gap: 0.2em;
+.song-bold-text {
+  font-weight: bold;
+  color: #00274c;
+  display: flex;
+  align-items: center;
+  column-gap: 0.2em;
 }
 
-.spotify-playing-container{
-    margin-top: 1em;
-    width: 400px;
-    row-gap: 0.5em;
-    display: flex;
-    flex-direction: column;
+.spotify-playing-container {
+  margin-top: 1em;
+  width: 400px;
+  row-gap: 0.5em;
+  display: flex;
+  flex-direction: column;
 }
 
-.album-cover{
-    width: 75px;
-    height: 75px;
+.album-cover {
+  width: 75px;
+  height: 75px;
 }
 
-.playing-song{
-    border: 1.8px solid rgb(229, 225, 218);
-    border-radius: 6px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    column-gap: 0.8em;
-    padding: 10px;
-
+.playing-song {
+  border: 1.8px solid rgb(229, 225, 218);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.8em;
+  padding: 10px;
 }
 
-@media screen and (max-width: 450px){
-    .spotify-playing-container{
-        width: 95%;
-    }
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .spotify-playing-container {
+    width: 95%;
+  }
 }
