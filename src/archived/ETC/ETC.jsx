@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import "./ETC.css";
-import etcpic from "../assets/etc.png";
-import etcdinner from "../assets/etc_dinner.jpg";
-import homepage from "../assets/homePage.png";
-import answerCard from "../assets/answerCard.png";
-import pinte from "../assets/pinte.jpg";
-import blueberry from "../assets/etc_blueberry.jpg";
-import baozi from "../assets/baozi.jpg";
+import etcpic from "../etc_assets/etc.png";
+import etcdinner from "../etc_assets/etc_dinner.jpg";
+import homepage from "../../../assets/homePage.png";
+import answerCard from "../../../assets/answerCard.png";
+import pinte from "../etc_assets/pinte.jpg";
+import blueberry from "../etc_assets/etc_blueberry.jpg";
+import baozi from "../etc_assets/baozi.jpg";
 export const ETC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);

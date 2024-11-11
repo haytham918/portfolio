@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./FairnessWeb.css"
+import "./FairnessWeb.css";
 import fairnessWebCover from "../assets/fairnessWebCover.jpg";
 import fairnessWebDataProcessing from "../assets/fairnessWebImg2.jpg";
 import fairnessWebPipeline from "../assets/fairnessWebImg1.jpg";
 import fairnessWebMultiverse from "../assets/fairnessWebImg3.jpg";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import CloseButton from "../layout_components/CloseButton";
 
 const FairnessWeb = ({ closeComponent }) => {
   const data = [
@@ -27,9 +28,7 @@ const FairnessWeb = ({ closeComponent }) => {
 
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <div className="carousel-fairness">
         <BsArrowLeftCircleFill
           className="arrow arrow-left"

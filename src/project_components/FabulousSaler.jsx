@@ -1,10 +1,9 @@
 import React from "react";
+import CloseButton from "../layout_components/CloseButton";
 const FabulousSaler = ({ closeComponent }) => {
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <iframe
         title="Video of Fabulous Saler"
         src="https://www.youtube.com/embed/M7JNln26pdI"

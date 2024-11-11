@@ -1,12 +1,11 @@
 import React from "react";
 import "./Capstone.css";
 import reportPdf from "../assets/Final-Report.pdf";
+import CloseButton from "../layout_components/CloseButton";
 export const Warehouse = ({ closeComponent }) => {
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <iframe
         title="Video of Warehouse Robot"
         src="https://www.youtube.com/embed/w0IdrNhn2UM"

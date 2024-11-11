@@ -6,6 +6,7 @@ import roboticsimg1 from "../assets/roboticsimg1.jpeg";
 import roboticsimg2 from "../assets/roboticsimg2.jpeg";
 import roboticsimg3 from "../assets/roboticsimg3.jpeg";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import CloseButton from "../layout_components/CloseButton";
 export const Vex = ({ closeComponent }) => {
   const data = [
     { src: roboticsCover, alt: "VEX Robotics" },
@@ -29,9 +30,7 @@ export const Vex = ({ closeComponent }) => {
 
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <div className="carousel">
         <BsArrowLeftCircleFill
           className="arrow arrow-left"

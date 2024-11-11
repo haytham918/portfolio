@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Work } from "./layout_components/Work";
 
 function App() {
+  // Function used to set the active navigation section with bold text
   const [activeNav, setActiveNav] = useState("#about");
 
   const handleNav = (section) => {
@@ -30,6 +31,7 @@ function App() {
       }
     }
   });
+
   return (
     <>
       <Header activeNav={activeNav} handleNav={handleNav} isHonors={false} />

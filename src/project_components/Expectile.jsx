@@ -1,12 +1,11 @@
 import React from "react";
 import expectile from "../assets/expectile.jpg";
 import "./Expectile.css";
+import CloseButton from "../layout_components/CloseButton";
 const Expectile = ({ closeComponent }) => {
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <img
         src={expectile}
         alt="Expectile-Cover"

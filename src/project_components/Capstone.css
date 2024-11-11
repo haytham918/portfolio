@@ -12,11 +12,6 @@
   overflow: scroll;
 }
 
-.close-icon {
-  height: 8%;
-  cursor: pointer;
-}
-
 .close {
   font-size: 2.5rem;
   right: 1.2rem;

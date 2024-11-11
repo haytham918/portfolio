@@ -1,12 +1,11 @@
 import React from "react";
 import "./ThreeDSSPP.css";
 import TDSSPPDemo from "../assets/3DSSPP-demo.png";
+import CloseButton from "../layout_components/CloseButton";
 const ThreeDSSPP = ({ closeComponent }) => {
   return (
     <div className="detail-container">
-      <a href={() => false} className="close-icon" onClick={closeComponent}>
-        <i className="uil uil-times close"></i>
-      </a>
+      <CloseButton closeComponent={closeComponent} />
       <img src={TDSSPPDemo} alt="3DSSPP-Demo" className="ThreeDSSPP-img"></img>
       <h3 className="subtitle">Figure of Example Application</h3>
       <div className="text-part">
