@@ -45,13 +45,14 @@ const getNowPlaying = async () => {
   }
 
   const { item, is_playing } = response.data;
-  console.log(item);
+  // console.log(response);
   return {
     id: item.id,
     song: item.name,
     artist: item.artists.map((artist) => artist.name).join(", "),
     albumCover: item.album.images[0].url,
     isPlaying: is_playing,
+    songUrl: item.external_urls.spotify,
   };
 };
 
@@ -99,7 +100,7 @@ export const SpotifyPlaying = () => {
       </div>
 
       {nowPlaying && nowPlaying.isPlaying ? (
-        <div className="playing-song">
+        <a href={nowPlaying.songUrl} className="playing-song">
           <img
             src={nowPlaying.albumCover}
             className="album-cover"
@@ -111,13 +112,25 @@ export const SpotifyPlaying = () => {
                 icon="solar:soundwave-square-bold-duotone"
                 width="1.5em"
                 height="1.5em"
-                style={{ color: "#0bad0e" }}
+                style={{
+                  color: "#0bad0e",
+                  animation: "pulse 1.5s ease-in-out infinite",
+                  transformOrigin: "center",
+                }}
               ></iconify-icon>{" "}
               {nowPlaying.song}
             </h4>
-            <span style={{ opacity: 0.8 }}>{nowPlaying.artist}</span>
+            <span
+              style={{
+                opacity: 0.8,
+                textDecoration: "none",
+                color: "var(--text-color)",
+              }}
+            >
+              {nowPlaying.artist}
+            </span>
           </div>
-        </div>
+        </a>
       ) : null}
     </div>
   );
