@@ -53,7 +53,11 @@ const getNowPlaying = async () => {
     },
   });
 
-  if (response.status === 204 || response.status > 400) {
+  if (
+    response.status === 204 ||
+    response.status > 400 ||
+    !response.data.is_playing
+  ) {
     return null;
   }
 
@@ -84,6 +88,9 @@ export const SpotifyPlaying = () => {
             data.isPlaying !== nowPlaying.isPlaying)
         ) {
           setNowPlaying(data);
+        } else if (data === null && nowPlaying) {
+          // Set to null if no track is playing (e.g., app closed or playback stopped)
+          setNowPlaying(null);
         }
       } catch (error) {
         console.error("Error fetching currently playing track:", error);
@@ -92,10 +99,10 @@ export const SpotifyPlaying = () => {
 
     fetchNowPlaying();
 
-    // Optional: Set up an interval to refresh every 5 seconds
-    const interval = setInterval(fetchNowPlaying, 5000);
+    // Optional: Set up an interval to refresh every 4 seconds
+    const interval = setInterval(fetchNowPlaying, 4000);
     return () => clearInterval(interval); // Cleanup on component unmount
-  }, [nowPlaying, nowPlaying?.id, nowPlaying?.isPlaying]);
+  }, [nowPlaying]);
 
   return (
     <div className="spotify-playing-container">
