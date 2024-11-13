@@ -1,7 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { projectsData, projectsNav } from "./WorkData";
+import { projectsData } from "./WorkData";
 import { WorksItems } from "./WorksItems";
+import { useLocation } from "react-router-dom";
+
 export const Works = () => {
+  // Check current location path
+  const location = useLocation();
+  const path = location.pathname;
+
+  // Portfolio Category
+  const projectsNav = [
+    {
+      name: "Project",
+    },
+    {
+      name: "Research",
+    },
+    path === "/enghonors" ? { name: "Honors" } : null,
+  ];
+
   const [item, setItem] = useState({ name: "Project" });
   const [projects, setProjects] = useState([]);
   const [active, setActive] = useState(0);
@@ -30,7 +47,7 @@ export const Works = () => {
               className={`${active === index ? "active-work" : ""} work__item`}
               key={index}
             >
-              {item.name}
+              {item?.name}
             </span>
           );
         })}

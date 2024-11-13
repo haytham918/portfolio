@@ -11,6 +11,7 @@ import fairnessCover from "../assets/fairnessWebCover.jpg";
 import multiverseCover from "../assets/multiverseCover.jpg";
 import rlCover from "../assets/rlCover.jpg";
 import fabulousSalerCover from "../assets/fabulousSalerCover.jpg";
+import enghonorsCover from "../assets/enghonors.webp";
 
 let work_id = 0;
 export const projectsData = [
@@ -99,25 +100,16 @@ export const projectsData = [
   //   title: "Focus Area Reflection",
   //   category: "Honors Plan",
   // },
-  // {
-  //   id: 12,
-  //   image: null,
-  //   title: "Current SMART GoalS",
-  //   category: "Honors Plan",
-  // },
-  // {
-  //   id: 11,
-  //   image: null,
-  //   title: "Competency Worksheet",
-  //   category: "Honors Plan",
-  // },
-];
-
-export const projectsNav = [
   {
-    name: "Project",
+    id: work_id++,
+    image: enghonorsCover,
+    title: "SMART Goals",
+    category: "Honors",
   },
   {
-    name: "Research",
+    id: work_id++,
+    image: enghonorsCover,
+    title: "Competency Worksheet",
+    category: "Honors",
   },
 ];

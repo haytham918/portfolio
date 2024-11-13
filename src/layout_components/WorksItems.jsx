@@ -283,6 +283,24 @@ export const WorksItems = ({ item }) => {
       descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
       break;
     }
+    case "SMART Goals": {
+      descriptText = <h4 className="check-out">Learn More</h4>;
+      openComponent = () => {
+        window.open(
+          "https://docs.google.com/document/d/1ucFK-MBJ8KPvFT034nsqrBablplPT48mP7rNmZRTSQ8/edit?tab=t.0"
+        );
+      };
+      break;
+    }
+    case "Competency Worksheet": {
+      descriptText = <h4 className="check-out">Learn More</h4>;
+      openComponent = () => {
+        window.open(
+          "https://docs.google.com/document/d/1rVV0qFgJWr93O9DXIFsgCS70Jzi1bjP6/edit"
+        );
+      };
+      break;
+    }
     default: {
       descriptText = <h4 className="check-out">Description Soon :&#41;</h4>;
       break;
