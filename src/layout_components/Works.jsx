@@ -39,6 +39,7 @@ export const Works = () => {
     <div>
       <div className="work__filters">
         {projectsNav.map((item, index) => {
+          if (!item) return null; // If there is no "Honors"
           return (
             <span
               onClick={(e) => {
@@ -47,7 +48,7 @@ export const Works = () => {
               className={`${active === index ? "active-work" : ""} work__item`}
               key={index}
             >
-              {item?.name}
+              {item.name}
             </span>
           );
         })}
