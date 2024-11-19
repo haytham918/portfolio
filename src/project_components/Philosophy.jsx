@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const Philosophy = () => {
   // Start from the beginning
   useEffect(() => {
-    // Instantly scroll to top by setting scroll position on `document.documentElement` and `window`
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0; // For Safari compatibility
@@ -16,6 +15,7 @@ const Philosophy = () => {
   const closeComponent = () => {
     navigate("/enghonors");
   };
+
   return (
     <div
       style={{
@@ -36,66 +36,82 @@ const Philosophy = () => {
       <div style={{ marginBottom: "20px" }}>
         <h2 style={{ color: "#0056b3" }}>Introduction</h2>
         <p style={{ textAlign: "justify" }}>
-          When I first chose computer science as my major, I viewed Computer
-          Scientists primarily as programmers. I was drawn to the idea of
-          solving problems through code, but it was not until I explored deeper
-          during my undergraduate studies at the University of Michigan that I
-          began to appreciate the vastness of computer science. From systems to
-          algorithms, and ultimately machine learning and artificial
-          intelligence, I realized that computer science is far more than
-          coding. I became captivated by this powerful and innovative tool that
-          has revolutionized entire industries. This growing fascination has
-          motivated me to pursue machine learning application research at the
-          graduate level, where I hope to contribute to building models that can
-          be applied successfully and equitably across diverse fields.
+          I still remember the enormous excitement of seeing the wheeled robot
+          follow the directions coded by my VEX robotics team, gracefully pick
+          up objects, and place them perfectly on balance. At that time, I
+          thought computer science was all about writing code to solve problems
+          and decided to choose it as my college major. However, as I explored
+          deeper during my undergraduate studies at the University of Michigan,
+          I discovered programming was just the gateway to a far more vast
+          field. From systems to algorithms, and ultimately machine learning and
+          artificial intelligence, I realized that computer science is a
+          powerful and innovative tool capable of revolutionizing industries and
+          addressing global challenges. Witnessing its potential to drive
+          innovation and tackle complex problems has motivated me to pursue
+          machine learning application research at the graduate level, where I
+          devote myself to developing innovative, ethical, and interdisciplinary
+          models that can make meaningful contributions to the real world.
         </p>
       </div>
 
       <div style={{ marginBottom: "20px" }}>
         <h2 style={{ color: "#0056b3" }}>Research Journey and Experiences</h2>
         <p style={{ textAlign: "justify" }}>
-          Throughout my undergraduate studies, I have been involved in various
-          projects and research initiatives that have laid the foundation for my
-          graduate pursuits. A pivotal moment in my research development came
-          when I joined Dr. SangHyun Lee’s lab, where I applied reinforcement
-          learning to robotic systems in the field of Civil Engineering. My
-          primary responsibility was to develop and optimize a reinforcement
-          learning program that allowed a robotic arm to interact with humans
-          and generate feedback based on its movements. I was thrilled that my
-          contributions, including refactoring legacy code and automating the
-          execution of 3DSSPP software, significantly improved the efficiency of
-          a computer vision pipeline used to predict body gestures, leading to a
-          patent application. This experience exposed me to the
-          interdisciplinary potential of machine learning. I became especially
-          interested in how adaptive models could be applied across fields like
-          construction, robotics, and more.
+          Throughout my undergraduate studies, I have actively sought
+          opportunities to expand my skills and explore interdisciplinary
+          applications of machine learning. My research experiences have
+          cultivated my abilities to persevere through complex technical
+          challenges, adapt to new disciplines, and lead impactful projects. As
+          a member of Dr. SangHyun Lee’s lab, I worked on applying reinforcement
+          learning to robotic systems in civil engineering. This project
+          provided me with an opportunity to adapt machine learning techniques
+          to meet the specific demands of a new domain. My primary role was to
+          optimize a reinforcement learning program that enabled a robotic arm
+          to interact with humans and generate feedback based on its movements.
+          Additionally, I automated the execution of 3DSSPP software by
+          refactoring legacy code, automating batch processes, and improving
+          gesture prediction pipelines using computer vision techniques.
+          Integrating ML techniques into civil engineering workflows required an
+          understanding of both disciplines. I was responsible for learning the
+          calculations of body movements and making corresponding commands in
+          the code base, and I needed to document program functionalities and
+          explain them in a pithy way to people without much knowledge of
+          coding. This is a complex challenge for me to coordinate between two
+          disciplines. I felt frustrated in the beginning, but I managed to
+          self-learn concepts, ask for help from Ph.D. students, and communicate
+          ideas using both texts and visuals. Ultimately, I was able to
+          streamline processes and support a patent application. This experience
+          enlightened my passion for interdisciplinary research and demonstrated
+          the adaptability of machine learning.
         </p>
-
+        <br></br>
         <p style={{ textAlign: "justify" }}>
-          My interdisciplinary interest in machine learning grew during my
-          research with Dr. Kerby Shedden, where we focused on a low-rank
-          expectile representation study of diurnal heart rate patterns. I
-          focused on the theoretical derivation of expectile values and
-          optimized the loss functions, which were used in a low-rank model to
-          predict missing heart rate values. This research broadened my
-          understanding of machine learning from a theoretical perspective and
-          illustrated its effectiveness in areas like biology. I realized that
-          machine learning can be a powerful tool not only for prediction but
-          for solving complex, domain-specific problems.
+          Since January 2024, I have been working with Dr. Kerby Shedden’s team
+          to explore the application of machine learning in the healthcare
+          industry. We focused on studying diurnal heart rate patterns using
+          low-rank expectile representation, where I adapted machine learning
+          techniques to analyze large-scale complex medical datasets. While
+          theoretical work on loss function optimization was new to me, I took
+          the initiative to refine derivations, optimize algorithms, and apply
+          them to real-world datasets, all to improve heart rate data
+          predictions for a better understanding of cardiovascular health.
+          Through this research, I not only honed my technical expertise while
+          deepening my understanding of the wider social implications of machine
+          learning, but also gained firsthand experience in applying machine
+          learning to sensitive and critical domains, where technical precision
+          and responsibility are essential.
         </p>
-
+        <br></br>
         <p style={{ textAlign: "justify" }}>
-          Most recently, I conducted machine learning research in the
-          educational domain under the supervision of Dr. Christopher Brooks. I
-          explored the fairness of machine learning models and their impacts on
-          education. I developed an interactive website that visualized model
+          Most recently, under Dr. Christopher Brooks, I researched the fairness
+          of machine learning models and their impacts on education. In this
+          project, I developed an interactive website that visualized model
           biases and demonstrated remediation strategies to improve fairness
-          through a custom pipeline. Furthermore, I researched multiverse
-          analysis, a technique where researchers evaluate multiple decision
-          pathways to identify the best-performing and legally sound models.
-          Currently, I am writing the multiverse analysis paper for the
-          Educational Data Mining Conference (EDM) and exploring transfer
-          learning mechanisms to help less-funded institutions, such as
+          through a custom pipeline. Furthermore, I studied multiverse analysis,
+          a technique to evaluate multiple decision pathways and identify the
+          best-performing and legally sound models. Currently, I am writing a
+          paper for the Educational Data Mining Conference (EDM) and exploring
+          transfer learning mechanisms to help less-funded institutions, such as
           community colleges, deploy strong, fair predictive models. These
           experiences deepened my understanding of fairness in machine learning,
           which I regard as both a technical and ethical challenge. As machine
@@ -107,48 +123,35 @@ const Philosophy = () => {
       </div>
 
       <div style={{ marginBottom: "20px" }}>
-        <h2 style={{ color: "#0056b3" }}>Technical Contributions and Goals</h2>
-        <p style={{ textAlign: "justify" }}>
-          These experiences have allowed me to apply machine learning
-          techniques, such as reinforcement learning and low-rank matrices,
-          across diverse fields like civil engineering, healthcare, and
-          education. They have deepened my expertise with these tools and
-          highlighted the transformative impacts machine learning models can
-          have across different fields. I am eager to further advance my
-          knowledge of these techniques and apply machine learning to develop
-          models that successfully and equitably solve pressing problems in
-          various domains.
-        </p>
-      </div>
-
-      <div style={{ marginBottom: "20px" }}>
         <h2 style={{ color: "#0056b3" }}>Teaching and Mentorship</h2>
         <p style={{ textAlign: "justify" }}>
-          In addition to my research, I have also developed a strong passion for
-          teaching. As an undergraduate teaching assistant for an operating
-          systems class, I have embraced inquiry-based learning, encouraging
-          students to think critically and find solutions independently. This
-          experience has significantly enhanced my ability to communicate
-          complex concepts clearly, deepened my understanding of computer
-          science, and sharpened my critical thinking by approaching problems
-          from diverse perspectives. It has reinforced my dedication to academia
-          and motivated me to become an even more effective educator and mentor.
-          I look forward to cultivating the next generation of computer
-          scientists, helping them develop both the technical skills and
-          critical thinking abilities essential for success in this rapidly
-          evolving field.
+          Beyond research, my role as an undergraduate teaching assistant for
+          the Operating System course has honed my ability to communicate
+          complex concepts effectively. I encourage inquiry-based learning,
+          fostering critical thinking and independent learning among students.
+          This experience has not only deepened my understanding of computer
+          science but has also reinforced my dedication to academia. I look
+          forward to cultivating the next generation of computer scientists,
+          helping them develop not only the technical skills but also critical
+          thinking and ethical decision-making abilities essential for success
+          in this rapidly evolving field.
         </p>
       </div>
 
       <div style={{ marginBottom: "20px" }}>
         <h2 style={{ color: "#0056b3" }}>Conclusion</h2>
         <p style={{ textAlign: "justify" }}>
-          I am deeply motivated to further my understanding of machine learning,
-          particularly in interdisciplinary applications, through graduate
-          studies. I commit to conducting machine learning research that not
-          only pushes the boundaries of computer science but also impacts other
-          diverse domains. It is my pursuit to become a professor to carry out
-          impactful research and inspire future computer scientists.
+          I am eager to further advance my knowledge of these techniques and
+          apply machine learning to develop models that successfully and
+          equitably solve pressing problems in various domains. My ultimate goal
+          is to become a professor, conducting research at the forefront of
+          machine learning while mentoring the next generation of computer
+          scientists. I am particularly passionate about developing equitable
+          and inclusive AI systems that address critical challenges across
+          domains. By pursuing a graduate degree, I
+          will contribute to the tradition of excellence in innovation,
+          leadership, and collaboration while growing into a researcher and
+          educator who embodies resilience, ethics, and leadership.
         </p>
       </div>
     </div>
