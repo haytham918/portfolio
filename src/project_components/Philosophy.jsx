@@ -71,18 +71,17 @@ const Philosophy = () => {
           Additionally, I automated the execution of 3DSSPP software by
           refactoring legacy code, automating batch processes, and improving
           gesture prediction pipelines using computer vision techniques.
-          Integrating ML techniques into civil engineering workflows required an
-          understanding of both disciplines. I was responsible for learning the
-          calculations of body movements and making corresponding commands in
-          the code base, and I needed to document program functionalities and
-          explain them in a pithy way to people without much knowledge of
-          coding. This is a complex challenge for me to coordinate between two
-          disciplines. I felt frustrated in the beginning, but I managed to
-          self-learn concepts, ask for help from Ph.D. students, and communicate
-          ideas using both texts and visuals. Ultimately, I was able to
-          streamline processes and support a patent application. This experience
-          enlightened my passion for interdisciplinary research and demonstrated
-          the adaptability of machine learning.
+          Integrating ML techniques into civil engineering workflows required me
+          to bridge knowledge gaps between the two disciplines. To adapt
+          successfully, I self-learned concepts such as the calculations of body
+          movements, asked for help from Ph.D. students, and clearly documented
+          the program functionalities to explain them to non-technical
+          collaborators. This process honed my ability to communicate technical
+          ideas effectively across disciplines, combining text and visuals to
+          ensure clarity. Eventually, I was able to streamline processes and
+          support a patent application. This experience enlightened my passion
+          for interdisciplinary research and demonstrated the adaptability of
+          machine learning.
         </p>
         <br></br>
         <p style={{ textAlign: "justify" }}>
@@ -112,13 +111,16 @@ const Philosophy = () => {
           best-performing and legally sound models. Currently, I am writing a
           paper for the Educational Data Mining Conference (EDM) and exploring
           transfer learning mechanisms to help less-funded institutions, such as
-          community colleges, deploy strong, fair predictive models. These
-          experiences deepened my understanding of fairness in machine learning,
-          which I regard as both a technical and ethical challenge. As machine
-          learning continues to influence the decision-making process across
-          industries, ensuring fairness and inclusivity is critical in
-          developing systems that benefit all individuals, particularly those in
-          underrepresented communities.
+          community colleges, deploy strong, fair predictive models. Looking
+          back, through my undergraduate research experiences, I have applied
+          machine learning techniques, such as reinforcement learning and
+          low-rank matrices, across diverse fields like civil engineering,
+          healthcare, and education. Each of these interdisciplinary projects
+          has honed my expertise as well as highlighted the transformative
+          impacts machine learning models can have across different fields. At
+          the same time, I have come to understand the ethical and practical
+          responsibilities of applying these techniques to address real-world
+          challenges.
         </p>
       </div>
 
@@ -148,10 +150,10 @@ const Philosophy = () => {
           machine learning while mentoring the next generation of computer
           scientists. I am particularly passionate about developing equitable
           and inclusive AI systems that address critical challenges across
-          domains. By pursuing a graduate degree, I
-          will contribute to the tradition of excellence in innovation,
-          leadership, and collaboration while growing into a researcher and
-          educator who embodies resilience, ethics, and leadership.
+          domains. By pursuing a graduate degree, I will contribute to the
+          tradition of excellence in innovation, leadership, and collaboration
+          while growing into a researcher and educator who embodies resilience,
+          ethics, and leadership.
         </p>
       </div>
     </div>
