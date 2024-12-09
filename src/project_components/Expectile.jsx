@@ -14,10 +14,10 @@ const Expectile = ({ closeComponent }) => {
       <h3 className="subtitle">First Page of Paper</h3>
       <div className="text-part">
         <h3 className="headline">
-          Low-Rank Expectile Analysis of Diurnal Heart Rates
+    <a href="https://arxiv.org/abs/2412.04765" target="_blank" rel="noopener noreferrer">Low-Rank Expectile Representations of a Data Matrix, with Application to Diurnal Heart Rates </a>
         </h3>
         <h4 className="time-info">
-          Jan. 2024 — May 2024 (Currnetly Furthering & Solidifying Work)
+          Jan. 2024 — Present (Currnetly Furthering & Solidifying Work)
         </h4>
 
         <h4 className="description">
