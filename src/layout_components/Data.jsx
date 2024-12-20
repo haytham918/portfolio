@@ -71,7 +71,7 @@ const Data = () => {
         public health, blending technical expertise with a desire to make a
         difference.
       </p>
-      <p className="home_description">
+      {/* <p className="home_description">
         Over 10 years with Barcelona{" "}
         <img
           src={barcaLogo}
@@ -88,8 +88,8 @@ const Data = () => {
         <span style={{ color: "#A50044" }}>r</span>
         <span style={{ color: "#DB0030" }}>ç</span>
         <span style={{ color: "#000000" }}>a!</span>
-      </p>
-      Updated: Nov. 10, 2024
+      </p> */}
+      Updated: Dec. 19, 2024
 
       <SpotifyPlaying />
     </div>

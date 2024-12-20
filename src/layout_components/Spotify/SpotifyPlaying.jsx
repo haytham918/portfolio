@@ -7,10 +7,6 @@ const SPOTIFY_CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 const SPOTIFY_CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 const SPOTIFY_REFRESH_TOKEN = process.env.REACT_APP_SPOTIFY_REFRESH_TOKEN;
 
-console.log("Client ID:", SPOTIFY_CLIENT_ID);
-console.log("Client Secret:", SPOTIFY_CLIENT_SECRET);
-console.log("Refresh Token:", SPOTIFY_REFRESH_TOKEN);
-
 const NOW_PLAYING_ENDPOINT =
   "https://api.spotify.com/v1/me/player/currently-playing";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
