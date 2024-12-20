@@ -1,5 +1,4 @@
 import React from "react";
-import barcaLogo from "../assets/barca.png";
 import { SpotifyPlaying } from "./Spotify/SpotifyPlaying";
 
 const Data = () => {
