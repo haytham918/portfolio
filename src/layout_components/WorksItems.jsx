@@ -14,6 +14,7 @@ import MetaLearning from "../project_components/MetaLearning";
 import FabulousSaler from "../project_components/FabulousSaler";
 import VCDive from "../project_components/VCDive";
 import Multiverse from "../project_components/Multiverse";
+import { Processor } from "../project_components/470Processor";
 
 export const WorksItems = ({ item }) => {
     const history = useNavigate();
@@ -181,7 +182,7 @@ export const WorksItems = ({ item }) => {
             );
             break;
         }
-        case "Mercury - QoS Memory System": {
+        case "Themis - QoS Memory System": {
             component = <Mercury closeComponent={closeComponent}></Mercury>;
             descriptText = <h4 className="check-out">Learn More</h4>;
             project_icon = (
@@ -338,6 +339,25 @@ export const WorksItems = ({ item }) => {
                 </>
             );
             component = <Multiverse closeComponent={closeComponent} />;
+            break;
+        }
+        case "N-way Superscaler RISC-V Computer Architecture (EECS 470)": {
+            descriptText = <h4 className="check-out">Learn More</h4>;
+            project_icon = (
+                <>
+                    <iconify-icon
+                        icon="material-icon-theme:verilog"
+                        width="1.5em"
+                        height="1.5em"
+                    />
+                    <iconify-icon
+                        icon="file-icons:systemverilog"
+                        width="1.5em"
+                        height="1.5em"
+                    />
+                </>
+            );
+            component = <Processor closeComponent={closeComponent} />;
             break;
         }
         default: {

@@ -1,0 +1,9 @@
+.processor-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1400px;
+    align-self: center;
+    margin-top: 30px;
+}

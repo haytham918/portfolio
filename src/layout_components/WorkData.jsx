@@ -13,9 +13,16 @@ import rlCover from "../assets/rlCover.jpg";
 import fabulousSalerCover from "../assets/fabulousSalerCover.jpg";
 import enghonorsCover from "../assets/enghonors.webp";
 import vcdiveCover from "../assets/VCDiveCover.jpg";
+import processorCover from "../assets/470_diagram.jpg";
 
 let work_id = 0;
 export const projectsData = [
+    {
+        id: work_id++,
+        image: processorCover,
+        title: "N-way Superscaler RISC-V Computer Architecture (EECS 470)",
+        category: "Project",
+    },
     {
         id: work_id++,
         image: vcdiveCover,
@@ -73,7 +80,7 @@ export const projectsData = [
     {
         id: work_id++,
         image: mercuryCover,
-        title: "Mercury - QoS Memory System",
+        title: "Themis - QoS Memory System",
         category: "Research",
     },
     {

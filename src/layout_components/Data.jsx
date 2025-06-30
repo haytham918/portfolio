@@ -58,17 +58,21 @@ const Data = () => {
             </h1>
             <h3 className="home__subtitle">唐允轩</h3>
             <p className="home__description">
-                Hello there, I'm Yunxuan "Haytham" Tang, a third-year Computer
-                Science Engineering student at University of Michigan with a
-                minor in Electrical Engineering.
+                Hello there, I'm Yunxuan "Haytham" Tang, a recent Computer
+                Science graduate from the University of Michigan with a minor in
+                Electrical Engineering. Currently, I am a Software Engineer at{" "}
+                TikTok{" "}
+                <iconify-icon
+                    icon="streamline-logos:tiktok-logo-block"
+                    width="1.25em"
+                    height="1.25em"
+                />
+                .
             </p>
             <p className="home__description">
-                With more than seven years of programming experience, I'm
-                passionate about creating impactful web and mobile applications,
-                whether for community benefit or fun. My interest in Machine
-                Learning and AI has led me to research and implement models in
-                education, construction, and public health, blending technical
-                expertise with a desire to make a difference.
+                Through years of programming, teaching, and research
+                experiences, I have expertise in fullstack development, machine
+                learning, system programming, hardware design and verification.
             </p>
             {/* <p className="home_description">
         Over 10 years with Barcelona{" "}
@@ -88,7 +92,7 @@ const Data = () => {
         <span style={{ color: "#DB0030" }}>ç</span>
         <span style={{ color: "#000000" }}>a!</span>
       </p> */}
-            Updated: Apr. 7, 2025
+            Updated: June 30, 2025
             <SpotifyPlaying />
         </div>
     );
