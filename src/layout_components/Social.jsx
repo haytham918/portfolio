@@ -4,7 +4,7 @@ const Social = () => {
   return (
     <div className="home__social">
       <a
-        href="https://www.linkedin.com/in/yunxuan-tang-263623227/"
+        href="https://www.linkedin.com/in/haythamtang/"
         className="home__social__icon"
         target="_blank"
         rel="noopener noreferrer"
