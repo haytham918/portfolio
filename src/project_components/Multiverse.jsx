@@ -17,7 +17,7 @@ const Multiverse = ({ closeComponent }) => {
                     Multiverse Analysis{" "}
                 </h3>
                 <h4 className="time-info">
-                    Aug. 2024 — Feb. 2025 (Submitted to Educational Data Mining
+                    Aug. 2024 — Feb. 2025 (Accepted to Educational Data Mining
                     (EDM 2025))
                 </h4>
 
