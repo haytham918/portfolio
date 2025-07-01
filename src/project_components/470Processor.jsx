@@ -11,7 +11,7 @@ export const Processor = ({ closeComponent }) => {
                 <img src={diagram} alt="diagram"></img>
             </div>
             <h3 className="subtitle">
-                Snapshot of CPU Diagram (Milestone 2 version, not finalized)
+                Snapshot of CPU Diagram (Milestone 2 version)
             </h3>
             <div className="text-part">
                 <h3 className="headline">
