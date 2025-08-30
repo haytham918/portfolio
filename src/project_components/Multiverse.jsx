@@ -13,8 +13,14 @@ const Multiverse = ({ closeComponent }) => {
             <h3 className="subtitle">First Page of Paper</h3>
             <div className="text-part">
                 <h3 className="headline">
-                    Understanding Predictive Models of Student Success with a
-                    Multiverse Analysis{" "}
+                    <a
+                        href="https://educationaldatamining.org/EDM2025/proceedings/2025.EDM.short-papers.193/2025.EDM.short-papers.193.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Understanding Predictive Models of Student Success with
+                        a Multiverse Analysis{" "}
+                    </a>
                 </h3>
                 <h4 className="time-info">
                     Aug. 2024 — Feb. 2025 (Accepted to Educational Data Mining
