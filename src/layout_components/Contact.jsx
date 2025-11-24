@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import "./Contact.css";
 const Contact = () => {
     const form = useRef();
+    const renderTime = useRef(Date.now());
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -13,6 +14,16 @@ const Contact = () => {
             e.target[1].value !== "" &&
             e.target[2].value !== ""
         ) {
+            // If the trap input has an value, that's bot
+            const { trk } = e.target.elements;
+            if (trk && trk.value) {
+                return;
+            }
+            // If submission time subtract rendering time is less than 3 secs,
+            // likely a bot
+            if ((Date.now() - renderTime.current) / 1000 < 3) {
+                return;
+            }
             emailjs.sendForm(
                 "service_sqrqiwq",
                 "template_uc60i8n",
@@ -90,6 +101,12 @@ const Contact = () => {
                                 placeholder="Leave Message"
                             ></textarea>
                         </div>
+                        {/* Fake input for bot */}
+                        <input
+                            name="trk"
+                            style={{ display: "none" }}
+                            autoComplete="off"
+                        />
 
                         <button className="button button--flex">
                             Send Message
