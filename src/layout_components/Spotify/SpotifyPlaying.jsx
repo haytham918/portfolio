@@ -113,9 +113,9 @@ export const SpotifyPlaying = () => {
           height="2.25em"
         ></iconify-icon>
         {!nowPlaying || !nowPlaying.isPlaying ? (
-          <h4 className="song-bold-text">Not Playing</h4>
+          <h4 className="song-bold-text">No music playing</h4>
         ) : (
-          <h4 className="song-bold-text">Now Playing</h4>
+          <h4 className="song-bold-text">Now listening</h4>
         )}
       </div>
 
