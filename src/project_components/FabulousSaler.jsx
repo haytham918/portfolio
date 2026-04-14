@@ -27,10 +27,10 @@ const FabulousSaler = ({ closeComponent }) => {
           During the summer of 2024, I led the development of Fabulous Helper,
           an AI-powered recommendation system designed to deliver personalized
           electronic device suggestions. Built using{" "}
-          <span style={{ color: "violet" }}> React</span> for the front-end and
-          <span style={{ color: "violet" }}> Express.js </span> for the
+          <span className="text-violet-500">React</span> for the front-end and
+          <span className="text-violet-500">Express.js</span> for the
           back-end, the platform utilized the{" "}
-          <span style={{ color: "violet" }}> OpenAI API</span> to generate
+          <span className="text-violet-500">OpenAI API</span> to generate
           intelligent recommendations based on user preferences. These
           recommendations included key product features, images, and direct
           shopping links, providing users with a seamless experience to discover
@@ -42,7 +42,7 @@ const FabulousSaler = ({ closeComponent }) => {
           on building the backend infrastructure while managing the overall
           project scope. One of the key technical challenges was ensuring the
           accuracy and timeliness of product data. To solve this, I wrote{" "}
-          <span style={{ color: "violet" }}>Python</span> scripts to web scrape
+          <span className="text-violet-500">Python</span> scripts to web scrape
           over 20 different shopping sites. These scripts continuously gathered
           and updated product information, ensuring that the recommendation
           system was not only effective but also up-to-date with the latest

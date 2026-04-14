@@ -1,4 +1,3 @@
-import "./App.css";
 import { useEffect, useState } from "react";
 import Header from "./layout_components/Header";
 import Home from "./layout_components/Home";
@@ -52,7 +51,7 @@ function App() {
     <>
       <Header activeNav={activeNav} handleNav={handleNav} />
 
-      <main className="main">
+      <main className="app-shell">
         <Home />
         <Experience />
         <Work />

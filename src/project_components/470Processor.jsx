@@ -1,6 +1,5 @@
 import React from "react";
 import diagram from "../assets/470_diagram.jpg";
-import "./470Processor.css";
 
 import CloseButton from "../layout_components/CloseButton";
 export const Processor = ({ closeComponent }) => {
@@ -32,9 +31,9 @@ export const Processor = ({ closeComponent }) => {
                     with 5 other teammates to build an entire functioning
                     out-of-order RISC-V processor based on the MP10K
                     architecture using{" "}
-                    <span style={{ color: "violet" }}>SystemVerilog</span>. We
+                    <span className="text-violet-500">SystemVerilog</span>. We
                     were the{" "}
-                    <span style={{ color: "violet" }}>
+                    <span className="text-violet-500">
                         highest scoring group
                     </span>{" "}
                     in the WN 2025 semester, and I was able to develop a GUI
@@ -57,18 +56,18 @@ export const Processor = ({ closeComponent }) => {
                     width independently tunable to match dispatch, fetch, and
                     Common Data Bus sizes . To shorten critical paths and reduce
                     pipeline stalls, we implemented{" "}
-                    <span style={{ color: "violet" }}>
+                    <span className="text-violet-500">
                         Early Tag Broadcast (ETB)
                     </span>
                     —broadcasting completed instruction tags one cycle early—and{" "}
-                    <span style={{ color: "violet" }}>
+                    <span className="text-violet-500">
                         Early Branch Resolution (EBR)
                     </span>
                     —checkpointing architectural state at branch dispatch and
                     restoring it immediately on mispredict. These features
                     together drove our weighted CPI down to{" "}
-                    <span style={{ color: "violet" }}>1.64</span> and our clock
-                    period to <span style={{ color: "violet" }}>7.2 ns</span>
+                    <span className="text-violet-500">1.64</span> and our clock
+                    period to <span className="text-violet-500">7.2 ns</span>
                     across a 15-benchmark suite.
                 </h4>
                 <h4 className="description">
@@ -101,7 +100,7 @@ export const Processor = ({ closeComponent }) => {
                 <h4 className="description end-text">
                     Throughout development, we emphasized modularity and
                     debuggability. We built{" "}
-                    <span style={{ color: "violet" }}>VCDive</span> (see the
+                    <span className="text-violet-500">VCDive</span> (see the
                     other project for details), an open-source, web-based visual
                     debugger that parses enhanced VPD/VCD files with a C++
                     backend (via PyBind11) and serves a Next.js/Flask frontend

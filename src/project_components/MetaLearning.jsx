@@ -1,6 +1,5 @@
 import React from "react";
 import rlCover from "../assets/rlCover.jpg";
-import "./MetaLearning.css";
 import CloseButton from "../layout_components/CloseButton";
 
 const MetaLearning = ({ closeComponent }) => {
@@ -33,7 +32,7 @@ const MetaLearning = ({ closeComponent }) => {
           , I am involved in upgrading a reinforcement learning model for
           movement analysis. This model has been significantly enhanced through
           the integration of over 30 versatile input and output channels using
-          the <span style={{ color: "violet" }}> OpenAI Gym </span> framework,
+          the <span className="text-violet-500">OpenAI Gym</span> framework,
           which has improved its ability to explore and exploit dynamic
           interactions. These improvements have resulted in a notable increase
           in predictive accuracy for the system, making it more responsive to
@@ -51,8 +50,7 @@ const MetaLearning = ({ closeComponent }) => {
 
         <h4 className="description">
           Furthermore, I leveraged cloud computing resources, specifically the
-          <span style={{ color: "violet" }}>
-            {" "}
+          <span className="text-violet-500">
             Great Lakes high-performance computing cluster
           </span>{" "}
           at the University of Michigan, to handle the intensive computational

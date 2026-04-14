@@ -7,7 +7,6 @@ import mercuryCover from "../assets/mercury.jpg";
 import fairnessCover from "../assets/fairnessWebCover.jpg";
 import whenPastMisleadsCover from "../assets/when-the-past-misleads.jpg";
 import multiverse from "../assets/multiverse.jpg";
-import enghonorsCover from "../assets/enghonors.webp";
 import vcdiveCover from "../assets/VCDiveCover.jpg";
 import processorCover from "../assets/470_diagram.jpg";
 
@@ -78,17 +77,5 @@ export const projectsData = [
         image: converterpic,
         title: "Universal Converter Web App",
         category: "Project",
-    },
-    {
-        id: work_id++,
-        image: enghonorsCover,
-        title: "SMART Goals",
-        category: "Honors",
-    },
-    {
-        id: work_id++,
-        image: enghonorsCover,
-        title: "Competency Worksheet",
-        category: "Honors",
     },
 ];

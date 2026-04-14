@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./SpotifyPlaying.css";
 
 const SPOTIFY_CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 const SPOTIFY_CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
@@ -14,12 +12,11 @@ const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 let cachedAccessToken = null;
 let tokenExpiryTime = null;
 
-// Function to get a new access token using the refresh token
 const getAccessToken = async () => {
   const currentTime = Date.now();
 
   if (cachedAccessToken && tokenExpiryTime && currentTime < tokenExpiryTime) {
-    return cachedAccessToken; // Return the cached token if it hasn't expired
+    return cachedAccessToken;
   }
 
   const response = await axios.post(
@@ -38,12 +35,11 @@ const getAccessToken = async () => {
   );
 
   cachedAccessToken = response.data.access_token;
-  tokenExpiryTime = currentTime + response.data.expires_in * 1000; // Set expiry time
+  tokenExpiryTime = currentTime + response.data.expires_in * 1000;
 
   return cachedAccessToken;
 };
 
-// Function to get currently playing track
 const getNowPlaying = async () => {
   const accessToken = await getAccessToken();
 
@@ -62,7 +58,6 @@ const getNowPlaying = async () => {
   }
 
   const { item, is_playing } = response.data;
-  // console.log(response);
   return {
     id: item.id,
     song: item.name,
@@ -96,61 +91,42 @@ export const SpotifyPlaying = () => {
     };
 
     fetchNowPlaying();
-
     const interval = setInterval(fetchNowPlaying, 4000);
     return () => clearInterval(interval);
   }, [nowPlaying]);
 
   return (
-    <div className="spotify-playing-container">
-      <div className="playing-header">
-        <iconify-icon
-          icon="logos:spotify-icon"
-          width="2.25em"
-          height="2.25em"
-        ></iconify-icon>
-        {!nowPlaying || !nowPlaying.isPlaying ? (
-          <h4 className="song-bold-text">No music playing</h4>
-        ) : (
-          <h4 className="song-bold-text">Now listening</h4>
-        )}
+    <div className="mt-6 flex w-full max-w-[420px] flex-col gap-3 max-[450px]:max-w-full">
+      <div className="flex items-center gap-3.5">
+        <iconify-icon icon="logos:spotify-icon" width="2.25em" height="2.25em" />
+        <h4 className="flex items-center gap-[0.2em] font-semibold text-title">
+          {!nowPlaying || !nowPlaying.isPlaying ? "No music playing" : "Now listening"}
+        </h4>
       </div>
 
       {nowPlaying && nowPlaying.isPlaying ? (
         <a
           href={nowPlaying.songUrl}
-          className="playing-song"
+          className="flex items-center gap-3 rounded-2xl border border-border bg-white/80 p-3.5"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
             src={nowPlaying.albumCover}
-            className="album-cover"
+            className="h-16 w-16 rounded-[0.9rem]"
             alt={`Album Cover of ${nowPlaying.song}`}
           />
           <div>
-            <h4 className="song-bold-text">
+            <h4 className="flex items-center gap-[0.2em] font-semibold text-title">
               <iconify-icon
                 icon="solar:soundwave-square-bold-duotone"
                 width="1.5em"
                 height="1.5em"
-                style={{
-                  color: "#0bad0e",
-                  animation: "pulse 1.5s ease-in-out infinite",
-                  transformOrigin: "center",
-                }}
+                className="animate-pulse text-[#0bad0e]"
               ></iconify-icon>{" "}
               {nowPlaying.song}
             </h4>
-            <span
-              style={{
-                opacity: 0.8,
-                textDecoration: "none",
-                color: "var(--text-color)",
-              }}
-            >
-              {nowPlaying.artist}
-            </span>
+            <span className="text-text/80">{nowPlaying.artist}</span>
           </div>
         </a>
       ) : null}

@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import "./JishoGPT.css";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import JishoDemo from "../assets/jishouse.jpg";
 import JishoDef from "../assets/jishouse2.jpg";

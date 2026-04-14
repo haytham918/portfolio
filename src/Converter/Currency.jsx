@@ -1,11 +1,29 @@
-import "./Currency.css";
 import coin from "./coin.svg";
 import arrow from "./arrow.svg";
 import { useState } from "react";
 import Select from "react-select";
 import bitcoin from "./bitcoin.svg";
+
+const selectStyles = {
+  control: (baseStyles, state) => ({
+    ...baseStyles,
+    minHeight: 48,
+    borderRadius: 12,
+    borderColor: state.isFocused ? "rgba(15, 23, 42, 0.24)" : "rgba(15, 23, 42, 0.1)",
+    boxShadow: "none",
+    paddingInline: 4,
+    backgroundColor: "white",
+    fontWeight: 500,
+  }),
+  menu: (baseStyles) => ({
+    ...baseStyles,
+    borderRadius: 12,
+    overflow: "hidden",
+  }),
+};
+
 const Currency = (props) => {
-  let countryCode = {
+  const countryCode = {
     AED: "AE",
     AFN: "AF",
     XCD: "AG",
@@ -165,7 +183,7 @@ const Currency = (props) => {
     ZAR: "ZA",
     ZMK: "ZM",
     ZWD: "ZW",
-    BTC: 'BTC',
+    BTC: "BTC",
   };
 
   const [country1, setCountry1] = useState("");
@@ -173,157 +191,114 @@ const Currency = (props) => {
   const [value_before, setEnterValue] = useState("");
   const [value_after, setAfterValue] = useState("");
   const [exchangeRate, setRate] = useState("");
-
   const [flag1, setFlag1] = useState("");
   const [flag2, setFlag2] = useState("");
 
-  const createFlag1 = (str) => {
-    if (str === "BTC") {
-      setFlag1(bitcoin);
-    } else {
-      setFlag1(`https://flagsapi.com/${str}/shiny/32.png`);
-    }
-  };
-
-  const createFlag2 = (str) => {
-    if (str === "BTC") {
-      setFlag2(bitcoin);
-    } else {
-      setFlag2(`https://flagsapi.com/${str}/shiny/32.png`);
-    }
-  };
+  const createFlag = (code) =>
+    code === "BTC" ? bitcoin : `https://flagsapi.com/${code}/shiny/32.png`;
 
   const inputHandler = (e) => {
     setEnterValue(e.target.value);
   };
 
-  const beforeHandler = (e) => {
+  const beforeHandler = (option) => {
     setAfterValue("");
-    setCountry1(e.value);
-    createFlag1(countryCode[e.value]);
+    setCountry1(option.value);
+    setFlag1(createFlag(countryCode[option.value]));
   };
 
-  const afterHandler = (e) => {
+  const afterHandler = (option) => {
     setAfterValue("");
-    setCountry2(e.value);
-    createFlag2(countryCode[e.value]);
-  };
-
-  const pickBoth = () => {
-    alert("Please Pick Both Currencies!!!");
+    setCountry2(option.value);
+    setFlag2(createFlag(countryCode[option.value]));
   };
 
   const clickHandler = () => {
-    if (country1 !== "" && country2 !== "") {
-      let exchangeValue1 = props.exchangeList[country1].value;
-      let exchangeValue2 = props.exchangeList[country2].value;
-      let ratio = exchangeValue2 / exchangeValue1;
-      setRate(Number(ratio).toLocaleString("en"));
-      setAfterValue(
-        Number(value_before * ratio.toFixed(3)).toLocaleString("en")
-      );
-    } else {
-      pickBoth();
+    if (country1 === "" || country2 === "") {
+      alert("Please Pick Both Currencies!!!");
+      return;
     }
+
+    const exchangeValue1 = props.exchangeList[country1].value;
+    const exchangeValue2 = props.exchangeList[country2].value;
+    const ratio = exchangeValue2 / exchangeValue1;
+
+    setRate(Number(ratio).toLocaleString("en"));
+    setAfterValue(Number(value_before * ratio.toFixed(3)).toLocaleString("en"));
   };
 
   let val = [];
   if (props.countryList !== "") {
-    val = Object.keys(props.countryList).map((key) => {
-      return { label: `(${key}) ` + props.countryList[key].name, value: key };
-    });
+    val = Object.keys(props.countryList).map((key) => ({
+      label: `(${key}) ${props.countryList[key].name}`,
+      value: key,
+    }));
+  }
+
+  if (props.countryList === "") {
+    return (
+      <section className="converter-panel">
+        <h1 className="converter-heading">Currency Conversion</h1>
+        <p className="mt-8 text-center text-[1rem] font-medium text-title">
+          Ooops... API Usage Limited:/ Come Back Later...
+        </p>
+      </section>
+    );
   }
 
   return (
-    <>
-      <h1 className="header-converter">Currency Conversion</h1>
-      <img src={coin} alt="Coin" className="coin" />
+    <section className="converter-panel">
+      <h1 className="converter-heading">Currency Conversion</h1>
+      <img src={coin} alt="Coin" className="converter-art" />
 
-      {props.countryList !== "" ? (
-        <div className="currency-container">
-          <div className="original-container">
-            <h4>From: </h4>
-            <input
-              className="value-enter"
-              placeholder="Value"
-              type="number"
-              value={value_before}
-              onChange={inputHandler}
-            />
-            <div className="kind-dropdown">
-              <Select
-                options={val}
-                onChange={beforeHandler}
-                styles={{
-                  control: (baseStyles) => ({
-                    ...baseStyles,
-                    borderColor: "green",
-                    borderRadius: "0.5rem",
-                    fontSize: "120%",
-                    textAlign: "center",
-                    fontWeight: "bold",
-                    fontFamily: "Verdana",
-                  }),
-                }}
-              />
-            </div>
-          </div>
-          <div className="convert-currency-container">
-            <button onClick={clickHandler} className="convert-button">
-              Convert!
-            </button>
-            <div className="flag-container">
-              {flag1 !== "" ? (
-                <img src={flag1} alt={country1} className="flag" />
-              ) : null}
-              <img src={arrow} alt="Arrow" className="arrow-convert" />
-              {flag2 !== "" ? (
-                <img src={flag2} alt={country2} className="flag" />
-              ) : null}
-            </div>
-          </div>
-
-          <div className="to-container">
-            <h4>To: </h4>
-            {value_after === "" ? null : (
-              <div className="result-container">
-                <p className="result-text">{value_after}</p>
-              </div>
-            )}
-            <div className="kind-dropdown">
-              <Select
-                options={val}
-                onChange={afterHandler}
-                styles={{
-                  control: (baseStyles) => ({
-                    ...baseStyles,
-                    borderColor: "green",
-                    borderRadius: "0.5rem",
-                    fontSize: "120%",
-                    textAlign: "center",
-                    fontWeight: "bold",
-                    fontFamily: "Verdana",
-                  }),
-                }}
-              />
-            </div>
-          </div>
-
-          <div className="ratio-container">
-            <h4>Exchange Rate: </h4>
-            {country2 === "" || value_after === "" ? null : (
-              <div className="formula-container">
-                <p className="formula-text">{exchangeRate}</p>
-              </div>
-            )}
+      <div className="mt-6 flex flex-col gap-1">
+        <div className="converter-row">
+          <h4 className="converter-label">From</h4>
+          <input
+            className="converter-input"
+            placeholder="Value"
+            type="number"
+            value={value_before}
+            onChange={inputHandler}
+          />
+          <div className="converter-select">
+            <Select options={val} onChange={beforeHandler} styles={selectStyles} />
           </div>
         </div>
-      ) : (
-        <h1>
-          Ooops... API Usage Limited:/<br></br>Come Back Later...
-        </h1>
-      )}
-    </>
+
+        <div className="flex flex-col items-center gap-4 py-4">
+          <button onClick={clickHandler} className="converter-button" type="button">
+            Convert
+          </button>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {flag1 !== "" ? <img src={flag1} alt={country1} className="h-10 w-10 rounded-full shadow-sm" /> : null}
+            <img src={arrow} alt="Arrow" className="h-12 w-auto opacity-70" />
+            {flag2 !== "" ? <img src={flag2} alt={country2} className="h-10 w-10 rounded-full shadow-sm" /> : null}
+          </div>
+        </div>
+
+        <div className="converter-row">
+          <h4 className="converter-label">To</h4>
+          {value_after === "" ? (
+            <div className="converter-note">Result appears here</div>
+          ) : (
+            <div className="converter-result">{value_after}</div>
+          )}
+          <div className="converter-select">
+            <Select options={val} onChange={afterHandler} styles={selectStyles} />
+          </div>
+        </div>
+
+        <div className="converter-row">
+          <h4 className="converter-label">Exchange rate</h4>
+          {country2 === "" || value_after === "" ? (
+            <div className="converter-note">Choose both currencies</div>
+          ) : (
+            <div className="converter-note">{exchangeRate}</div>
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 

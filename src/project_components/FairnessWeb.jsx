@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./FairnessWeb.css";
 import fairnessWebCover from "../assets/fairnessWebCover.jpg";
 import fairnessWebDataProcessing from "../assets/fairnessWebImg2.jpg";
 import fairnessWebPipeline from "../assets/fairnessWebImg1.jpg";
@@ -101,8 +100,8 @@ const FairnessWeb = ({ closeComponent }) => {
         </h4>
         <h4 className="description">
           I developed an interactive website using{" "}
-          <span style={{ color: "violet" }}> Streamlit</span> and{" "}
-          <span style={{ color: "violet" }}>Python</span>, which served as a
+          <span className="text-violet-500">Streamlit</span> and{" "}
+          <span className="text-violet-500">Python</span>, which served as a
           user-friendly interface for showcasing the underlying complexities of
           bias in machine learning. This platform walks users through different
           methods of detecting bias within ML models, and importantly, provides

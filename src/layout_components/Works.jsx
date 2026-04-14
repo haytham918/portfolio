@@ -1,23 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { projectsData } from "./WorkData";
 import { WorksItems } from "./WorksItems";
-import { useLocation } from "react-router-dom";
 
 export const Works = () => {
-  // Check current location path
-  const location = useLocation();
-  const path = location.pathname;
-
-  // Portfolio Category
-  const projectsNav = [
-    {
-      name: "Project",
-    },
-    {
-      name: "Research",
-    },
-    path === "/enghonors" ? { name: "Honors" } : null,
-  ];
+  const projectsNav = [{ name: "Project" }, { name: "Research" }];
 
   const [item, setItem] = useState({ name: "Project" });
   const [projects, setProjects] = useState([]);
@@ -30,31 +16,36 @@ export const Works = () => {
     setProjects(newProjects);
   }, [item]);
 
-  const handleClick = (e, index) => {
-    setItem({ name: e.target.textContent });
+  const handleClick = (name, index) => {
+    setItem({ name });
     setActive(index);
   };
 
   return (
-    <div>
-      <div className="work__filters">
+    <div className="app-container">
+      <div className="mb-10 flex flex-wrap items-center justify-center gap-5 border-b border-[rgba(15,23,42,0.08)] pb-4 xs:justify-stretch md:mb-10 md:gap-5">
         {projectsNav.map((item, index) => {
-          if (!item) return null; // If there is no "Honors"
+          const isActive = active === index;
           return (
-            <span
-              onClick={(e) => {
-                handleClick(e, index);
+            <button
+              onClick={() => {
+                handleClick(item.name, index);
               }}
-              className={`${active === index ? "active-work" : ""} work__item`}
-              key={index}
+              className={`border-b-2 px-0 py-1 text-center font-medium transition duration-200 xs:flex-1 xs:basis-[calc(50%-0.75rem)] max-[350px]:w-full max-[350px]:basis-full ${
+                isActive
+                  ? "border-title text-title"
+                  : "border-transparent text-textLight hover:border-title hover:text-title"
+              }`}
+              key={item.name}
+              type="button"
             >
               {item.name}
-            </span>
+            </button>
           );
         })}
       </div>
 
-      <div className="work__container container grid">
+      <div className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 md:gap-6">
         {projects.map((item) => {
           return <WorksItems item={item} key={item.id} />;
         })}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Select from "react-select";
 import arrow from "./arrow.svg";
-import "./Units.css";
+
 const Length = [
   { label: "Nanometer", value: 1 },
   { label: "Micrometer", value: 1000 },
@@ -27,7 +27,6 @@ const Mass = [
   { label: "US Ton", value: 9.072 * 10e11 },
   { label: "Imperial Ton", value: 1.016 * 10e12 },
 ];
-
 const Speed = [
   { label: "Kilometer per hour", value: 1 },
   { label: "Meter per second", value: 3.6 },
@@ -35,7 +34,6 @@ const Speed = [
   { label: "Miles per hour", value: 1.60934 },
   { label: "Knot", value: 1.852 },
 ];
-
 const Time = [
   { label: "Nanosecond", value: 1 },
   { label: "Microsecond", value: 1000 },
@@ -55,14 +53,12 @@ const Temperature = [
   { label: "Celsius", value: 0 },
   { label: "Fahrenheit", value: 0 },
 ];
-
 const Frequency = [
   { label: "Hertz", value: 1 },
   { label: "KiloHertz", value: 1000 },
   { label: "MegaHertz", value: 10e6 },
   { label: "Gigahertz", value: 10e9 },
 ];
-
 const Fuel_Economy = [
   { label: "Miles per gallon(Imperial)", value: 1 },
   { label: "Miles per gallon", value: 1.20095 },
@@ -121,7 +117,6 @@ const Data_Transfer_Rate = [
   { label: "Terabyte per second", value: 8 * 10e12 },
   { label: "Tebibit per second", value: 1.1 * 10e12 },
 ];
-
 const Volume = [
   { label: "Milliliter", value: 1 },
   { label: "Liter", value: 1000 },
@@ -185,227 +180,197 @@ const units_kind = [
   { label: "Frequency", value: Frequency },
 ];
 
+const selectStyles = {
+  control: (baseStyles, state) => ({
+    ...baseStyles,
+    minHeight: 48,
+    borderRadius: 12,
+    borderColor: state.isFocused ? "rgba(15, 23, 42, 0.24)" : "rgba(15, 23, 42, 0.1)",
+    boxShadow: "none",
+    paddingInline: 4,
+    backgroundColor: "white",
+    fontWeight: 500,
+  }),
+  menu: (baseStyles) => ({
+    ...baseStyles,
+    borderRadius: 12,
+    overflow: "hidden",
+  }),
+};
+
 const Units = () => {
+  const [kind, setKind] = useState("");
+  const [before, setBefore] = useState("");
+  const [after, setAfter] = useState("");
+  const [value_before, setEnterValue] = useState("");
+  const [value_after, setAfterValue] = useState("");
+  const [ratio, setRatio] = useState("");
+
   const converter = (before_label, before_value, after_label, after_value) => {
-    let formula, value_after, conversion;
+    let formula;
+    let valueAfter;
+
     if (before_label === "Liter per 100 kilometers") {
       formula = `${282.481 / after_value}/x`;
-      value_after = before_value / after_value / value_before;
-      conversion = { formula: formula, value_after: value_after };
+      valueAfter = before_value / after_value / value_before;
     } else if (after_label === "Liter per 100 kilometers") {
       formula = `${282.481 / before_value}/x`;
-      value_after = after_value / before_value / value_before;
-      conversion = { formula: formula, value_after: value_after };
+      valueAfter = after_value / before_value / value_before;
     } else {
       formula = before_value / after_value;
-      value_after = formula * value_before;
-      conversion = { formula: formula, value_after: value_after };
+      valueAfter = formula * value_before;
     }
-    return conversion;
+
+    return { formula, value_after: valueAfter };
   };
 
   const temperature = (before_label, after_label) => {
-    let formula, value_after, conversion;
+    let formula;
+    let valueAfter;
+
     if (before_label === "Celsius") {
       if (after_label === "Kelvin") {
         formula = "x + 273.15";
-        value_after = value_before + 273.15;
+        valueAfter = Number(value_before) + 273.15;
       } else {
         formula = "x*(1.8) + 32";
-        value_after = value_before * 1.8 + 32;
+        valueAfter = Number(value_before) * 1.8 + 32;
       }
     } else if (before_label === "Kelvin") {
       if (after_label === "Celsius") {
         formula = "x - 273.15";
-        value_after = value_before - 273.15;
+        valueAfter = value_before - 273.15;
       } else {
         formula = "(x-273.15) * (1.8) + 32";
-        value_after = (value_before - 273.15) * 1.8 + 32;
+        valueAfter = (value_before - 273.15) * 1.8 + 32;
       }
     } else if (before_label === "Fahrenheit") {
       if (after_label === "Celsius") {
         formula = "(x-32) * 5/9 ";
-        value_after = ((value_before - 32) * 5) / 9;
+        valueAfter = ((value_before - 32) * 5) / 9;
       } else {
         formula = "(x-32) * 5/9 + 273.15";
-        value_after = ((value_before - 32) * 5) / 9 + 273.15;
+        valueAfter = ((value_before - 32) * 5) / 9 + 273.15;
       }
     }
-    conversion = { formula: formula, value_after: value_after };
-    return conversion;
+
+    return { formula, value_after: valueAfter };
   };
 
-  const [kind, setKind] = useState("");
-
-  const [before, setBefore] = useState("");
-
-  const [after, setAfter] = useState("");
-
-  const [value_before, setEnterValue] = useState("");
-
-  const [value_after, setAfterValue] = useState("");
-
-  const [ratio, setRatio] = useState("");
-
-  const kindHandler = (e) => {
+  const kindHandler = (option) => {
     setEnterValue("");
     setAfterValue("");
     setBefore("");
     setAfter("");
-    setKind(e.value);
+    setKind(option.value);
   };
 
-  const orinHandler = (e) => {
+  const orinHandler = (option) => {
     setAfterValue("");
-    setBefore(e);
+    setBefore(option);
   };
 
-  const aftHandler = (e) => {
+  const aftHandler = (option) => {
     setAfterValue("");
-    setAfter(e);
-  };
-
-  const message = () => {
-    alert("Negative Number Makes No Sense Here!!!");
-  };
-
-  const pickBoth = () => {
-    alert("Make Sure You Picked Both Units!!!");
+    setAfter(option);
   };
 
   const inputHandler = (e) => {
     setEnterValue(e.target.value);
   };
 
-  const clickHandler = (e) => {
+  const clickHandler = () => {
     if (value_before < 0 && kind !== Temperature) {
-      message();
-    } else {
-      if (before && after) {
-        let conversion;
-        if (kind !== Temperature) {
-          conversion = converter(
-            before.label,
-            before.value,
-            after.label,
-            after.value
-          );
-        } else {
-          conversion = temperature(before.label, after.label);
-        }
-        setRatio(conversion.formula);
-        setAfterValue(conversion.value_after);
-      } else {
-        pickBoth();
-      }
+      alert("Negative Number Makes No Sense Here!!!");
+      return;
     }
+
+    if (!before || !after) {
+      alert("Make Sure You Picked Both Units!!!");
+      return;
+    }
+
+    const conversion =
+      kind !== Temperature
+        ? converter(before.label, before.value, after.label, after.value)
+        : temperature(before.label, after.label);
+
+    setRatio(conversion.formula);
+    setAfterValue(conversion.value_after);
   };
 
   return (
-    <>
-      <h1 className="header-converter">Unit Conversion</h1>
+    <section className="converter-panel">
+      <h1 className="converter-heading">Unit Conversion</h1>
       <img
         src="https://www.seekpng.com/png/detail/61-610271_png-file-pencil-ruler-svg.png"
-        alt="Png File - Pencil Ruler Svg@seekpng.com"
-        className="ruler-img"
-      ></img>
+        alt="Pencil and ruler"
+        className="converter-art"
+      />
 
-      <div className="unit-container">
-        <div className="kind-container">
-          <h4 className="kind-text">Select Measurement</h4>
-          <div className="kind-dropdown">
-            <Select
-              options={units_kind}
-              onChange={kindHandler}
-              styles={{
-                control: (baseStyles) => ({
-                  ...baseStyles,
-                  borderColor: "green",
-                  borderRadius: "0.5rem",
-                  fontSize: "120%",
-                  textAlign: "center",
-                  fontWeight: "bold",
-                  fontFamily: "Verdana",
-                }),
-              }}
-            />
+      <div className="mt-6 flex flex-col gap-1">
+        <div className="converter-row">
+          <h4 className="converter-label">Select measurement</h4>
+          <div className="converter-select">
+            <Select options={units_kind} onChange={kindHandler} styles={selectStyles} />
           </div>
         </div>
-        <div className="original-container">
-          <h4>From: </h4>
 
+        <div className="converter-row">
+          <h4 className="converter-label">From</h4>
           <input
-            className="value-enter"
+            className="converter-input"
             placeholder="Value"
             type="number"
             value={value_before}
             onChange={inputHandler}
           />
-          <div className="kind-dropdown">
+          <div className="converter-select">
             <Select
               options={kind}
               isDisabled={kind === ""}
               value={before}
               onChange={orinHandler}
-              styles={{
-                control: (baseStyles) => ({
-                  ...baseStyles,
-                  borderColor: "green",
-                  borderRadius: "0.5rem",
-                  fontSize: "120%",
-                  textAlign: "center",
-                  fontWeight: "bold",
-                  fontFamily: "Verdana",
-                }),
-              }}
+              styles={selectStyles}
             />
           </div>
         </div>
-        <div className="arrow-container">
-          <button onClick={clickHandler} className="convert-button">
-            Convert!
+
+        <div className="flex flex-col items-center gap-4 py-4">
+          <button onClick={clickHandler} className="converter-button" type="button">
+            Convert
           </button>
-          <img src={arrow} alt="Arrow" className="arrow-convert" />
+          <img src={arrow} alt="Arrow" className="h-12 w-auto opacity-70" />
         </div>
 
-        <div className="to-container">
-          <h4>To: </h4>
-          {value_after === "" ? null : (
-            <div className="result-container">
-              <p className="result-text">{value_after}</p>
-            </div>
+        <div className="converter-row">
+          <h4 className="converter-label">To</h4>
+          {value_after === "" ? (
+            <div className="converter-note">Result appears here</div>
+          ) : (
+            <div className="converter-result">{value_after}</div>
           )}
-          <div className="kind-dropdown">
+          <div className="converter-select">
             <Select
               options={kind}
               isDisabled={kind === ""}
               value={after}
               onChange={aftHandler}
-              styles={{
-                control: (baseStyles) => ({
-                  ...baseStyles,
-                  borderColor: "green",
-                  borderRadius: "0.5rem",
-                  fontSize: "120%",
-                  textAlign: "center",
-                  fontWeight: "bold",
-                  fontFamily: "Verdana",
-                }),
-              }}
+              styles={selectStyles}
             />
           </div>
         </div>
 
-        <div className="ratio-container">
-          <h4>Ratio/Formula: </h4>
-          {after === "" || value_after === "" ? null : (
-            <div className="formula-container">
-              <p className="formula-text">{ratio}</p>
-            </div>
+        <div className="converter-row">
+          <h4 className="converter-label">Ratio / Formula</h4>
+          {after === "" || value_after === "" ? (
+            <div className="converter-note">Choose units to compute</div>
+          ) : (
+            <div className="converter-note">{ratio}</div>
           )}
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

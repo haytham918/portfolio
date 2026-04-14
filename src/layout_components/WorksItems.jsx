@@ -27,7 +27,7 @@ export const WorksItems = ({ item }) => {
   };
 
   let component;
-  let descriptText = <h4 className="check-out">Learn more</h4>;
+  let descriptText = <h4 className="text-[0.92rem] font-medium text-title">Learn more</h4>;
   let projectIcon = null;
 
   switch (item.title) {
@@ -129,22 +129,6 @@ export const WorksItems = ({ item }) => {
       );
       break;
     }
-    case "SMART Goals": {
-      openComponent = () => {
-        window.open(
-          "https://docs.google.com/document/d/1ucFK-MBJ8KPvFT034nsqrBablplPT48mP7rNmZRTSQ8/edit?tab=t.0"
-        );
-      };
-      break;
-    }
-    case "Competency Worksheet": {
-      openComponent = () => {
-        window.open(
-          "https://docs.google.com/document/d/1rVV0qFgJWr93O9DXIFsgCS70Jzi1bjP6/edit"
-        );
-      };
-      break;
-    }
     case "VCDive": {
       component = <VCDive closeComponent={closeComponent} />;
       projectIcon = (
@@ -178,19 +162,38 @@ export const WorksItems = ({ item }) => {
       break;
     }
     default:
-      descriptText = <h4 className="check-out">Description soon</h4>;
+      descriptText = (
+        <h4 className="text-[0.92rem] font-medium text-title">Description soon</h4>
+      );
   }
 
   return (
     <>
-      <button className="work__card" key={item.id} onClick={openComponent}>
-        <img src={item.image} alt={item.title} className="work__img" />
-        <div className="work__meta">
-          <span className="work__category">{item.category}</span>
-          <span className="check-out">View details</span>
+      <button
+        className="grid w-full content-start gap-4 rounded-[1.5rem] border border-border bg-white/90 p-4 text-left shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[rgba(15,23,42,0.16)] hover:shadow-md"
+        key={item.id}
+        onClick={openComponent}
+        type="button"
+      >
+        <img
+          src={item.image}
+          alt={item.title}
+          className="h-[180px] w-full rounded-[calc(var(--radius-lg)-0.35rem)] object-cover md:h-[200px] lg:h-[220px]"
+        />
+        <div className="flex items-center justify-between gap-4">
+          <span className="text-[0.86rem] text-textLight md:text-[0.92rem]">
+            {item.category}
+          </span>
+          <span className="text-[0.92rem] font-medium text-title">View details</span>
         </div>
-        <h3 className="work__title">{item.title}</h3>
-        {projectIcon ? <div className="work__icon-row">{projectIcon}</div> : descriptText}
+        <h3 className="text-[1.08rem] font-semibold leading-[1.35] text-title">
+          {item.title}
+        </h3>
+        {projectIcon ? (
+          <div className="flex flex-wrap gap-1.5 text-title">{projectIcon}</div>
+        ) : (
+          descriptText
+        )}
       </button>
       {showComponent ? component : null}
     </>

@@ -26,12 +26,12 @@ const Mercury = ({ closeComponent }) => {
             Dr. Mosharf Chowdhury
           </a>{" "}
           at the University of Michigan on developing{" "}
-          <span style={{ color: "violet" }}>Mercury</span>, a QoS-aware tiered
+          <span className="text-violet-500">Mercury</span>, a QoS-aware tiered
           memory system designed to address the growing memory demands of
           memory-intensive applications. While existing tiered memory systems
           offer increased capacity to accommodate more applications, they lack
           robust support for{" "}
-          <span style={{ color: "violet" }}>Quality-of-Service (QoS)</span>,
+          <span className="text-violet-500">Quality-of-Service (QoS)</span>,
           leading to significant performance drops when multiple applications
           share the system. In fact, applications often suffer up to a 70%
           reduction in performance due to local memory contention and bandwidth
@@ -41,17 +41,15 @@ const Mercury = ({ closeComponent }) => {
         <h4 className="description">
           To solve this, Mercury introduces a novel solution by enforcing
           application-level resource management through{" "}
-          <span style={{ color: "violet" }}> per-tier page reclamation</span>{" "}
+          <span className="text-violet-500">per-tier page reclamation</span>{" "}
           and leveraging an innovative{" "}
-          <span style={{ color: "violet" }}>
+          <span className="text-violet-500">
             admission control and real-time adaptation algorithm
           </span>
           . These features maximize memory utilization and minimize
           interference, ensuring predictable performance for coexisting
           applications with different{" "}
-          <span style={{ color: "violet" }}>
-            Service-Level Objectives (SLOs)
-          </span>
+          <span className="text-violet-500">Service-Level Objectives (SLOs)</span>
           .
         </h4>
 
@@ -65,7 +63,7 @@ const Mercury = ({ closeComponent }) => {
           fine-tuning of the Mercury system’s adaptive algorithms. My work
           directly supported the improvement of memory access efficiency,
           leading to performance gains of up to{" "}
-          <span style={{ color: "violet" }}>53.4%</span> for applications
+          <span className="text-violet-500">53.4%</span> for applications
           sharing the tiered memory system.
         </h4>
 

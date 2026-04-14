@@ -1,5 +1,4 @@
 import React from "react";
-import "./ThreeDSSPP.css";
 import TDSSPPDemo from "../assets/3DSSPP-demo.png";
 import CloseButton from "../layout_components/CloseButton";
 const ThreeDSSPP = ({ closeComponent }) => {

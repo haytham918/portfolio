@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import "./Capstone.css";
-import "./Vex.css";
 import roboticsCover from "../assets/roboticsCover.jpeg";
 import roboticsimg1 from "../assets/roboticsimg1.jpeg";
 import roboticsimg2 from "../assets/roboticsimg2.jpeg";

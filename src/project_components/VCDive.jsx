@@ -94,9 +94,9 @@ const VCDive = ({ closeComponent }) => {
                     the analysis of Value Change Dump (VCD) files, which are
                     crucial in digital circuit simulations for tracking signal
                     transitions over time. The frontend is built with{" "}
-                    <span style={{ color: "violet" }}>Next.js</span> and the
+                    <span className="text-violet-500">Next.js</span> and the
                     backend is built with{" "}
-                    <span style={{ color: "violet" }}>Flask</span>. One of its
+                    <span className="text-violet-500">Flask</span>. One of its
                     standout features is CAEN Forwarding, allowing users to
                     debug VCD files directly on CAEN servers through DUO
                     authentication. This integration facilitates a seamless and
@@ -108,8 +108,8 @@ const VCDive = ({ closeComponent }) => {
                 <h4 className="description">
                     To address performance challenges associated with large VCD
                     files, VCDive employs a parser written in{" "}
-                    <span style={{ color: "violet" }}>C++</span> and integrated
-                    with <span style={{ color: "violet" }}>Python</span> using
+                    <span className="text-violet-500">C++</span> and integrated
+                    with <span className="text-violet-500">Python</span> using
                     Pybind. This combination leverages the efficiency of C++ for
                     rapid data processing and the flexibility of Python for user
                     interface and scripting capabilities. As a result, VCDive
