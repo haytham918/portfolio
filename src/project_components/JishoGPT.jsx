@@ -29,7 +29,7 @@ const JishoGPT = ({ closeComponent }) => {
             <CloseButton closeComponent={closeComponent} />
             <div className="carousel-jisho">
                 <BsArrowLeftCircleFill
-                    className="arrow arrow-left"
+                    className="jisho-arrow jisho-arrow-left"
                     onClick={prevSlide}
                 />
                 {jishodata.map((item, index) => {
@@ -39,16 +39,18 @@ const JishoGPT = ({ closeComponent }) => {
                             alt={item.alt}
                             key={index}
                             className={
-                                index === slide ? "slide" : "slide slide-hidden"
+                                index === slide
+                                    ? "jisho-slide"
+                                    : "jisho-slide jisho-slide-hidden"
                             }
                         />
                     );
                 })}
                 <BsArrowRightCircleFill
-                    className="arrow arrow-right"
+                    className="jisho-arrow jisho-arrow-right"
                     onClick={nextSlide}
                 />
-                <span className="indicators">
+                <span className="jisho-indicators">
                     {jishodata.map((_, id) => {
                         return (
                             <button
@@ -56,8 +58,8 @@ const JishoGPT = ({ closeComponent }) => {
                                 onClick={() => setSlide(id)}
                                 className={
                                     id === slide
-                                        ? "indicator"
-                                        : "indicator indicator-inactive"
+                                        ? "jisho-indicator"
+                                        : "jisho-indicator jisho-indicator-inactive"
                                 }
                                 key={id}
                             ></button>

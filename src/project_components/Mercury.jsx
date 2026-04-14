@@ -12,8 +12,8 @@ const Mercury = ({ closeComponent }) => {
       ></img>
       <h3 className="subtitle">First Page of Paper</h3>
       <div className="text-part">
-        <h3 className="headline">Mercury - QoS Memory System</h3>
-        <h4 className="time-info">May 2023 — June 2024</h4>
+        <h3 className="headline">Themis - QoS Memory System</h3>
+        <h4 className="time-info">May 2023 — June 2024 (paper still in submission)</h4>
 
         <h4 className="description">
           In May 2023, I began working under the supervision of{" "}
@@ -70,11 +70,10 @@ const Mercury = ({ closeComponent }) => {
         </h4>
 
         <h4 className="description end-text">
-          Throughout this project, I also contributed to the development of the
-          research paper, offering critical feedback during the writing and
-          review process. This project not only honed my skills in systems
-          research but also provided hands-on experience with cutting-edge tools
-          for distributed systems optimization.
+          I also contributed to the paper development and revision process, and
+          the work is still in submission. This project strengthened my systems
+          research background and gave me hands-on experience with performance
+          evaluation for modern memory-intensive workloads.
         </h4>
       </div>
     </div>

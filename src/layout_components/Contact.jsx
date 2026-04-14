@@ -2,39 +2,75 @@ import React from "react";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
+
+const SPAM_PATTERNS = [
+    /https?:\/\//i,
+    /www\./i,
+    /seo/i,
+    /backlinks?/i,
+    /crypto/i,
+    /casino/i,
+    /telegram/i,
+    /whatsapp/i,
+];
+
 const Contact = () => {
     const form = useRef();
     const renderTime = useRef(Date.now());
+    const firstInteractionTime = useRef(null);
 
-    const sendEmail = (e) => {
+    const markInteraction = () => {
+        if (!firstInteractionTime.current) {
+            firstInteractionTime.current = Date.now();
+        }
+    };
+
+    const sendEmail = async (e) => {
         e.preventDefault();
 
-        if (
-            e.target[0].value !== "" &&
-            e.target[1].value !== "" &&
-            e.target[2].value !== ""
-        ) {
-            // If the trap input has an value, that's bot
-            const { trk } = e.target.elements;
-            if (trk && trk.value) {
-                return;
-            }
-            // If submission time subtract rendering time is less than 3 secs,
-            // likely a bot
-            if ((Date.now() - renderTime.current) / 1000 < 3) {
-                return;
-            }
-            emailjs.sendForm(
-                "service_sqrqiwq",
-                "template_uc60i8n",
-                form.current,
-                "uIXRdmH3kUyJh3oXm"
-            );
-            e.target.reset();
-            alert("I will get back to you soon!");
-        } else {
+        const { name, email, project, trk, website } = e.target.elements;
+        const message = project.value.trim();
+        const senderName = name.value.trim();
+        const senderEmail = email.value.trim();
+        const secondsSinceRender = (Date.now() - renderTime.current) / 1000;
+        const secondsSinceInteraction = firstInteractionTime.current
+            ? (Date.now() - firstInteractionTime.current) / 1000
+            : 0;
+        const lastSubmittedAt = Number(localStorage.getItem("contact-last-submit") || 0);
+        const repeatedTooSoon = lastSubmittedAt && Date.now() - lastSubmittedAt < 60000;
+        const looksSpammy = SPAM_PATTERNS.some((pattern) => pattern.test(message));
+
+        if (!senderName || !senderEmail || !message) {
             alert("Please fill out all info");
+            return;
         }
+
+        if (trk.value || website.value) {
+            return;
+        }
+
+        if (
+            secondsSinceRender < 8 ||
+            !firstInteractionTime.current ||
+            secondsSinceInteraction < 2 ||
+            repeatedTooSoon ||
+            message.length < 20 ||
+            looksSpammy
+        ) {
+            alert("Please revise your message and try again.");
+            return;
+        }
+
+        await emailjs.sendForm(
+            "service_sqrqiwq",
+            "template_uc60i8n",
+            form.current,
+            "uIXRdmH3kUyJh3oXm"
+        );
+        localStorage.setItem("contact-last-submit", String(Date.now()));
+        e.target.reset();
+        firstInteractionTime.current = null;
+        alert("I will get back to you soon!");
     };
 
     return (
@@ -43,7 +79,15 @@ const Contact = () => {
             <span className="section__subtitle">Contact Me</span>
 
             <div className="contact__container container grid">
-                <div className="contact__content">
+                <div className="contact__panel contact__panel--intro">
+                    <div className="contact__intro">
+                        <h3 className="contact__heading">Let’s talk</h3>
+                        <p className="contact__intro-copy">
+                            Reach out for software engineering, research, or
+                            collaboration.
+                        </p>
+                    </div>
+
                     <div className="contact__info">
                         <div className="contact__card">
                             <i className="bx bx-mail-send contact__card-icon"></i>
@@ -63,52 +107,75 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className="contact__content">
-                    <h3 className="contact__title">Leave a message</h3>
+                <div className="contact__panel contact__panel--form">
+                    <h3 className="contact__heading">Start a conversation</h3>
 
                     <form
                         ref={form}
                         onSubmit={sendEmail}
-                        className="content__form"
+                        className="contact__form"
                     >
-                        <div className="contact__form-div">
-                            <label className="contact__form-tag">Name</label>
-                            <input
-                                type="text"
-                                name="name"
-                                className="contact__form-input"
-                                placeholder="Insert your name"
-                            />
+                        <div className="contact__form-grid">
+                            <div className="contact__field">
+                                <label htmlFor="contact-name" className="contact__label">
+                                    Name
+                                </label>
+                                <input
+                                    id="contact-name"
+                                    type="text"
+                                    name="name"
+                                    className="contact__form-input"
+                                    placeholder="Your name"
+                                    onFocus={markInteraction}
+                                    onChange={markInteraction}
+                                />
+                            </div>
+
+                            <div className="contact__field">
+                                <label htmlFor="contact-email" className="contact__label">
+                                    Email
+                                </label>
+                                <input
+                                    id="contact-email"
+                                    type="email"
+                                    name="email"
+                                    className="contact__form-input"
+                                    placeholder="you@example.com"
+                                    onFocus={markInteraction}
+                                    onChange={markInteraction}
+                                />
+                            </div>
                         </div>
 
-                        <div className="contact__form-div">
-                            <label className="contact__form-tag">Email</label>
-                            <input
-                                type="email"
-                                name="email"
-                                className="contact__form-input"
-                                placeholder="Insert your email"
-                            />
-                        </div>
-
-                        <div className="contact__form-div contact__form-area">
-                            <label className="contact__form-tag">Content</label>
+                        <div className="contact__field contact__field--message">
+                            <label htmlFor="contact-message" className="contact__label">
+                                Message
+                            </label>
                             <textarea
+                                id="contact-message"
                                 name="project"
                                 cols="30"
                                 rows="10"
-                                className="contact__form-input"
-                                placeholder="Leave Message"
+                                className="contact__form-input contact__form-input--message"
+                                placeholder="Tell me what you&apos;re working on"
+                                onFocus={markInteraction}
+                                onChange={markInteraction}
                             ></textarea>
                         </div>
-                        {/* Fake input for bot */}
-                        <input
-                            name="trk"
-                            style={{ display: "none" }}
-                            autoComplete="off"
-                        />
+                        <div className="contact__honeypot" aria-hidden="true">
+                            <input
+                                name="trk"
+                                tabIndex="-1"
+                                autoComplete="off"
+                            />
+                            <input
+                                name="website"
+                                tabIndex="-1"
+                                autoComplete="url"
+                            />
+                        </div>
 
-                        <button className="button button--flex">
+                        <button className="button button--flex contact__submit">
                             Send Message
                             <svg
                                 className="button__icon"

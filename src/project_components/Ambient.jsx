@@ -32,7 +32,7 @@ export const Ambient = ({ closeComponent }) => {
       <CloseButton closeComponent={closeComponent} />
       <div className="carousel-ambient">
         <BsArrowLeftCircleFill
-          className="arrow arrow-left"
+          className="ambient-arrow ambient-arrow-left"
           onClick={prevSlide}
         />
         {data.map((item, idx) => {
@@ -41,22 +41,28 @@ export const Ambient = ({ closeComponent }) => {
               src={item.src}
               alt={item.alt}
               key={idx}
-              className={idx === slide ? "slide" : "slide slide-hidden"}
+              className={
+                idx === slide
+                  ? "ambient-slide"
+                  : "ambient-slide ambient-slide-hidden"
+              }
             />
           );
         })}
         <BsArrowRightCircleFill
-          className="arrow arrow-right"
+          className="ambient-arrow ambient-arrow-right"
           onClick={nextSlide}
         />
-        <span className="indicators">
+        <span className="ambient-indicators">
           {data.map((_, id) => {
             return (
               <button
                 id={id}
                 onClick={() => setSlide(id)}
                 className={
-                  id === slide ? "indicator" : "indicator indicator-inactive"
+                  id === slide
+                    ? "ambient-indicator"
+                    : "ambient-indicator ambient-indicator-inactive"
                 }
                 key={id}
               ></button>

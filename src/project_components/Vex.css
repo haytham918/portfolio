@@ -3,72 +3,87 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35%;
-  height: 40%;
+  width: min(100%, 760px);
+  aspect-ratio: 16 / 10;
   align-self: center;
-  margin-top: 50px;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-sm);
 }
 
-.slide {
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 7px #666;
+.vex-slide {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  border-radius: 0.85rem;
+  background: #fff;
 }
 
-.slide-hidden {
+.vex-slide-hidden {
   display: none;
 }
 
-.arrow {
+.vex-arrow {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 2rem;
   height: 2rem;
-  color: white;
-  filter: drop-shadow(0px 0px 5px #555);
+  color: var(--title-color);
 }
 
-.arrow-left {
-  left: 0.5rem;
+.vex-arrow-left {
+  left: 0.65rem;
 }
 
-.arrow-right {
-  right: 0.5rem;
+.vex-arrow-right {
+  right: 0.65rem;
 }
 
-.arrow:hover {
+.vex-arrow:hover {
   cursor: pointer;
+  color: var(--title-color-dark);
 }
 
-.indicators {
+.vex-indicators {
   display: flex;
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.85rem;
+  gap: 0.35rem;
 }
 
-.indicator {
-  background-color: white;
+.vex-indicator {
+  background-color: var(--title-color);
+  opacity: 0.9;
   height: 0.5rem;
   width: 0.5rem;
-  border-radius: 100%;
+  border-radius: 999px;
   border: none;
   outline: none;
-  box-shadow: 0px 0px 5px #555;
-  margin: 0 0.2rem;
   cursor: pointer;
 }
 
-.indicator-inactive {
-  background-color: grey;
+.vex-indicator-inactive {
+  opacity: 0.25;
 }
 
 .end-text {
   margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
   .carousel {
-    width: 60%;
-    height: 20%;
+    aspect-ratio: 4 / 3;
+    padding: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .carousel {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
   }
 }

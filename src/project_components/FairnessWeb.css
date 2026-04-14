@@ -1,11 +1,85 @@
 .carousel-fairness {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 550px;
-    align-self: center;
-    margin-top: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(100%, 760px);
+  aspect-ratio: 16 / 10;
+  align-self: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-sm);
+}
+
+.fairness-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.85rem;
+  background: #fff;
+}
+
+.fairness-slide-hidden {
+  display: none;
+}
+
+.fairness-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  color: var(--title-color);
+}
+
+.fairness-arrow-left {
+  left: 0.65rem;
+}
+
+.fairness-arrow-right {
+  right: 0.65rem;
+}
+
+.fairness-arrow:hover {
+  cursor: pointer;
+  color: var(--title-color-dark);
+}
+
+.fairness-indicators {
+  display: flex;
+  position: absolute;
+  bottom: 0.85rem;
+  gap: 0.35rem;
+}
+
+.fairness-indicator {
+  background-color: var(--title-color);
+  opacity: 0.9;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.fairness-indicator-inactive {
+  opacity: 0.25;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-fairness {
+    aspect-ratio: 4 / 3;
+    padding: 0.85rem;
   }
-  
+}
+
+@media screen and (max-width: 576px) {
+  .carousel-fairness {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+  }
+}

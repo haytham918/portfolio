@@ -80,7 +80,6 @@ export const SpotifyPlaying = () => {
     const fetchNowPlaying = async () => {
       try {
         const data = await getNowPlaying();
-        // Update only if a new song is detected or switching from pausing/playing
         if (
           data &&
           (!nowPlaying ||
@@ -89,7 +88,6 @@ export const SpotifyPlaying = () => {
         ) {
           setNowPlaying(data);
         } else if (data === null && nowPlaying) {
-          // Set to null if no track is playing (e.g., app closed or playback stopped)
           setNowPlaying(null);
         }
       } catch (error) {
@@ -99,9 +97,8 @@ export const SpotifyPlaying = () => {
 
     fetchNowPlaying();
 
-    // Optional: Set up an interval to refresh every 4 seconds
     const interval = setInterval(fetchNowPlaying, 4000);
-    return () => clearInterval(interval); // Cleanup on component unmount
+    return () => clearInterval(interval);
   }, [nowPlaying]);
 
   return (

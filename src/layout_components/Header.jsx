@@ -1,98 +1,72 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { HashLink } from "react-router-hash-link";
-import { useLocation } from "react-router-dom";
 
-const Header = (props) => {
-  // Check my current location for heading redirection
-  const location = useLocation();
-  const path = location.pathname;
+const navItems = [
+  { id: "#about", label: "About", icon: "uil-user" },
+  { id: "#experience", label: "Experience", icon: "uil-briefcase-alt" },
+  { id: "#portfolio", label: "Work", icon: "uil-file-alt" },
+  { id: "#contact", label: "Contact", icon: "uil-message" },
+];
 
-  window.addEventListener("scroll", function () {
-    const header = document.querySelector(".header");
-    if (header) {
-      if (this.scrollY >= 80) {
-        header.classList.add("scroll-header");
-      } else {
-        header.classList.remove("scroll-header");
-      }
-    }
-  });
+const Header = ({ activeNav, handleNav }) => {
+  const [toggle, setToggle] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const [Toggle, showMenu] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY >= 24);
+    };
+
+    const closeMenu = () => {
+      setToggle(false);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", closeMenu);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", closeMenu);
+    };
+  }, []);
 
   return (
-    <header className="header">
+    <header className={`header${isScrolled ? " scroll-header" : ""}`}>
       <nav className="nav container">
-        <a
-          href={path !== "/enghonors" ? "/" : "#enghonors"}
-          onClick={() => window.location.reload()}
-          className="nav__logo"
-        >
+        <HashLink to="#about" className="nav__logo">
           Haytham Tang
-        </a>
+        </HashLink>
 
-        <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
+        <div className={toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className="nav__list grid">
-            <li className="nav__item">
-              <HashLink
-                to="#about"
-                className={
-                  props.activeNav === "#about"
-                    ? "nav__link active-link"
-                    : "nav__link"
-                }
-                onClick={() => {
-                  props.handleNav("#about");
-                  showMenu(false);
-                }}
-              >
-                <i className="uil uil-user nav__icon"></i> About
-              </HashLink>
-            </li>
-
-            <li className="nav__item">
-              <HashLink
-                to="#portfolio"
-                className={
-                  props.activeNav === "#portfolio"
-                    ? "nav__link active-link"
-                    : "nav__link"
-                }
-                onClick={() => {
-                  props.handleNav("#portfolio");
-                  showMenu(false);
-                }}
-              >
-                <i className="uil uil-file-alt nav__icon"></i> Portfolio
-              </HashLink>
-            </li>
-
-            <li className="nav__item">
-              <HashLink
-                to="#contact"
-                className={
-                  props.activeNav === "#contact"
-                    ? "nav__link active-link"
-                    : "nav__link"
-                }
-                onClick={() => {
-                  props.handleNav("#contact");
-                  showMenu(false);
-                }}
-              >
-                <i className="uil uil-message nav__icon"></i> Contact
-              </HashLink>
-            </li>
+            {navItems.map((item) => (
+              <li className="nav__item" key={item.id}>
+                <HashLink
+                  to={item.id}
+                  className={
+                    activeNav === item.id ? "nav__link active-link" : "nav__link"
+                  }
+                  onClick={() => {
+                    handleNav(item.id);
+                    setToggle(false);
+                  }}
+                >
+                  <i className={`uil ${item.icon} nav__icon`}></i>
+                  {item.label}
+                </HashLink>
+              </li>
+            ))}
           </ul>
 
           <i
             className="uil uil-times nav__close"
-            onClick={() => showMenu(!Toggle)}
+            onClick={() => setToggle(false)}
           ></i>
         </div>
 
-        <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
+        <div className="nav__toggle" onClick={() => setToggle((value) => !value)}>
           <i className="uil uil-apps"></i>
         </div>
       </nav>

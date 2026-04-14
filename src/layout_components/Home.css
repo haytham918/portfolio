@@ -1,187 +1,208 @@
+.home {
+  padding-top: calc(var(--header-offset) + 1rem);
+}
+
 .home__container {
-  row-gap: 7rem;
+  row-gap: 3rem;
 }
 
 .home__content {
-  grid-template-columns: 116px repeat(2, 1fr);
-  padding-top: 5.5rem;
-  column-gap: 2rem;
+  grid-template-columns: 72px minmax(0, 1.15fr) minmax(280px, 0.85fr);
   align-items: center;
-}
-.home__hand {
-  width: 38px;
-  height: 38px;
-  margin-left: 0.4rem;
+  column-gap: 3rem;
 }
 
 .home__social {
   display: grid;
-  grid-template-columns: max-content;
-  row-gap: 1rem;
+  gap: 0.9rem;
 }
 
 .home__social__icon {
-  font-size: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
   color: var(--title-color);
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .home__social__icon:hover {
-  color: var(--title-color-dark);
+  transform: translateY(-2px);
+  border-color: rgba(15, 23, 42, 0.2);
+}
+
+.home__data {
+  max-width: 560px;
 }
 
 .home__title {
-  font-size: 2.5rem;
-  margin-bottom: var(--mb-0-25);
+  font-size: clamp(2.15rem, 3.1vw, 2.55rem);
+  font-weight: var(--font-bold);
+  letter-spacing: -0.04em;
+  margin-bottom: 0.45rem;
 }
 
 .home__subtitle {
   position: relative;
-  font-size: var(--h3-font-size);
-  padding-left: 5.4rem;
-  font-weight: var(--front-normal);
-  margin-bottom: var(--mb-1);
-  font-family: kai;
+  display: inline-flex;
+  align-items: center;
+  color: var(--title-color);
+  font-size: 1.05rem;
+  font-weight: var(--font-medium);
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", serif;
+  letter-spacing: 0.08em;
+  padding-left: 3.4rem;
+  margin-bottom: 1rem;
 }
 
 .home__subtitle::before {
   content: "";
   position: absolute;
-  width: 70px;
-  height: 1px;
-  background-color: var(--text-color);
   left: 0;
-  top: 1rem;
+  top: 50%;
+  width: 2.35rem;
+  height: 1px;
+  background: rgba(15, 23, 42, 0.18);
 }
 
 .home__description {
-  max-width: 400px;
-  margin-bottom: var(--mb-2);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.home__inline-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.home__meta {
+  margin-top: 0.35rem;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
 }
 
 .home__img {
-  background: url(../assets/headshot2mb.jpg);
+  background: linear-gradient(rgba(15, 23, 42, 0.06), rgba(15, 23, 42, 0.06)),
+    url(../assets/headshot2mb.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  box-shadow: inset 0 0 0 4px rgb(255 255 255 / 30%);
-  order: 1;
   justify-self: center;
-  width: 350px;
-  height: 350px;
-  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  width: min(100%, 360px);
+  aspect-ratio: 0.86;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: inset 0 0 0 4px rgb(255 255 255 / 24%), var(--shadow-md);
   animation: profile_animate 8s ease-in-out infinite 1s;
 }
 
 @keyframes profile_animate {
   0% {
-    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
 
   50% {
-    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
   }
+
   100% {
-    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
-}
-
-.home__scroll {
-  margin-left: 9.25rem;
-}
-
-.wheel {
-  animation: scroll 2s ease infinite;
-}
-@keyframes scroll {
-  0% {
-    transform: translateY(0);
-  }
-  30% {
-    transform: translateY(3.75rem);
-  }
-}
-
-.home__scroll-name {
-  color: var(--title-color);
-  font-weight: var(--font-medium);
-  margin-right: var(--mb-0-25);
-  margin-left: 2px;
-}
-
-.home__scroll-arrow {
-  font-size: 1.25rem;
-  color: var(--title-color);
 }
 
 @media screen and (max-width: 992px) {
   .home__content {
-    grid-template-columns: 100px repeat(2, 1fr);
-    column-gap: 1.25rem;
+    grid-template-columns: 56px minmax(0, 1fr) minmax(240px, 0.8fr);
+    column-gap: 1.75rem;
   }
 
-  .home__hand {
-    width: 26px;
-    height: 26px;
-  }
-
-  .home__subtitle {
-    padding-left: 3.75rem;
-    margin-bottom: var(--mb-1);
-  }
-
-  .home__subtitle::before {
-    width: 42px;
-    top: 0.8rem;
-  }
-
-  .home__description {
-    max-width: initial;
-    margin-bottom: var(--mb-2-5);
-  }
-
-  .home__img {
-    width: 250px;
-    height: 300px;
-    box-shadow: inset 0 0 0 3px rgb(255 255 255 / 30%);
-  }
-
-  .home__scroll {
-    margin-left: 7.5rem;
+  .home__title {
+    font-size: clamp(2rem, 4.2vw, 2.35rem);
   }
 }
 
 @media screen and (max-width: 768px) {
-  .home__content {
-    grid-template-columns: 0.5fr 3fr;
-    padding-top: 3.5rem;
+  .home {
+    padding-top: calc(var(--header-offset) + 0.25rem);
   }
+
+  .home__container {
+    row-gap: 2rem;
+  }
+
+  .home__content {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  .home__social {
+    grid-auto-flow: column;
+    justify-content: flex-start;
+  }
+
   .home__img {
-    order: initial;
-    justify-self: initial;
+    order: -1;
+    justify-self: start;
+    width: min(100%, 320px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home__social {
+    gap: 0.65rem;
+  }
+
+  .home__social__icon {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .home__title {
+    font-size: 1.95rem;
+  }
+
+  .home__subtitle {
+    display: inline-flex;
+    justify-content: center;
+    font-size: 0.96rem;
+    padding-left: 1.9rem;
+  }
+
+  .home__subtitle::before {
+    width: 1.1rem;
+  }
+
+  .home__img {
+    justify-self: center;
+    width: min(100%, 280px);
   }
 
   .home__data {
-    grid-column: 1/3;
-  }
-
-  .home__img {
-    box-shadow: inset 0 0 0 2px rgb(255 255 255 / 30%);
-    width: 200px;
-    height: 250px;
-  }
-
-  .home__scroll {
-    display: none;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 350px) {
-  .home__img {
-    width: 180px;
-    height: 230px;
+  .home__title {
+    font-size: 1.78rem;
   }
-  .home__hand {
-    width: 22px;
-    height: 22px;
+
+  .home__subtitle {
+    padding-left: 1.55rem;
+  }
+
+  .home__subtitle::before {
+    width: 0.9rem;
   }
 }

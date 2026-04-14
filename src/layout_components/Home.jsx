@@ -15,9 +15,9 @@ const Home = () => {
         <div className="home__content grid">
           <Social />
 
-          <div className="home__img"></div>
-
           <Data />
+
+          <div className="home__img"></div>
         </div>
         {/*Add Philosophy Statement for honors*/}
         {path === "/enghonors" ? <Blog /> : null}{" "}

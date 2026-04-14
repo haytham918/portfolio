@@ -3,12 +3,87 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 75%;
-  height: auto;
+  width: min(100%, 760px);
+  aspect-ratio: 16 / 10;
   align-self: center;
-  margin-top: 30px;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-sm);
+}
+
+.jisho-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.85rem;
+  background: #fff;
+}
+
+.jisho-slide-hidden {
+  display: none;
+}
+
+.jisho-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  color: var(--title-color);
+}
+
+.jisho-arrow-left {
+  left: 0.65rem;
+}
+
+.jisho-arrow-right {
+  right: 0.65rem;
+}
+
+.jisho-arrow:hover {
+  cursor: pointer;
+  color: var(--title-color-dark);
+}
+
+.jisho-indicators {
+  display: flex;
+  position: absolute;
+  bottom: 0.85rem;
+  gap: 0.35rem;
+}
+
+.jisho-indicator {
+  background-color: var(--title-color);
+  opacity: 0.9;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.jisho-indicator-inactive {
+  opacity: 0.25;
 }
 
 .headline {
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-jisho {
+    aspect-ratio: 4 / 3;
+    padding: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .carousel-jisho {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+  }
 }

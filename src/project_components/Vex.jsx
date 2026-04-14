@@ -33,7 +33,7 @@ export const Vex = ({ closeComponent }) => {
       <CloseButton closeComponent={closeComponent} />
       <div className="carousel">
         <BsArrowLeftCircleFill
-          className="arrow arrow-left"
+          className="vex-arrow vex-arrow-left"
           onClick={prevSlide}
         />
         {data.map((item, idx) => {
@@ -42,22 +42,26 @@ export const Vex = ({ closeComponent }) => {
               src={item.src}
               alt={item.alt}
               key={idx}
-              className={idx === slide ? "slide" : "slide slide-hidden"}
+              className={
+                idx === slide ? "vex-slide" : "vex-slide vex-slide-hidden"
+              }
             />
           );
         })}
         <BsArrowRightCircleFill
-          className="arrow arrow-right"
+          className="vex-arrow vex-arrow-right"
           onClick={nextSlide}
         />
-        <span className="indicators">
+        <span className="vex-indicators">
           {data.map((_, id) => {
             return (
               <button
                 id={id}
                 onClick={() => setSlide(id)}
                 className={
-                  id === slide ? "indicator" : "indicator indicator-inactive"
+                  id === slide
+                    ? "vex-indicator"
+                    : "vex-indicator vex-indicator-inactive"
                 }
                 key={id}
               ></button>

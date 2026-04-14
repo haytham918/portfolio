@@ -1,21 +1,35 @@
 import React from "react";
 import "./Footer.css";
 import { HashLink } from "react-router-hash-link";
+
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container container">
-        <h1 className="footer__title">Haytham Tang</h1>
+        <h2 className="footer__title">Haytham Tang</h2>
+        <p className="footer__lead">
+          Software engineer with a focus on product, systems, and research.
+        </p>
+
         <ul className="footer__list">
           <li>
             <HashLink to="#about" className="footer__link">
               About
             </HashLink>
           </li>
-
+          <li>
+            <HashLink to="#experience" className="footer__link">
+              Experience
+            </HashLink>
+          </li>
           <li>
             <HashLink to="#portfolio" className="footer__link">
-              Portfolio
+              Work
+            </HashLink>
+          </li>
+          <li>
+            <HashLink to="#contact" className="footer__link">
+              Contact
             </HashLink>
           </li>
         </ul>
@@ -38,9 +52,7 @@ const Footer = () => {
             <i className="uil uil-github-alt"></i>
           </a>
         </div>
-        <span className="footer__copy">
-          &#169; Haytham Tang. All rights reserved
-        </span>
+        <span className="footer__copy">© Haytham Tang. All rights reserved.</span>
       </div>
     </footer>
   );

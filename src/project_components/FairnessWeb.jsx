@@ -31,7 +31,7 @@ const FairnessWeb = ({ closeComponent }) => {
       <CloseButton closeComponent={closeComponent} />
       <div className="carousel-fairness">
         <BsArrowLeftCircleFill
-          className="arrow arrow-left"
+          className="fairness-arrow fairness-arrow-left"
           onClick={prevSlide}
         />
         {data.map((item, idx) => {
@@ -40,22 +40,28 @@ const FairnessWeb = ({ closeComponent }) => {
               src={item.src}
               alt={item.alt}
               key={idx}
-              className={idx === slide ? "slide" : "slide slide-hidden"}
+              className={
+                idx === slide
+                  ? "fairness-slide"
+                  : "fairness-slide fairness-slide-hidden"
+              }
             />
           );
         })}
         <BsArrowRightCircleFill
-          className="arrow arrow-right"
+          className="fairness-arrow fairness-arrow-right"
           onClick={nextSlide}
         />
-        <span className="indicators">
+        <span className="fairness-indicators">
           {data.map((_, id) => {
             return (
               <button
                 id={id}
                 onClick={() => setSlide(id)}
                 className={
-                  id === slide ? "indicator" : "indicator indicator-inactive"
+                  id === slide
+                    ? "fairness-indicator"
+                    : "fairness-indicator fairness-indicator-inactive"
                 }
                 key={id}
               ></button>
