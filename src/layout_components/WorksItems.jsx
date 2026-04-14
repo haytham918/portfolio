@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Capstone } from "../project_components/Capstone";
-import { Vex } from "../project_components/Vex";
-import { Warehouse } from "../project_components/Warehouse";
 import { Ambient } from "../project_components/Ambient";
 import ThreeDSSPP from "../project_components/ThreeDSSPP";
-import JishoGPT from "../project_components/JishoGPT";
 import Expectile from "../project_components/Expectile";
 import Mercury from "../project_components/Mercury";
 import FairnessWeb from "../project_components/FairnessWeb";
@@ -38,17 +35,6 @@ export const WorksItems = ({ item }) => {
       );
       break;
     }
-    case "VEX Robotics Competition": {
-      component = <Vex closeComponent={closeComponent} />;
-      break;
-    }
-    case "Warehouse Robot": {
-      component = <Warehouse closeComponent={closeComponent} />;
-      projectIcon = (
-        <iconify-icon icon="skill-icons:processing-light" width="1.35em" height="1.35em" />
-      );
-      break;
-    }
     case "Ambient Learning Mobile App": {
       component = <Ambient closeComponent={closeComponent} />;
       projectIcon = (
@@ -76,18 +62,6 @@ export const WorksItems = ({ item }) => {
         <>
           <iconify-icon icon="skill-icons:cpp" width="1.35em" height="1.35em" />
           <iconify-icon icon="skill-icons:bash-dark" width="1.35em" height="1.35em" />
-        </>
-      );
-      break;
-    }
-    case "JishoGPT": {
-      component = <JishoGPT closeComponent={closeComponent} />;
-      projectIcon = (
-        <>
-          <iconify-icon icon="skill-icons:nextjs-dark" width="1.35em" height="1.35em" />
-          <iconify-icon icon="skill-icons:expressjs-light" width="1.35em" height="1.35em" />
-          <iconify-icon icon="skill-icons:mongodb" width="1.35em" height="1.35em" />
-          <iconify-icon icon="bi:stripe" width="1.35em" height="1.35em" />
         </>
       );
       break;
