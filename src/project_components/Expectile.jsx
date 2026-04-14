@@ -1,6 +1,5 @@
 import React from "react";
 import expectile from "../assets/expectile.jpg";
-import "./Expectile.css";
 import CloseButton from "../layout_components/CloseButton";
 const Expectile = ({ closeComponent }) => {
     return (

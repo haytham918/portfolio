@@ -1,5 +1,4 @@
 import React from "react";
-import "./Capstone.css";
 import reportPdf from "../assets/Final-Report.pdf";
 import CloseButton from "../layout_components/CloseButton";
 export const Warehouse = ({ closeComponent }) => {

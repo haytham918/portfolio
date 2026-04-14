@@ -1,5 +1,4 @@
 import React from "react";
-import "./Capstone.css";
 import capstonePdf from "../assets/Linear-Programming-Capstone.pdf";
 import CloseButton from "../layout_components/CloseButton";
 export const Capstone = ({ closeComponent }) => {

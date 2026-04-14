@@ -1,43 +1,59 @@
-import "./App.css";
+import { useEffect, useState } from "react";
 import Header from "./layout_components/Header";
 import Home from "./layout_components/Home";
+import Experience from "./layout_components/Experience";
 import Contact from "./layout_components/Contact";
 import Footer from "./layout_components/Footer";
 import { ScrollUp } from "./layout_components/ScrollUp";
-import { useState } from "react";
 import { Work } from "./layout_components/Work";
 
+const sectionIds = ["about", "experience", "portfolio", "contact"];
+
 function App() {
-  // Function used to set the active navigation section with bold text
   const [activeNav, setActiveNav] = useState("#about");
 
   const handleNav = (section) => {
     setActiveNav(section);
   };
-  window.addEventListener("scroll", function () {
-    const contactSec = document.getElementById("contact");
-    if (contactSec) {
-      const rect = contactSec.getBoundingClientRect();
-      const contactY = rect.y;
-      const portfolioSec = document.getElementById("portfolio");
-      const portfolioRect = portfolioSec.getBoundingClientRect();
-      const portfolioY = portfolioRect.y;
-      if (contactY <= 50) {
-        setActiveNav("#contact");
-      } else if (portfolioY <= 50) {
-        setActiveNav("#portfolio");
-      } else {
-        setActiveNav("#about");
-      }
-    }
-  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let currentSection = "#about";
+
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
+
+        if (!section) {
+          return;
+        }
+
+        const { top } = section.getBoundingClientRect();
+
+        if (top <= 160) {
+          currentSection = `#${id}`;
+        }
+      });
+
+      setActiveNav((prev) =>
+        prev === currentSection ? prev : currentSection
+      );
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <Header activeNav={activeNav} handleNav={handleNav} isHonors={false} />
+      <Header activeNav={activeNav} handleNav={handleNav} />
 
-      <main className="main">
+      <main className="app-shell">
         <Home />
+        <Experience />
         <Work />
         <Contact />
       </main>

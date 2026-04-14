@@ -4,7 +4,6 @@ import card from "../assets/card.png";
 import sessionReview from "../assets/sessionReview.png";
 import answerCard from "../assets/answerCard.png";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
-import "./Ambient.css";
 import CloseButton from "../layout_components/CloseButton";
 export const Ambient = ({ closeComponent }) => {
   const data = [
@@ -32,7 +31,7 @@ export const Ambient = ({ closeComponent }) => {
       <CloseButton closeComponent={closeComponent} />
       <div className="carousel-ambient">
         <BsArrowLeftCircleFill
-          className="arrow arrow-left"
+          className="ambient-arrow ambient-arrow-left"
           onClick={prevSlide}
         />
         {data.map((item, idx) => {
@@ -41,22 +40,28 @@ export const Ambient = ({ closeComponent }) => {
               src={item.src}
               alt={item.alt}
               key={idx}
-              className={idx === slide ? "slide" : "slide slide-hidden"}
+              className={
+                idx === slide
+                  ? "ambient-slide"
+                  : "ambient-slide ambient-slide-hidden"
+              }
             />
           );
         })}
         <BsArrowRightCircleFill
-          className="arrow arrow-right"
+          className="ambient-arrow ambient-arrow-right"
           onClick={nextSlide}
         />
-        <span className="indicators">
+        <span className="ambient-indicators">
           {data.map((_, id) => {
             return (
               <button
                 id={id}
                 onClick={() => setSlide(id)}
                 className={
-                  id === slide ? "indicator" : "indicator indicator-inactive"
+                  id === slide
+                    ? "ambient-indicator"
+                    : "ambient-indicator ambient-indicator-inactive"
                 }
                 key={id}
               ></button>
@@ -70,7 +75,7 @@ export const Ambient = ({ closeComponent }) => {
           Ambient Learning Mobile App {"       "}
           <a
             href="https://apps.apple.com/us/app/ambient-learning/id6456572536"
-            style={{ fontSize: "1.3rem", color: "blue" }}
+            className="text-[1.3rem] text-blue-600 transition-colors duration-200 hover:text-blue-700"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -79,7 +84,7 @@ export const Ambient = ({ closeComponent }) => {
           {"      /     "}
           <a
             href="https://play.google.com/store/apps/details?id=com.etc.ambientlearning&pcampaignid=APPU_1_ZdnbZNTTL4mfptQPq-ef6A0&pli=1"
-            style={{ fontSize: "1.3rem", color: "blue" }}
+            className="text-[1.3rem] text-blue-600 transition-colors duration-200 hover:text-blue-700"
             target="_blank"
             rel="noopener noreferrer"
           >

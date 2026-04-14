@@ -1,386 +1,175 @@
 import React, { useState } from "react";
-import { Capstone } from "../project_components/Capstone";
-import { Vex } from "../project_components/Vex";
-import { Warehouse } from "../project_components/Warehouse";
-import { Ambient } from "../project_components/Ambient";
 import { useNavigate } from "react-router-dom";
+import { Capstone } from "../project_components/Capstone";
+import { Ambient } from "../project_components/Ambient";
 import ThreeDSSPP from "../project_components/ThreeDSSPP";
-import JishoGPT from "../project_components/JishoGPT";
-import "iconify-icon";
 import Expectile from "../project_components/Expectile";
 import Mercury from "../project_components/Mercury";
 import FairnessWeb from "../project_components/FairnessWeb";
-import MetaLearning from "../project_components/MetaLearning";
-import FabulousSaler from "../project_components/FabulousSaler";
 import VCDive from "../project_components/VCDive";
 import Multiverse from "../project_components/Multiverse";
+import WhenPastMisleads from "../project_components/WhenPastMisleads";
 import { Processor } from "../project_components/470Processor";
+import "iconify-icon";
 
 export const WorksItems = ({ item }) => {
-    const history = useNavigate();
-    const [showComponent, setComponent] = useState(false);
-    let openComponent = () => {
-        setComponent(true);
-    };
+  const history = useNavigate();
+  const [showComponent, setComponent] = useState(false);
+  let openComponent = () => {
+    setComponent(true);
+  };
 
-    // let hrefLink = () => false;
-    // if (item.id === 10) {
-    //   hrefLink =
-    //     "https://docs.google.com/document/d/1W2UxzEufvzUFMtvvxZtFbr-SXE1dEpVJ/edit";
-    // } else if (item.id === 11) {
-    //   hrefLink =
-    //     "https://docs.google.com/document/d/1rVV0qFgJWr93O9DXIFsgCS70Jzi1bjP6/edit";
-    // } else if (item.id === 12) {
-    //   hrefLink =
-    //     "https://docs.google.com/document/d/1ucFK-MBJ8KPvFT034nsqrBablplPT48mP7rNmZRTSQ8/edit";
-    // }
+  const closeComponent = () => {
+    setComponent(false);
+  };
 
-    const closeComponent = () => {
-        setComponent(false);
-    };
+  let component;
+  let descriptText = <h4 className="text-[0.92rem] font-medium text-title">Learn more</h4>;
+  let projectIcon = null;
 
-    // Set the components
-    let component;
-    let descriptText;
-    let project_icon = null;
-
-    // Set based on the title
-    switch (item.title) {
-        case "Linear Programming Capstone": {
-            component = <Capstone closeComponent={closeComponent} />;
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <iconify-icon
-                    icon="material-icon-theme:python"
-                    width="1.5em"
-                    height="1.5em"
-                ></iconify-icon>
-            );
-            break;
-        }
-        case "VEX Robotics Competition": {
-            component = <Vex closeComponent={closeComponent} />;
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            break;
-        }
-        case "Warehouse Robot": {
-            component = <Warehouse closeComponent={closeComponent} />;
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <iconify-icon
-                    icon="skill-icons:processing-light"
-                    width="1.5em"
-                    height="1.5em"
-                ></iconify-icon>
-            );
-            break;
-        }
-        case "Ambient Learning Mobile App": {
-            component = <Ambient closeComponent={closeComponent} />;
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="skill-icons:react-light"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="logos:aws-lambda"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="skill-icons:mongodb"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="skill-icons:postgresql-light"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>
-                </>
-            );
-            break;
-        }
-        case "Universal Converter Web App": {
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="skill-icons:react-light"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>
-                </>
-            );
-            openComponent = () => {
-                history("/converter");
-            };
-            break;
-        }
-        case "Automated 3DSSPP Software": {
-            component = (
-                <ThreeDSSPP closeComponent={closeComponent}></ThreeDSSPP>
-            );
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="skill-icons:cpp"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="skill-icons:bash-dark"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>
-                </>
-            );
-            break;
-        }
-        case "JishoGPT": {
-            component = <JishoGPT closeComponent={closeComponent}></JishoGPT>;
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="skill-icons:nextjs-dark"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="skill-icons:expressjs-light"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="skill-icons:mongodb"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="bi:stripe"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>
-                </>
-            );
-            break;
-        }
-        case "Low-Rank Expectile Representations of a Data Matrix, with Application to Diurnal Heart Rates": {
-            component = <Expectile closeComponent={closeComponent}></Expectile>;
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <iconify-icon
-                    icon="material-icon-theme:python"
-                    width="1.5em"
-                    height="1.5em"
-                ></iconify-icon>
-            );
-            break;
-        }
-        case "Themis - QoS Memory System": {
-            component = <Mercury closeComponent={closeComponent}></Mercury>;
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="skill-icons:cpp"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="skill-icons:docker"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>
-                </>
-            );
-            break;
-        }
-        case "Fairness in Educational Models": {
-            component = (
-                <FairnessWeb closeComponent={closeComponent}></FairnessWeb>
-            );
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="logos:jupyter"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="material-icon-theme:python"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>
-                </>
-            );
-            break;
-        }
-        case "Meta-Reinforcement Learning for Human-Robot Collaboration": {
-            component = (
-                <MetaLearning closeComponent={closeComponent}></MetaLearning>
-            );
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="material-icon-theme:python"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="eos-icons:cloud-computing-outlined"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>
-                </>
-            );
-            break;
-        }
-        case "Fabulous Saler": {
-            component = (
-                <FabulousSaler closeComponent={closeComponent}></FabulousSaler>
-            );
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="skill-icons:react-light"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="skill-icons:expressjs-light"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="material-icon-theme:python"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="skill-icons:mysql-light"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>
-                </>
-            );
-            break;
-        }
-
-        case "SMART Goals": {
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            openComponent = () => {
-                window.open(
-                    "https://docs.google.com/document/d/1ucFK-MBJ8KPvFT034nsqrBablplPT48mP7rNmZRTSQ8/edit?tab=t.0"
-                );
-            };
-            break;
-        }
-        case "Competency Worksheet": {
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            openComponent = () => {
-                window.open(
-                    "https://docs.google.com/document/d/1rVV0qFgJWr93O9DXIFsgCS70Jzi1bjP6/edit"
-                );
-            };
-            break;
-        }
-        case "VCDive": {
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="skill-icons:nextjs-dark"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="material-icon-theme:python"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="skill-icons:flask-dark"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="skill-icons:cpp"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                </>
-            );
-            component = <VCDive closeComponent={closeComponent}></VCDive>;
-            break;
-        }
-        case "Understanding Predictive Models of Student Success with a Multiverse Analysis": {
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="logos:jupyter"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>{" "}
-                    <iconify-icon
-                        icon="material-icon-theme:python"
-                        width="1.5em"
-                        height="1.5em"
-                    ></iconify-icon>
-                </>
-            );
-            component = <Multiverse closeComponent={closeComponent} />;
-            break;
-        }
-        case "N-way Superscaler RISC-V Computer Architecture (EECS 470)": {
-            descriptText = <h4 className="check-out">Learn More</h4>;
-            project_icon = (
-                <>
-                    <iconify-icon
-                        icon="material-icon-theme:verilog"
-                        width="1.5em"
-                        height="1.5em"
-                    />
-                    <iconify-icon
-                        icon="file-icons:systemverilog"
-                        width="1.5em"
-                        height="1.5em"
-                    />
-                </>
-            );
-            component = <Processor closeComponent={closeComponent} />;
-            break;
-        }
-        default: {
-            descriptText = (
-                <h4 className="check-out">Description Soon :&#41;</h4>
-            );
-            break;
-        }
+  switch (item.title) {
+    case "Linear Programming Capstone": {
+      component = <Capstone closeComponent={closeComponent} />;
+      projectIcon = (
+        <iconify-icon icon="material-icon-theme:python" width="1.35em" height="1.35em" />
+      );
+      break;
     }
-
-    return (
+    case "Ambient Learning Mobile App": {
+      component = <Ambient closeComponent={closeComponent} />;
+      projectIcon = (
         <>
-            <button
-                className="work__card"
-                key={item.id}
-                onClick={openComponent}
-            >
-                <img src={item.image} alt="" className="work__img" />
-                <h3 className="work__title">{item.title}</h3>
-                <div>{project_icon}</div>
-                {descriptText}
-            </button>
-            {showComponent ? component : null}
+          <iconify-icon icon="skill-icons:react-light" width="1.35em" height="1.35em" />
+          <iconify-icon icon="logos:aws-lambda" width="1.35em" height="1.35em" />
+          <iconify-icon icon="skill-icons:mongodb" width="1.35em" height="1.35em" />
+          <iconify-icon icon="skill-icons:postgresql-light" width="1.35em" height="1.35em" />
         </>
-    );
+      );
+      break;
+    }
+    case "Universal Converter Web App": {
+      projectIcon = (
+        <iconify-icon icon="skill-icons:react-light" width="1.35em" height="1.35em" />
+      );
+      openComponent = () => {
+        history("/converter");
+      };
+      break;
+    }
+    case "Automated 3DSSPP Software": {
+      component = <ThreeDSSPP closeComponent={closeComponent} />;
+      projectIcon = (
+        <>
+          <iconify-icon icon="skill-icons:cpp" width="1.35em" height="1.35em" />
+          <iconify-icon icon="skill-icons:bash-dark" width="1.35em" height="1.35em" />
+        </>
+      );
+      break;
+    }
+    case "Low-Rank Expectile Representations of a Data Matrix, with Application to Diurnal Heart Rates": {
+      component = <Expectile closeComponent={closeComponent} />;
+      projectIcon = (
+        <iconify-icon icon="material-icon-theme:python" width="1.35em" height="1.35em" />
+      );
+      break;
+    }
+    case "Themis - QoS Memory System": {
+      component = <Mercury closeComponent={closeComponent} />;
+      projectIcon = (
+        <>
+          <iconify-icon icon="skill-icons:cpp" width="1.35em" height="1.35em" />
+          <iconify-icon icon="skill-icons:docker" width="1.35em" height="1.35em" />
+        </>
+      );
+      break;
+    }
+    case "Fairness in Educational Models": {
+      component = <FairnessWeb closeComponent={closeComponent} />;
+      projectIcon = (
+        <>
+          <iconify-icon icon="logos:jupyter" width="1.35em" height="1.35em" />
+          <iconify-icon icon="material-icon-theme:python" width="1.35em" height="1.35em" />
+        </>
+      );
+      break;
+    }
+    case "When the Past Misleads: Rethinking Training Data Expansion Under Temporal Distribution Shifts": {
+      component = <WhenPastMisleads closeComponent={closeComponent} />;
+      projectIcon = (
+        <>
+          <iconify-icon icon="logos:jupyter" width="1.35em" height="1.35em" />
+          <iconify-icon icon="material-icon-theme:python" width="1.35em" height="1.35em" />
+        </>
+      );
+      break;
+    }
+    case "VCDive": {
+      component = <VCDive closeComponent={closeComponent} />;
+      projectIcon = (
+        <>
+          <iconify-icon icon="skill-icons:nextjs-dark" width="1.35em" height="1.35em" />
+          <iconify-icon icon="material-icon-theme:python" width="1.35em" height="1.35em" />
+          <iconify-icon icon="skill-icons:flask-dark" width="1.35em" height="1.35em" />
+          <iconify-icon icon="skill-icons:cpp" width="1.35em" height="1.35em" />
+        </>
+      );
+      break;
+    }
+    case "Understanding Predictive Models of Student Success with a Multiverse Analysis": {
+      component = <Multiverse closeComponent={closeComponent} />;
+      projectIcon = (
+        <>
+          <iconify-icon icon="logos:jupyter" width="1.35em" height="1.35em" />
+          <iconify-icon icon="material-icon-theme:python" width="1.35em" height="1.35em" />
+        </>
+      );
+      break;
+    }
+    case "N-way Superscaler RISC-V Computer Architecture (EECS 470)": {
+      component = <Processor closeComponent={closeComponent} />;
+      projectIcon = (
+        <>
+          <iconify-icon icon="material-icon-theme:verilog" width="1.35em" height="1.35em" />
+          <iconify-icon icon="file-icons:systemverilog" width="1.35em" height="1.35em" />
+        </>
+      );
+      break;
+    }
+    default:
+      descriptText = (
+        <h4 className="text-[0.92rem] font-medium text-title">Description soon</h4>
+      );
+  }
+
+  return (
+    <>
+      <button
+        className="grid w-full content-start gap-4 rounded-[1.5rem] border border-border bg-white/90 p-4 text-left shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[rgba(15,23,42,0.16)] hover:shadow-md"
+        key={item.id}
+        onClick={openComponent}
+        type="button"
+      >
+        <img
+          src={item.image}
+          alt={item.title}
+          className="h-[180px] w-full rounded-[calc(var(--radius-lg)-0.35rem)] object-cover md:h-[200px] lg:h-[220px]"
+        />
+        <div className="flex items-center justify-between gap-4">
+          <span className="text-[0.86rem] text-textLight md:text-[0.92rem]">
+            {item.category}
+          </span>
+          <span className="text-[0.92rem] font-medium text-title">View details</span>
+        </div>
+        <h3 className="text-[1.08rem] font-semibold leading-[1.35] text-title">
+          {item.title}
+        </h3>
+        {projectIcon ? (
+          <div className="flex flex-wrap gap-1.5 text-title">{projectIcon}</div>
+        ) : (
+          descriptText
+        )}
+      </button>
+      {showComponent ? component : null}
+    </>
+  );
 };

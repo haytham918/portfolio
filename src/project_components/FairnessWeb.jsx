@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./FairnessWeb.css";
 import fairnessWebCover from "../assets/fairnessWebCover.jpg";
 import fairnessWebDataProcessing from "../assets/fairnessWebImg2.jpg";
 import fairnessWebPipeline from "../assets/fairnessWebImg1.jpg";
@@ -31,7 +30,7 @@ const FairnessWeb = ({ closeComponent }) => {
       <CloseButton closeComponent={closeComponent} />
       <div className="carousel-fairness">
         <BsArrowLeftCircleFill
-          className="arrow arrow-left"
+          className="fairness-arrow fairness-arrow-left"
           onClick={prevSlide}
         />
         {data.map((item, idx) => {
@@ -40,22 +39,28 @@ const FairnessWeb = ({ closeComponent }) => {
               src={item.src}
               alt={item.alt}
               key={idx}
-              className={idx === slide ? "slide" : "slide slide-hidden"}
+              className={
+                idx === slide
+                  ? "fairness-slide"
+                  : "fairness-slide fairness-slide-hidden"
+              }
             />
           );
         })}
         <BsArrowRightCircleFill
-          className="arrow arrow-right"
+          className="fairness-arrow fairness-arrow-right"
           onClick={nextSlide}
         />
-        <span className="indicators">
+        <span className="fairness-indicators">
           {data.map((_, id) => {
             return (
               <button
                 id={id}
                 onClick={() => setSlide(id)}
                 className={
-                  id === slide ? "indicator" : "indicator indicator-inactive"
+                  id === slide
+                    ? "fairness-indicator"
+                    : "fairness-indicator fairness-indicator-inactive"
                 }
                 key={id}
               ></button>
@@ -95,8 +100,8 @@ const FairnessWeb = ({ closeComponent }) => {
         </h4>
         <h4 className="description">
           I developed an interactive website using{" "}
-          <span style={{ color: "violet" }}> Streamlit</span> and{" "}
-          <span style={{ color: "violet" }}>Python</span>, which served as a
+          <span className="text-violet-500">Streamlit</span> and{" "}
+          <span className="text-violet-500">Python</span>, which served as a
           user-friendly interface for showcasing the underlying complexities of
           bias in machine learning. This platform walks users through different
           methods of detecting bias within ML models, and importantly, provides
