@@ -152,7 +152,11 @@ export const WorksItems = ({ item }) => {
         <img
           src={item.image}
           alt={item.title}
-          className="h-[180px] w-full rounded-[calc(var(--radius-lg)-0.35rem)] object-cover md:h-[200px] lg:h-[220px]"
+          className={`h-[180px] w-full rounded-[calc(var(--radius-lg)-0.35rem)] md:h-[200px] lg:h-[220px] ${
+            item.title === "Ambient Learning Mobile App"
+              ? "bg-[#efeee7] object-contain p-3"
+              : "object-cover"
+          }`}
         />
         <div className="flex items-center justify-between gap-4">
           <span className="text-[0.86rem] text-textLight md:text-[0.92rem]">

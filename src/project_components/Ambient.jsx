@@ -69,7 +69,7 @@ export const Ambient = ({ closeComponent }) => {
           })}
         </span>
       </div>
-      <h3 className="subtitle">Screenshots of Ambient Learning Mobile App</h3>
+      <h3 className="subtitle mt-8 xs:mt-10">Screenshots of Ambient Learning Mobile App</h3>
       <div className="text-part">
         <h3 className="headline">
           Ambient Learning Mobile App {"       "}
