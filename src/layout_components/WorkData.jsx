@@ -1,5 +1,5 @@
 import capstonepic from "../assets/capstone.jpeg";
-import converterpic from "../assets/converter.jpg";
+import converterpic from "../assets/converter-cover.svg";
 import ambientCover from "../assets/ambient-cover.png";
 import thdssppcover from "../assets/3DSSPP-Cover.jpg";
 import expectileCover from "../assets/expectile.jpg";
