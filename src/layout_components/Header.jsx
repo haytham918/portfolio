@@ -33,7 +33,7 @@ const Header = ({ activeNav, handleNav }) => {
 
   return (
     <header
-      className={`fixed inset-x-0 bottom-4 z-fixed bg-transparent pointer-events-none md:pointer-events-auto md:bottom-auto md:top-0 md:border-b md:backdrop-blur-[14px] md:transition-all md:duration-200 ${
+      className={`fixed inset-x-0 top-4 z-fixed bg-transparent pointer-events-none md:pointer-events-auto md:top-0 md:border-b md:backdrop-blur-[14px] md:transition-all md:duration-200 ${
         isScrolled
           ? "md:border-border md:bg-[rgba(248,250,252,0.92)] md:shadow-header"
           : "md:border-transparent md:bg-[rgba(248,250,252,0.78)]"
@@ -48,8 +48,10 @@ const Header = ({ activeNav, handleNav }) => {
         </HashLink>
 
         <div
-          className={`fixed left-3 right-3 bottom-[5.15rem] top-auto rounded-[1.25rem] border border-border bg-[rgba(248,250,252,0.97)] px-[0.9rem] pb-4 pt-[1.1rem] opacity-0 shadow-floating backdrop-blur-[18px] transition duration-200 pointer-events-none translate-y-4 xs:left-4 xs:right-4 xs:bottom-[5.5rem] xs:px-4 xs:pb-[1.15rem] md:static md:translate-y-0 md:rounded-none md:border-0 md:bg-transparent md:px-0 md:pb-0 md:pt-0 md:opacity-100 md:shadow-none md:backdrop-blur-0 md:pointer-events-auto ${
-            toggle ? "pointer-events-auto translate-y-0 opacity-100" : ""
+          className={`fixed left-3 right-3 top-6 rounded-[1.25rem] px-[0.9rem] pb-4 pt-[1.1rem] opacity-0 transition duration-200 pointer-events-none -translate-y-4 xs:left-4 xs:right-4 xs:px-4 xs:pb-[1.15rem] md:static md:translate-y-0 md:rounded-none md:border-0 md:bg-transparent md:px-0 md:pb-0 md:pt-0 md:opacity-100 md:shadow-none md:backdrop-blur-none md:pointer-events-auto ${
+            toggle
+              ? "pointer-events-auto translate-y-0 opacity-100 border border-border bg-[rgba(248,250,252,0.97)] shadow-floating backdrop-blur-[18px]"
+              : ""
           }`}
         >
           <ul className="grid grid-cols-1 gap-[0.9rem] xs:grid-cols-2 md:flex md:items-center md:gap-6">
