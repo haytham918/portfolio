@@ -1,4 +1,5 @@
 import umichLogo from "../assets/umich-logo-ref-square.png";
+import { FcGoogle } from "react-icons/fc";
 
 export const experienceData = [
   {
@@ -31,13 +32,24 @@ export const experienceData = [
   },
   {
     id: 3,
-    period: "2025 — Present",
+    period: "2025 — 2026",
     title: "Software Engineer",
     organization: "TikTok",
     logo: {
       type: "icon",
       value: "streamline-logos:tiktok-logo-block",
       label: "TikTok",
+    },
+  },
+  {
+    id: 4,
+    period: "2026",
+    title: "Software Engineer",
+    organization: "Google",
+    logo: {
+      type: "component",
+      value: FcGoogle,
+      label: "Google",
     },
   },
 ];
