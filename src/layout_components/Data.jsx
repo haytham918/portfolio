@@ -1,4 +1,5 @@
 import React from "react";
+import { FcGoogle } from "react-icons/fc";
 import { SpotifyPlaying } from "./Spotify/SpotifyPlaying";
 
 const Data = () => {
@@ -13,16 +14,12 @@ const Data = () => {
       </h3>
 
       <p className="mb-4 text-base leading-[1.8] text-text">
-        Hello there, I&apos;m Yunxuan "Haytham" Tang, a recent Computer Science
+        Hello there, I&apos;m Yunxuan "Haytham" Tang, a Computer Science
         graduate from the University of Michigan with a minor in Electrical
-        Engineering. Currently, I am a Software Engineer at{" "}
+        Engineering. I am a Software Engineer at{" "}
         <span className="inline-flex items-center gap-1.5 font-medium text-title">
-          TikTok
-          <iconify-icon
-            icon="streamline-logos:tiktok-logo-block"
-            width="1.1em"
-            height="1.1em"
-          />
+          Google
+          <FcGoogle size="1.1em" aria-hidden="true" />
         </span>
         .
       </p>
@@ -34,7 +31,7 @@ const Data = () => {
       </p>
 
       <p className="mt-1 text-[0.86rem] text-textLight md:text-[0.92rem]">
-        Updated: Apr. 13, 2026
+        Updated: Oct. 1, 2026
       </p>
       <SpotifyPlaying />
     </div>

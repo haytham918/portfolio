@@ -3,6 +3,20 @@ import "iconify-icon";
 import { experienceData } from "./ExperienceData";
 
 const renderLogo = (logo) => {
+  if (logo.type === "component") {
+    const Logo = logo.value;
+
+    return (
+      <span
+        className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-black"
+        role="img"
+        aria-label={logo.label}
+      >
+        <Logo size="2em" aria-hidden="true" />
+      </span>
+    );
+  }
+
   if (logo.type === "icon") {
     return (
       <span
@@ -31,9 +45,9 @@ const Experience = () => {
       <span className="app-section-subtitle">Research, teaching, and industry.</span>
 
       <div className="app-container max-w-[1040px]">
-        <div className="relative grid gap-4 md:grid-cols-3 md:gap-5">
+        <div className="relative grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-4">
           <div className="absolute bottom-2 left-[1.1rem] top-2 w-px bg-gradient-to-b from-[rgba(15,23,42,0.08)] via-[rgba(15,23,42,0.2)] to-[rgba(15,23,42,0.08)] md:hidden"></div>
-          <div className="absolute left-[10%] right-[10%] top-8 hidden h-px bg-gradient-to-r from-[rgba(15,23,42,0.08)] via-[rgba(15,23,42,0.2)] to-[rgba(15,23,42,0.08)] md:block"></div>
+          <div className="absolute left-[10%] right-[10%] top-8 hidden h-px bg-gradient-to-r from-[rgba(15,23,42,0.08)] via-[rgba(15,23,42,0.2)] to-[rgba(15,23,42,0.08)] lg:block"></div>
 
           {experienceData.map((item) => (
             <article key={item.id} className="relative pl-10 md:pl-0 md:pt-4">
